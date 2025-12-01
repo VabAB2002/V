@@ -1,0 +1,5155 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-29T21:45:24.020161",
+    "total_courses": 511,
+    "description": "Maps course codes to majors that require them"
+  },
+  "index": {
+    "ACCTG 211": [
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ECON 102": [
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "economics_ba",
+        "context": "entrance"
+      },
+      {
+        "major_id": "economics_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ENGL 15": [
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "entrance_option"
+      }
+    ],
+    "ENGL 30": [
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "entrance_option"
+      }
+    ],
+    "FIN 301": [
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MATH 110": [
+      {
+        "major_id": "accounting_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MATH 140": [
+      {
+        "major_id": "accounting_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MGMT 301": [
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MKTG 301W": [
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SCM 200": [
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "entrance_option"
+      }
+    ],
+    "STAT 200": [
+      {
+        "major_id": "accounting_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "accounting_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "hdfs_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ACCTG 310": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ACCTG 340": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ACCTG 403": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_accounting_option_additional_courses"
+      }
+    ],
+    "ACCTG 471": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_accounting_option_prescribed_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ACCTG 472": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_accounting_option_prescribed_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ACCTG 473": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BA 364Y": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ECON 104": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "economics_ba",
+        "context": "entrance"
+      },
+      {
+        "major_id": "economics_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ENGL 202D": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MIS 204": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MIS 390": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SCM 301": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BA 462": [
+      {
+        "major_id": "accounting_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BA 243": [
+      {
+        "major_id": "accounting_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ACCTG 410": [
+      {
+        "major_id": "accounting_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ACCTG 423": [
+      {
+        "major_id": "accounting_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ACCTG 462": [
+      {
+        "major_id": "accounting_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ACCTG 483": [
+      {
+        "major_id": "accounting_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "AGBM 102": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "AGBM 106": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "AGBM 302": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "AGBM 308W": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "AGBM 320": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MKTG 301": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance"
+      }
+    ],
+    "AGBM 101": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "AGBM 408": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "AGBM 440": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "AGBM 460": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "IST 110": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SRA 111": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SOC 1": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BBH 101": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BBH 302": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BBH 310": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BBH 311": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BBH 316": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BBH 411W": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BBH 440": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BIOL 110": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BIOL 161": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BIOL 163": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "NUTR 251": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PSYCH 100": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "entrance"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CHEM 110": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CHEM 130": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MICRB 106": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ANTH 21": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ANTH 22": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BIOL 155": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CHEM 111": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CHEM 202": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EARTH 103N": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "EGEE 101": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "EGEE 102": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MICRB 107": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 260": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 470": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BBH 305": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BBH 315": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BBH 416": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BBH 432": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BBH 451": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CSD 100": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CSD 269": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HPA 101": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_prescribed_courses"
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HDFS 229": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "hdfs_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HDFS 239": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "hdfs_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HDFS 249N": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "hdfs_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HDFS 250": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HDFS 311": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "hdfs_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HDFS 315Y": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "hdfs_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HDFS 418": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "hdfs_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HDFS 428": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HDFS 429": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HDFS 433": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HDFS 445": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HPA 57": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HPA 310": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "KINES 203": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 212": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 243": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 270": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 441": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "RPTM 120": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HDFS 129": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "hdfs_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BBH 301W": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HDFS 414": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HDFS 455": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MATH 21": [
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MATH 22": [
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MATH 26": [
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MATH 40": [
+      {
+        "major_id": "business_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "entrance_option"
+      }
+    ],
+    "MATH 41": [
+      {
+        "major_id": "business_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "entrance_option"
+      }
+    ],
+    "BA 321": [
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BA 322": [
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BA 420": [
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BA 421": [
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BA 422W": [
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "IB 303": [
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MIS 301": [
+      {
+        "major_id": "business_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ACCTG 201": [
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ACCTG 202": [
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BA 495A": [
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MIS 250": [
+      {
+        "major_id": "business_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ACCTG 404": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_accounting_option_prescribed_courses"
+      }
+    ],
+    "ACCTG 405": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_accounting_option_additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_financial_services_option_additional_courses"
+      }
+    ],
+    "ENTR 300": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_entrepreneurship_option_prescribed_courses"
+      }
+    ],
+    "ENTR 320": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_entrepreneurship_option_prescribed_courses"
+      }
+    ],
+    "ENTR 400": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_entrepreneurship_option_prescribed_courses"
+      }
+    ],
+    "CAS 352": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_entrepreneurship_option_additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_management_marketing_option_additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "ENGL 419": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_entrepreneurship_option_additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_management_marketing_option_additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "FIN 420": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_financial_services_option_prescribed_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HPA 332": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_prescribed_courses"
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CAS 404": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_additional_courses"
+      },
+      {
+        "major_id": "business_bs",
+        "context": "subplan_management_marketing_option_additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "LHR 424": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_additional_courses"
+      }
+    ],
+    "LHR 472": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_additional_courses"
+      }
+    ],
+    "PSYCH 281": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 484": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "PSYCH 485": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_health_services_option_additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "BA 250": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_management_marketing_option_additional_courses"
+      }
+    ],
+    "MKTG 220": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_management_marketing_option_additional_courses"
+      }
+    ],
+    "CAS 252": [
+      {
+        "major_id": "business_bs",
+        "context": "subplan_management_marketing_option_additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "CRIMJ 12": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "CRIMJ 100": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "CRIMJ 210": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CRIMJ 220": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "CRIMJ 230": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CRIMJ 250W": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CRIMJ 450W": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CRIMJ 465": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CRIMJ 260": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CRIMJ 304": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CRIMJ 408": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CRIMJ 435": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "SOC 119N": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "CRIMJ 451": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CRIMJ 407": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CRIMJ 420": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "CRIMJ 430": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CRIMJ 441": [
+      {
+        "major_id": "criminal_justice_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CYBER 100S": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "entrance"
+      }
+    ],
+    "IST 210": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "IST 220": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "IST 242": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CYBER 221": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CYBER 262": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CYBER 342W": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CYBER 362": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CYBER 366": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CYBER 451": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CYBER 454": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CYBER 456": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CYBER 440": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "IST 230": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "IST 432": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "IST 495": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SRA 211": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SRA 231": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SRA 311": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SRA 365": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CYBER 100": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ENGL 202C": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "IST 140": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "IST 256": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "IST 261": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "HCDD 361": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 160": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 180": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 260W": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 269": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 271": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 280": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 409": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 282": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 460W": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 467": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 310": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 364": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 403": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 492": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 228": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "COMM 380": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "COMM 461": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "COMM 469": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "ART 211Y": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 215": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 230": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DART 202": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DMD 100": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DMD 300": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DMD 400": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HCDD 113": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "IST 250": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ART 10": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "ART 20": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 118": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 342": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "COMM 428A": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DART 203": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "DART 204": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "DART 206": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "DART 300": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "DART 412": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "GD 110": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "GD 210": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "HCDD 311": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "HCDD 413": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "context": "additional_courses"
+      }
+    ],
+    "ECON 106": [
+      {
+        "major_id": "economics_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ECON 302": [
+      {
+        "major_id": "economics_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ECON 304": [
+      {
+        "major_id": "economics_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ECON 306": [
+      {
+        "major_id": "economics_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "economics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPSC 101": [
+      {
+        "major_id": "economics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CMPSC 203": [
+      {
+        "major_id": "economics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CAS 100": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EBF 200": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PLSC 1": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "international_politics_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "political_science_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PLSC 490": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EGEE 120": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EGEE 401": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EME 444": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EME 466": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EMSC 240N": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EMSC 302": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "GEOG 30N": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "GEOG 438W": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "METEO 469": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "GEOG 432": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EME 432": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "METEO 3": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "EGEE 299": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "EGEE 495": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ETI 300W": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ETI 301": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ETI 302": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ETI 420": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ETI 421": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ETI 461": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "IST 402": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "IST 423": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ETI 435": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ETI 463": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "IST 440W": [
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ACCTG 426": [
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "FIN 451": [
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "FIN 471": [
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MGMT 471W": [
+      {
+        "major_id": "finance_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ACCTG 305": [
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ECON 351": [
+      {
+        "major_id": "finance_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CMPSC 121": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DA 101": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "marketing_bs",
+        "context": "entrance_option"
+      }
+    ],
+    "PSYCH 200": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "entrance_option"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "entrance_option"
+      }
+    ],
+    "DA 201W": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DA 301": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DA 302W": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DA 305": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DA 401": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DA 402W": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DA 475": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DA 476": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DIGIT 410": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "DIGIT 430": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ENG 202C": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MGMT 409": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MIS 415": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MIS 447": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PHIL 103": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "STAT 184": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MIS 336": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "cross_disciplinary": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "financial_analytics": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "program_evaluation": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "HPA 200": [
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HPA 210": [
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HPA 211": [
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HPA 301W": [
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HPA 311": [
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HPA 390W": [
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HPA 455": [
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HPA 395": [
+      {
+        "major_id": "health_policy_administration_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HIST 302W": [
+      {
+        "major_id": "history_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HIST 20": [
+      {
+        "major_id": "history_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HIST 21": [
+      {
+        "major_id": "history_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HIST 107": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 120N": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 139": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 144": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 109": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 111": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 117": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 130": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 122": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 165": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 179": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 181": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 184": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 193": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "JST 193": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 101": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 426": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 441": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 447": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 450": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 453": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 458Y": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 473": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 479": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HIST 486": [
+      {
+        "major_id": "history_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HDFS 301": [
+      {
+        "major_id": "hdfs_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HDFS 312W": [
+      {
+        "major_id": "hdfs_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "HCDD 331": [
+      {
+        "major_id": "information_sciences_technology_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "LA 201W": [
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "LA 496": [
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 309": [
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "PHIL 103W": [
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PHIL 119": [
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CAS 390": [
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PSYCH 301W": [
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SOC 207": [
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PLSC 7N": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PLSC 3": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "political_science_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PLSC 200N": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PLSC 14": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "political_science_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PLSC 410": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 412": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 418W": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 438": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 439": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 442": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 456": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 467": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "HLS 483": [
+      {
+        "major_id": "international_politics_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "LHR 100": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "LHR 201": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "LHR 304": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "LHR 305": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "LHR 312": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "LHR 460": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "LHR 136Y": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "LHR 458Y": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "LHR 202": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "AFAM 100": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "BA 304": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "BLAW 243": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "CAS 203": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "MGMT 100": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "MGMT 321": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "OLEAD 100": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "OLEAD 409": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "OLEAD 464": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "OLEAD 465": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "LHR 136W": [
+      {
+        "major_id": "labor_human_resources_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PLSC 210N": [
+      {
+        "major_id": "law_society_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 472": [
+      {
+        "major_id": "law_society_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CAS 215": [
+      {
+        "major_id": "law_society_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "CAS 321": [
+      {
+        "major_id": "law_society_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "PHIL 10": [
+      {
+        "major_id": "law_society_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PHIL 12": [
+      {
+        "major_id": "law_society_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "PLSC 10": [
+      {
+        "major_id": "law_society_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "political_science_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CAS 426W": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CAS 475": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "CRIM 113": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "CRIM 467": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "SOC 467": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "LA 402": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "LA 404": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "LHR 401": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PHIL 105": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 471": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "PLSC 473": [
+      {
+        "major_id": "law_society_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "MKTG 330": [
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MKTG 342": [
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MKTG 450W": [
+      {
+        "major_id": "marketing_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "NURS 200W": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "NURS 352": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "NURS 357": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "NURS 390": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "NURS 417": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "NURS 465": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "NURS 475": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "NURS 245": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 325N": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 409": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 410": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 411": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 430": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 431": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 432": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 433": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 440": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 458": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 460": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 495": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "NURS 496": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "CAS 204": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CAS 301": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CAS 303": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CAS 496": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CAS 212": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "CAS 340": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "CAS 271N": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "CAS 302": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "ENGL 418": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "ENGL 420": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "CAS 452W": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "CAS 455": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "LER 464": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "LHR 465": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "OLEAD 410": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "SOC 404": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "SOC 456": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "OLEAD 201": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "OLEAD 210": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "LHR 437": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "OLEAD 411": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "supporting_courses"
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "OLEAD 495": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "OLEAD 496": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "SOC 455": [
+      {
+        "major_id": "organizational_leadership_ba",
+        "context": "supporting_courses"
+      }
+    ],
+    "LHR 464": [
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "OLEAD 220": [
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "WMNST 105N": [
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "BA 100": [
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "LHR 427": [
+      {
+        "major_id": "organizational_leadership_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PLSC 17N": [
+      {
+        "major_id": "political_science_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MGMT 341": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MGMT 418": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SCM 445": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SCM 460": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MGMT 410": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MGMT 415": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "SCM 455": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MGMT 461": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MKTG 445": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "SCM 340": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 105": [
+      {
+        "major_id": "psychology_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PSYCH 490": [
+      {
+        "major_id": "psychology_ba",
+        "context": "prescribed_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PSYCH 256": [
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 221": [
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 231": [
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "PSYCH 238": [
+      {
+        "major_id": "psychology_ba",
+        "context": "additional_courses"
+      },
+      {
+        "major_id": "psychology_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "ENGL 202A": [
+      {
+        "major_id": "psychology_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "RPTM 220": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "RPTM 236": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "RPTM 277": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "RPTM 390": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "RPTM 410": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "RPTM 433": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "RPTM 456": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CAS 283": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "RPTM 370": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "RPTM 435": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "SOC 5": [
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "GEOG 128": [
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "STAT 460": [
+      {
+        "major_id": "security_risk_analysis_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "MATH 141": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PHYS 211": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "entrance"
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MATH 220": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "MATH 250": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PHYS 212": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "STAT 318": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPSC 122": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPSC 360": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPSC 431W": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPSC 461": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPSC 465": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPEN 270": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPEN 351": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPEN 441": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "CMPEN 461": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SWENG 311": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SWENG 411": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SWENG 421": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SWENG 431": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SWENG 452W": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SWENG 480": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SWENG 481": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "EE 211": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "CMPSC 445": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "SWENG 455": [
+      {
+        "major_id": "software_engineering_bs",
+        "context": "supporting_courses"
+      }
+    ],
+    "COMM 230W": [
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 428B": [
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 428C": [
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 428D": [
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 428E": [
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "prescribed_courses"
+      }
+    ],
+    "COMM 412": [
+      {
+        "major_id": "strategic_communications_ba",
+        "context": "additional_courses"
+      }
+    ],
+    "TURF 230": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "TURF 235": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "TURF 238": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "TURF 307": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "TURF 425": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "TURF 434": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "TURF 435": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "TURF 436W": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "TURF 490": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "TURF 495": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "ENT 317": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "PPEM 412": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "SOILS 101": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "prescribed_courses"
+      }
+    ],
+    "BIOL 127": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "HORT 101": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "additional_courses"
+      }
+    ],
+    "METEO 101": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "context": "additional_courses"
+      }
+    ]
+  }
+}

@@ -1,0 +1,257 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-29T21:45:24.020175",
+    "total_degree_types": 4,
+    "description": "Groups majors by degree type (BS, BA, etc.)"
+  },
+  "index": {
+    "BS": [
+      {
+        "major_id": "accounting_bs",
+        "name": "Accounting, B.S.",
+        "department": "ACCTG",
+        "credits_required": 120
+      },
+      {
+        "major_id": "agribusiness_management_bs",
+        "name": "Agribusiness Management, B.S.",
+        "department": "AGBM",
+        "credits_required": 120
+      },
+      {
+        "major_id": "biobehavioral_health_bs",
+        "name": "Biobehavioral Health, B.S.",
+        "department": "BBH",
+        "credits_required": 120
+      },
+      {
+        "major_id": "business_bs",
+        "name": "Business, B.S.",
+        "department": null,
+        "credits_required": 120
+      },
+      {
+        "major_id": "criminal_justice_bs",
+        "name": "Criminal Justice, B.S.",
+        "department": "CRIMJ",
+        "credits_required": 120
+      },
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "name": "Cybersecurity Analytics and Operations, B.S.",
+        "department": "IST",
+        "credits_required": 123
+      },
+      {
+        "major_id": "economics_bs",
+        "name": "Economics, B.S.",
+        "department": "ECON",
+        "credits_required": 120
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "name": "Energy and Sustainability Policy, B.S.",
+        "department": "EME",
+        "credits_required": 120
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "name": "Enterprise Technology Integration, B.S.",
+        "department": "IST",
+        "credits_required": 124
+      },
+      {
+        "major_id": "finance_bs",
+        "name": "Finance, B.S.",
+        "department": "FIN",
+        "credits_required": 120
+      },
+      {
+        "major_id": "functional_data_analytics_bs",
+        "name": "Functional Data Analytics, B.S.",
+        "department": "DA",
+        "credits_required": 120
+      },
+      {
+        "major_id": "health_policy_administration_bs",
+        "name": "Health Policy and Administration, B.S.",
+        "department": "HPA",
+        "credits_required": 120
+      },
+      {
+        "major_id": "hdfs_bs",
+        "name": "Human Development and Family Studies, B.S.",
+        "department": "HDFS",
+        "credits_required": 120
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "name": "Information Sciences and Technology, B.S.",
+        "department": "IST",
+        "credits_required": 125
+      },
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "name": "Integrated Social Sciences, B.S.",
+        "department": "L A",
+        "credits_required": 120
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "name": "Labor and Human Resources, B.S.",
+        "department": "LHR",
+        "credits_required": 123
+      },
+      {
+        "major_id": "marketing_bs",
+        "name": "Marketing, B.S.",
+        "department": "MKTG",
+        "credits_required": 120
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "name": "Organizational and Professional Communication, B.S.",
+        "department": "CAS",
+        "credits_required": 120
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "name": "Organizational Leadership, B.S.",
+        "department": "LHR",
+        "credits_required": 120
+      },
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "name": "Project and Supply Chain Management, B.S.",
+        "department": "SCM",
+        "credits_required": 120
+      },
+      {
+        "major_id": "psychology_bs",
+        "name": "Psychology, B.S.",
+        "department": "PSYCH",
+        "credits_required": 123
+      },
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "name": "Recreation, Park, and Tourism Management, B.S.",
+        "department": "RPTM",
+        "credits_required": 120
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "name": "Security and Risk Analysis, B.S.",
+        "department": "IST",
+        "credits_required": 120
+      },
+      {
+        "major_id": "software_engineering_bs",
+        "name": "Software Engineering, B.S.",
+        "department": "SWENG",
+        "credits_required": 126
+      },
+      {
+        "major_id": "turfgrass_science_bs",
+        "name": "Turfgrass Science, B.S.",
+        "department": "PLANT",
+        "credits_required": 120
+      }
+    ],
+    "BA": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "name": "Digital Journalism and Media, B.A.",
+        "department": "COMM",
+        "credits_required": 120
+      },
+      {
+        "major_id": "economics_ba",
+        "name": "Economics, B.A.",
+        "department": "ECON",
+        "credits_required": 120
+      },
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "name": "Energy and Sustainability Policy, B.A.",
+        "department": "EME",
+        "credits_required": 120
+      },
+      {
+        "major_id": "history_ba",
+        "name": "History, B.A.",
+        "department": "HIST",
+        "credits_required": 123
+      },
+      {
+        "major_id": "international_politics_ba",
+        "name": "International Politics, B.A.",
+        "department": "PLSC",
+        "credits_required": 123
+      },
+      {
+        "major_id": "labor_human_resources_ba",
+        "name": "Labor and Human Resources, B.A.",
+        "department": "LHR",
+        "credits_required": 123
+      },
+      {
+        "major_id": "law_society_ba",
+        "name": "Law and Society, B.A.",
+        "department": "L A",
+        "credits_required": 120
+      },
+      {
+        "major_id": "multidisciplinary_studies_ba",
+        "name": "Multidisciplinary Studies, B.A.",
+        "department": "L A",
+        "credits_required": 120
+      },
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "name": "Organizational and Professional Communication, B.A.",
+        "department": "CAS",
+        "credits_required": 120
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "name": "Organizational Leadership, B.A.",
+        "department": "LHR",
+        "credits_required": 120
+      },
+      {
+        "major_id": "political_science_ba",
+        "name": "Political Science, B.A.",
+        "department": "PLSC",
+        "credits_required": 120
+      },
+      {
+        "major_id": "psychology_ba",
+        "name": "Psychology, B.A.",
+        "department": "PSYCH",
+        "credits_required": 123
+      },
+      {
+        "major_id": "strategic_communications_ba",
+        "name": "Strategic Communications, B.A.",
+        "department": "COMM",
+        "credits_required": 120
+      }
+    ],
+    "B.Des": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "name": "Digital Multimedia Design, B.Des.",
+        "department": "INTERDISCIPLINARY",
+        "credits_required": 120
+      }
+    ],
+    "BSN": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "name": "Nursing (RN to BSN), B.S.",
+        "department": "NURS",
+        "credits_required": 120
+      }
+    ]
+  }
+}

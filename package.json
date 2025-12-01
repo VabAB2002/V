@@ -1,0 +1,30 @@
+{
+    "name": "penn-state-degree-audit-engine",
+    "version": "1.0.0",
+    "description": "TypeScript engine for auditing student progress and recommending minors",
+    "main": "index.ts",
+    "scripts": {
+        "test": "ts-node tests/test_my_transcript.ts",
+        "test:db": "ts-node tests/test_db_speed.ts",
+        "example": "ts-node examples/example.ts",
+        "migrate": "ts-node scripts/migrate_to_sqlite.ts",
+        "build": "tsc"
+    },
+    "keywords": [
+        "degree",
+        "audit",
+        "recommendation",
+        "penn-state"
+    ],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/better-sqlite3": "^7.6.13",
+        "@types/node": "^20.19.25",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.3"
+    },
+    "dependencies": {
+        "better-sqlite3": "^12.5.0"
+    }
+}

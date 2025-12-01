@@ -1,0 +1,1696 @@
+{
+    "minors": {
+        "business_minor": {
+            "minor_id": "business_minor",
+            "minor_name": "Business Minor",
+            "department": "BUSINESS",
+            "total_credits_required": 19,
+            "description": "Study the fundamentals of business including accounting, marketing, management, and economics.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "OR",
+                                "requirement_id": "accounting_req",
+                                "description": "Accounting requirement",
+                                "credits_needed": 4,
+                                "children": [
+                                    {
+                                        "type": "FIXED",
+                                        "option_id": "single_course",
+                                        "courses": [
+                                            "ACCTG 211"
+                                        ]
+                                    },
+                                    {
+                                        "type": "AND",
+                                        "option_id": "two_course_combo",
+                                        "courses": [
+                                            "ACCTG 201",
+                                            "ACCTG 202"
+                                        ]
+                                    }
+                                ],
+                                "label": "Accounting Req"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "mgmt_req",
+                                "description": "Management requirement",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "MGMT 301"
+                                ],
+                                "label": "Mgmt Req"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "mktg_req",
+                                "description": "Marketing requirement",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "MKTG 301W"
+                                ],
+                                "label": "Mktg Req"
+                            }
+                        ],
+                        "description": "Required courses (10-12 credits)",
+                        "total_credits": 10,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "OR",
+                                "requirement_id": "econ_req",
+                                "description": "Economics course",
+                                "credits_needed": 3,
+                                "options": [
+                                    "ECON 102",
+                                    "ECON 104"
+                                ],
+                                "label": "Econ Req"
+                            }
+                        ],
+                        "description": "Economics requirement",
+                        "total_credits": 3,
+                        "label": "Additional Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_DEPT",
+                                "requirement_id": "supporting_primary",
+                                "description": "Select 3 credits from list of business disciplines (400-level)",
+                                "credits_required": 3,
+                                "credits_needed": 3,
+                                "label": "Supporting Primary",
+                                "valid_departments": [
+                                    "ACCTG",
+                                    "BA",
+                                    "EBF",
+                                    "ECON",
+                                    "ENTR",
+                                    "FIN",
+                                    "HPA",
+                                    "IB",
+                                    "LHR",
+                                    "MGMT",
+                                    "MIS",
+                                    "MKTG",
+                                    "SCM",
+                                    "STAT"
+                                ],
+                                "level_min": 400,
+                                "level_max": 499
+                            },
+                            {
+                                "type": "OR",
+                                "requirement_id": "supporting_secondary",
+                                "description": "Select 3 credits from business disciplines or specific list",
+                                "credits_required": 3,
+                                "credits_needed": 3,
+                                "label": "Supporting Secondary",
+                                "children": [
+                                    {
+                                        "type": "PICK_FROM_LIST",
+                                        "valid_courses": [
+                                            "CAS 404",
+                                            "CRIMJ 408",
+                                            "ENGL 419",
+                                            "ETI 420",
+                                            "HDFS 455",
+                                            "IST 402",
+                                            "IST 432",
+                                            "PSYCH 484",
+                                            "PSYCH 485",
+                                            "SOC 455",
+                                            "SOC 456",
+                                            "SOC 467"
+                                        ],
+                                        "credits_needed": 3
+                                    },
+                                    {
+                                        "type": "PICK_FROM_DEPT",
+                                        "valid_departments": [
+                                            "ACCTG",
+                                            "BA",
+                                            "EBF",
+                                            "ECON",
+                                            "ENTR",
+                                            "FIN",
+                                            "HPA",
+                                            "IB",
+                                            "LHR",
+                                            "MGMT",
+                                            "MIS",
+                                            "MKTG",
+                                            "SCM",
+                                            "STAT"
+                                        ],
+                                        "level_min": 400,
+                                        "level_max": 499,
+                                        "credits_needed": 3
+                                    }
+                                ]
+                            }
+                        ],
+                        "description": "400-level supporting courses",
+                        "total_credits": 6,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "criminal_justice_minor": {
+            "minor_id": "criminal_justice_minor",
+            "minor_name": "Criminal Justice Minor",
+            "department": "CRIMJ",
+            "total_credits_required": 18,
+            "description": "Delve into the foundational concepts of criminal justice, as well as explore supporting topics and specializations within the field.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "crimj_100",
+                                "description": "Introduction to Criminal Justice",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "CRIMJ 100"
+                                ],
+                                "label": "Crimj 100"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "crimj_210",
+                                "description": "Policing in America",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "CRIMJ 210"
+                                ],
+                                "label": "Crimj 210"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "crimj_220",
+                                "description": "Courts and the Prosecution Process",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "CRIMJ 220"
+                                ],
+                                "label": "Crimj 220"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "crimj_230",
+                                "description": "Corrections in America",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "CRIMJ 230"
+                                ],
+                                "label": "Crimj 230"
+                            }
+                        ],
+                        "description": "Required Core Courses (12 credits)",
+                        "total_credits": 12,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "advanced_electives",
+                                "description": "Select 6 credits from approved 400-level list",
+                                "credits_required": 6,
+                                "credits_needed": 6,
+                                "valid_courses": [
+                                    "CRIM 406",
+                                    "SOC 406",
+                                    "CRIMJ 408",
+                                    "AFAM 409",
+                                    "SOC 409",
+                                    "CRIMJ 430",
+                                    "CRIMJ 435",
+                                    "CRIMJ 441",
+                                    "CRIMJ 450W",
+                                    "CRIMJ 465"
+                                ],
+                                "label": "Advanced Electives"
+                            }
+                        ],
+                        "description": "Supporting Courses and Related Areas (6 credits at 400-level)",
+                        "total_credits": 6,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "dispute_management_minor": {
+            "minor_id": "dispute_management_minor",
+            "minor_name": "Dispute Management and Resolution Minor",
+            "department": "LHR",
+            "total_credits_required": 18,
+            "description": "Explore conflict management, dispute resolution, and negotiation through communication and labor relations.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "interpersonal_comm",
+                                "description": "Interpersonal Communication",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "CAS 203"
+                                ],
+                                "label": "Interpersonal Comm"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "labor_relations",
+                                "description": "Labor and Employment Relations Fundamentals",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "LHR 304"
+                                ],
+                                "label": "Labor Relations"
+                            }
+                        ],
+                        "description": "Required Core Courses",
+                        "total_credits": 6,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "dispute_electives",
+                                "description": "Select 12 credits from list. At least 9 credits must be at the 400 level.",
+                                "credits_required": 12,
+                                "credits_needed": 12,
+                                "valid_courses": [
+                                    "CAS 403",
+                                    "CAS 426W",
+                                    "CAS 452W",
+                                    "LHR 201",
+                                    "LHR 136",
+                                    "LHR 434",
+                                    "OLEAD 465",
+                                    "LHR 465",
+                                    "PSYCH 281"
+                                ],
+                                "label": "Dispute Electives"
+                            }
+                        ],
+                        "description": "Additional Courses (Select 12 credits)",
+                        "total_credits": 12,
+                        "label": "Additional Courses"
+                    }
+                ]
+            }
+        },
+        "economics_minor": {
+            "minor_id": "economics_minor",
+            "minor_name": "Economics Minor",
+            "department": "ECON",
+            "total_credits_required": 18,
+            "description": "Study economic theory, micro/macro analysis, and specialized topics.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "econ_core",
+                                "description": "Economics Core",
+                                "credits_needed": 12,
+                                "min_grade": "C",
+                                "courses": [
+                                    "ECON 102",
+                                    "ECON 104",
+                                    "ECON 302",
+                                    "ECON 304"
+                                ],
+                                "label": "Econ Core"
+                            }
+                        ],
+                        "description": "Required Core Courses",
+                        "total_credits": 12,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "advanced_econ",
+                                "description": "Select 6 credits from 400-level ECON courses.",
+                                "credits_required": 6,
+                                "credits_needed": 6,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "ECON 402",
+                                    "ECON 425",
+                                    "ECON 428",
+                                    "ECON 433",
+                                    "ECON 434",
+                                    "ECON 471"
+                                ],
+                                "label": "Advanced Econ"
+                            }
+                        ],
+                        "description": "400-Level Economics Electives",
+                        "total_credits": 6,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "energy_business_finance_minor": {
+            "minor_id": "energy_business_finance_minor",
+            "minor_name": "Energy Business and Finance Minor",
+            "department": "EBF",
+            "total_credits_required": 28,
+            "description": "Integrates energy, business, and finance concepts with engineering and earth sciences.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "ebf_core",
+                                "description": "Energy Business & Finance Core",
+                                "credits_needed": 6,
+                                "courses": [
+                                    "EBF 200",
+                                    "EBF 301"
+                                ],
+                                "label": "Ebf Core"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "economics_core",
+                                "description": "Microeconomic Analysis",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "ECON 102"
+                                ],
+                                "label": "Economics Core"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "geo_resource_eval",
+                                "description": "Geo-Resource Evaluation",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "EME 460"
+                                ],
+                                "label": "Geo Resource Eval"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "statistics_core",
+                                "description": "Elementary Statistics",
+                                "credits_needed": 4,
+                                "courses": [
+                                    "STAT 200"
+                                ],
+                                "label": "Statistics Core"
+                            }
+                        ],
+                        "description": "Required Core Courses (16 credits)",
+                        "total_credits": 16,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "OR",
+                                "requirement_id": "math_selection",
+                                "description": "Select 3-4 credits of Math",
+                                "credits_needed": 3,
+                                "options": [
+                                    "MATH 22",
+                                    "MATH 110",
+                                    "MATH 140"
+                                ],
+                                "label": "Math Selection"
+                            },
+                            {
+                                "type": "OR",
+                                "requirement_id": "energy_foundation",
+                                "description": "Select 3 credits of Energy Foundation",
+                                "credits_needed": 3,
+                                "options": [
+                                    "EGEE 101",
+                                    "EGEE 102",
+                                    "EGEE 120"
+                                ],
+                                "label": "Energy Foundation"
+                            }
+                        ],
+                        "description": "Additional Math and Energy Selections",
+                        "total_credits": 6,
+                        "label": "Additional Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "advanced_electives",
+                                "description": "Select 6 credits from approved list",
+                                "credits_required": 6,
+                                "credits_needed": 6,
+                                "valid_courses": [
+                                    "EBF 483",
+                                    "EGEE 401",
+                                    "EME 444",
+                                    "GEOG 430",
+                                    "GEOG 432"
+                                ],
+                                "label": "Advanced Electives"
+                            }
+                        ],
+                        "description": "Supporting Courses and Related Areas",
+                        "total_credits": 6,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "english_minor": {
+            "minor_id": "english_minor",
+            "minor_name": "English Minor",
+            "department": "ENGL",
+            "total_credits_required": 18,
+            "description": "Select any combination of writing and literature courses relevant to personal interests.",
+            "requirements": {
+                "type": "AND",
+                "min_grade": "C",
+                "children": [
+                    {
+                        "type": "PICK_FROM_DEPT",
+                        "label": "200-Level English",
+                        "description": "Select 6 credits from ENGL 200-299.",
+                        "credits_needed": 6,
+                        "valid_departments": [
+                            "ENGL"
+                        ],
+                        "level_min": 200,
+                        "level_max": 299
+                    },
+                    {
+                        "type": "PICK_FROM_DEPT",
+                        "label": "400-Level English",
+                        "description": "Select 6 credits from ENGL 400-499.",
+                        "credits_needed": 6,
+                        "valid_departments": [
+                            "ENGL"
+                        ],
+                        "level_min": 400,
+                        "level_max": 499
+                    },
+                    {
+                        "type": "PICK_FROM_DEPT",
+                        "label": "English Electives",
+                        "description": "Select 6 additional credits in English.",
+                        "credits_needed": 6,
+                        "valid_departments": [
+                            "ENGL"
+                        ],
+                        "note": "Courses used to satisfy General Education Writing/Speaking requirements cannot count toward this minor."
+                    }
+                ]
+            }
+        },
+        "entrepreneurship_minor": {
+            "minor_id": "entrepreneurship_minor",
+            "minor_name": "Entrepreneurship Minor",
+            "department": "ENTR",
+            "total_credits_required": 19,
+            "description": "Develop a foundation of knowledge to help take advantage of entrepreneurial opportunities.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "entr_core",
+                                "description": "Entrepreneurship Core",
+                                "credits_needed": 13,
+                                "min_grade": "C",
+                                "courses": [
+                                    "ACCTG 211",
+                                    "ECON 102",
+                                    "ENTR 300",
+                                    "ENTR 320"
+                                ],
+                                "label": "Entr Core"
+                            }
+                        ],
+                        "description": "Required Core Courses",
+                        "total_credits": 13,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_DEPT",
+                                "requirement_id": "entr_advanced",
+                                "description": "Select 3 credits at the 400-level from ENTR.",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "valid_departments": [
+                                    "ENTR"
+                                ],
+                                "level_min": 400,
+                                "label": "Entr Advanced"
+                            },
+                            {
+                                "type": "OR",
+                                "requirement_id": "business_writing_or_elective",
+                                "description": "Select ENGL 419 OR any 400-level Business/Economics course.",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "children": [
+                                    {
+                                        "type": "FIXED",
+                                        "option_id": "business_writing",
+                                        "courses": [
+                                            "ENGL 419"
+                                        ]
+                                    },
+                                    {
+                                        "type": "PICK_FROM_DEPT",
+                                        "option_id": "business_econ_elective",
+                                        "credits_needed": 3,
+                                        "valid_departments": [
+                                            "ACCTG",
+                                            "BA",
+                                            "ECON",
+                                            "FIN",
+                                            "IB",
+                                            "MGMT",
+                                            "MKTG",
+                                            "SCM"
+                                        ],
+                                        "level_min": 400
+                                    }
+                                ],
+                                "label": "Business Writing Or Elective"
+                            }
+                        ],
+                        "description": "Advanced Electives",
+                        "total_credits": 6,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "finance_minor": {
+            "minor_id": "finance_minor",
+            "minor_name": "Finance Minor",
+            "department": "FIN",
+            "total_credits_required": 18,
+            "description": "Study investments, corporate finance, and financial markets.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "fin_core_1",
+                                "description": "Corporation Finance",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "courses": [
+                                    "FIN 301"
+                                ],
+                                "label": "Fin Core 1"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "fin_core_2",
+                                "description": "Investment and Portfolio Analysis",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "courses": [
+                                    "FIN 420"
+                                ],
+                                "label": "Fin Core 2"
+                            }
+                        ],
+                        "description": "Required Core Courses",
+                        "total_credits": 6,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "OR",
+                                "requirement_id": "finance_electives",
+                                "description": "Select 12 credits. At least 6 credits must be at the 400 level.",
+                                "credits_required": 12,
+                                "credits_needed": 12,
+                                "min_grade": "C",
+                                "label": "Finance Electives",
+                                "children": [
+                                    {
+                                        "type": "FIXED_LIST",
+                                        "courses": [
+                                            "ACCTG 426"
+                                        ]
+                                    },
+                                    {
+                                        "type": "PICK_FROM_DEPT",
+                                        "valid_departments": [
+                                            "FIN"
+                                        ],
+                                        "level_min": 300,
+                                        "level_max": 399,
+                                        "credits_needed": 12
+                                    },
+                                    {
+                                        "type": "PICK_FROM_DEPT",
+                                        "valid_departments": [
+                                            "FIN"
+                                        ],
+                                        "level_min": 400,
+                                        "level_max": 499,
+                                        "credits_needed": 12
+                                    }
+                                ]
+                            }
+                        ],
+                        "description": "Finance Electives",
+                        "total_credits": 12,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "geography_minor": {
+            "minor_id": "geography_minor",
+            "minor_name": "Geography Minor",
+            "department": "GEOG",
+            "total_credits_required": 18,
+            "description": "Explore physical and human geography, environmental issues, and geospatial technologies.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "geog_core",
+                                "description": "Environment and Society",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "courses": [
+                                    "GEOG 30N"
+                                ],
+                                "label": "Geog Core"
+                            }
+                        ],
+                        "description": "Required Core Course",
+                        "total_credits": 3,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "physical_geog",
+                                "description": "Select 3 credits in Physical Geography",
+                                "credits_required": 3,
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "GEOG 1N",
+                                    "GEOG 3N",
+                                    "GEOG 30N",
+                                    "GEOG 430"
+                                ],
+                                "label": "Physical Geog"
+                            },
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "human_geog",
+                                "description": "Select 3 credits in Human Geography",
+                                "credits_required": 3,
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "GEOG 1N",
+                                    "GEOG 2N",
+                                    "GEOG 3N",
+                                    "GEOG 30N",
+                                    "GEOG 430",
+                                    "GEOG 432",
+                                    "GEOG 438W"
+                                ],
+                                "label": "Human Geog"
+                            },
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "additional_geog",
+                                "description": "Select 6 credits of additional Geography courses",
+                                "credits_required": 6,
+                                "credits_needed": 6,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "GEOG 1N",
+                                    "GEOG 2N",
+                                    "GEOG 3N",
+                                    "GEOG 6N",
+                                    "GEOG 430",
+                                    "GEOG 432",
+                                    "GEOG 438W"
+                                ],
+                                "label": "Additional Geog"
+                            },
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "advanced_geog",
+                                "description": "Select 3 credits of 400-level Geography courses (Note: Text says select 6, but list overlaps with other sections. Logic implies 6 credits total at 400 level including those selected above)",
+                                "credits_required": 6,
+                                "credits_needed": 6,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "GEOG 430",
+                                    "GEOG 432",
+                                    "GEOG 438W",
+                                    "EME 432"
+                                ],
+                                "label": "Advanced Geog"
+                            }
+                        ],
+                        "description": "Geography Electives (15 credits)",
+                        "total_credits": 15,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "history_minor": {
+            "minor_id": "history_minor",
+            "minor_name": "History Minor",
+            "department": "HIST",
+            "total_credits_required": 18,
+            "description": "Gain deep knowledge of culture, religion, art, politics, and war through the study of history.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [],
+                        "description": "None listed",
+                        "total_credits": 0,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "history_electives",
+                                "description": "Select 18 credits from the list below. NOTE: At least 6 credits must be at the 400 level.",
+                                "credits_required": 18,
+                                "credits_needed": 18,
+                                "valid_courses": [
+                                    "HIST 20",
+                                    "HIST 21",
+                                    "HIST 101",
+                                    "HIST 120N",
+                                    "HIST 130",
+                                    "HIST 144",
+                                    "HIST 181",
+                                    "HIST 302W",
+                                    "HIST 426",
+                                    "HIST 447",
+                                    "HIST 453",
+                                    "HIST 458Y",
+                                    "LHR 458",
+                                    "HIST 479"
+                                ],
+                                "label": "History Electives"
+                            }
+                        ],
+                        "description": "History Electives (18 credits total)",
+                        "total_credits": 18,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "homeland_security_minor": {
+            "minor_id": "homeland_security_minor",
+            "minor_name": "Homeland Security Minor",
+            "department": "HLS",
+            "total_credits_required": 18,
+            "description": "Explore emergency management, security administration, border security, and critical infrastructure protection.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "hls_core",
+                                "description": "Homeland Security Core",
+                                "credits_needed": 9,
+                                "courses": [
+                                    "HLS 201",
+                                    "HLS 306",
+                                    "HLS 483"
+                                ],
+                                "label": "Hls Core"
+                            }
+                        ],
+                        "description": "Required Core Courses",
+                        "total_credits": 9,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "hls_electives",
+                                "description": "Select 9 credits from the approved list.",
+                                "credits_required": 9,
+                                "credits_needed": 9,
+                                "valid_courses": [
+                                    "CRIMJ 304",
+                                    "CRIMJ 435",
+                                    "HLS 475",
+                                    "HLS 476",
+                                    "PLSC 439",
+                                    "SRA 421"
+                                ],
+                                "label": "Hls Electives"
+                            }
+                        ],
+                        "description": "Homeland Security Electives",
+                        "total_credits": 9,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "hdfs_minor": {
+            "minor_id": "hdfs_minor",
+            "minor_name": "Human Development and Family Studies Minor",
+            "department": "HDFS",
+            "total_credits_required": 18,
+            "description": "Tailor the focus of your minor by selecting courses that fit your interests in human development.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "hdfs_core",
+                                "description": "Introduction to Human Development and Family Studies",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "courses": [
+                                    "HDFS 129"
+                                ],
+                                "label": "Hdfs Core"
+                            }
+                        ],
+                        "description": "Required Core Course",
+                        "total_credits": 3,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "hdfs_electives",
+                                "description": "Select 15 credits. At least 6 credits must be at the 400 level.",
+                                "credits_required": 15,
+                                "credits_needed": 15,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "HDFS 229",
+                                    "HDFS 239",
+                                    "HDFS 249N",
+                                    "HDFS 301",
+                                    "HDFS 311",
+                                    "HDFS 312W",
+                                    "HDFS 315Y",
+                                    "HDFS 411",
+                                    "HDFS 414",
+                                    "HDFS 418",
+                                    "HDFS 428",
+                                    "HDFS 429",
+                                    "HDFS 433",
+                                    "HDFS 455"
+                                ],
+                                "label": "Hdfs Electives"
+                            }
+                        ],
+                        "description": "HDFS Electives",
+                        "total_credits": 15,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "ist_minor": {
+            "minor_id": "ist_minor",
+            "minor_name": "Information Sciences and Technology Minor",
+            "department": "IST",
+            "total_credits_required": 18,
+            "description": "Explore the organization of data, networking, and the relationship between information, people, and technology.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "ist_core",
+                                "description": "IST Core Courses",
+                                "credits_needed": 9,
+                                "courses": [
+                                    "IST 110",
+                                    "IST 210",
+                                    "IST 220"
+                                ],
+                                "label": "Ist Core"
+                            }
+                        ],
+                        "description": "Required Core Courses",
+                        "total_credits": 9,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "ist_electives_intro",
+                                "description": "Select 3 credits from application/web dev or management",
+                                "credits_required": 3,
+                                "credits_needed": 3,
+                                "valid_courses": [
+                                    "ETI 301",
+                                    "ETI 302",
+                                    "IST 140",
+                                    "IST 250"
+                                ],
+                                "label": "Ist Electives Intro"
+                            },
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "ist_electives_advanced",
+                                "description": "Select 6 credits from 400-level emerging issues/law/policy",
+                                "credits_required": 6,
+                                "credits_needed": 6,
+                                "valid_courses": [
+                                    "IST 402",
+                                    "IST 432",
+                                    "IST 452"
+                                ],
+                                "label": "Ist Electives Advanced"
+                            }
+                        ],
+                        "description": "Additional Courses (Select 9 credits)",
+                        "total_credits": 9,
+                        "label": "Additional Courses"
+                    }
+                ]
+            }
+        },
+        "labor_human_resources_minor": {
+            "minor_id": "labor_human_resources_minor",
+            "minor_name": "Labor and Human Resources Minor",
+            "department": "LHR",
+            "total_credits_required": 18,
+            "description": "Study labor relations, human resources, and workplace dynamics. Note: 6 credits must be at the 400 level.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "lhr_core",
+                                "description": "LHR Core",
+                                "credits_needed": 9,
+                                "courses": [
+                                    "LHR 100",
+                                    "LHR 304",
+                                    "LHR 305"
+                                ],
+                                "label": "Lhr Core"
+                            }
+                        ],
+                        "description": "Required Core Courses",
+                        "total_credits": 9,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "OR",
+                                "requirement_id": "lhr_law_policy",
+                                "description": "Select LHR 201 OR LHR 401",
+                                "credits_needed": 3,
+                                "options": [
+                                    "LHR 201",
+                                    "LHR 401"
+                                ],
+                                "label": "Lhr Law Policy"
+                            }
+                        ],
+                        "description": "Law & Policy Selection",
+                        "total_credits": 3,
+                        "label": "Additional Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_DEPT",
+                                "requirement_id": "lhr_400_level",
+                                "description": "Select 3 credits of any 400-level LHR course.",
+                                "credits_needed": 3,
+                                "valid_departments": [
+                                    "LHR"
+                                ],
+                                "level_min": 400,
+                                "label": "Lhr 400 Level"
+                            },
+                            {
+                                "type": "OR",
+                                "requirement_id": "related_courses",
+                                "description": "Select 3 credits: Either 400-level from related depts OR from the specific course list.",
+                                "credits_needed": 3,
+                                "children": [
+                                    {
+                                        "type": "PICK_FROM_DEPT",
+                                        "option_id": "400_level_related",
+                                        "description": "400-level from AFAM, CAS, ECON, etc.",
+                                        "credits_needed": 3,
+                                        "valid_departments": [
+                                            "AFAM",
+                                            "CAS",
+                                            "ECON",
+                                            "HIST",
+                                            "LTNST",
+                                            "MGMT",
+                                            "PHIL",
+                                            "PSYCH",
+                                            "SPAN",
+                                            "SOC",
+                                            "WMNST"
+                                        ],
+                                        "level_min": 400
+                                    },
+                                    {
+                                        "type": "PICK_FROM_LIST",
+                                        "option_id": "specific_list",
+                                        "description": "Specific approved courses",
+                                        "credits_needed": 3,
+                                        "valid_courses": [
+                                            "ACCTG 211",
+                                            "AFAM 100",
+                                            "BA 243",
+                                            "CAS 203",
+                                            "CAS 352",
+                                            "ECON 342",
+                                            "HIST 155",
+                                            "MGMT 100",
+                                            "MGMT 301",
+                                            "MGMT 321",
+                                            "OLEAD 100",
+                                            "OLEAD 409",
+                                            "OLEAD 464",
+                                            "OLEAD 465",
+                                            "SOC 119N"
+                                        ]
+                                    }
+                                ],
+                                "label": "Related Courses"
+                            }
+                        ],
+                        "description": "Advanced and Related Electives",
+                        "total_credits": 6,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "media_studies_minor": {
+            "minor_id": "media_studies_minor",
+            "minor_name": "Media Studies Minor",
+            "department": "COMM",
+            "total_credits_required": 18,
+            "description": "Explore the role, content, and effects of mass media, cinema, and electronic telecommunications.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "media_core",
+                                "description": "The Mass Media and Society",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "courses": [
+                                    "COMM 100N"
+                                ],
+                                "label": "Media Core"
+                            }
+                        ],
+                        "description": "Required Core Course",
+                        "total_credits": 3,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "OR",
+                                "requirement_id": "media_survey_selection",
+                                "description": "Select 3 credits: Cinema or Electronic Media Survey.",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "options": [
+                                    "COMM 150",
+                                    "COMM 180"
+                                ],
+                                "label": "Media Survey Selection"
+                            },
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "advanced_media_selection",
+                                "description": "Select 12 credits. At least 6 credits must be at the 400 level.",
+                                "credits_required": 12,
+                                "credits_needed": 12,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "COMM 205",
+                                    "COMM 403",
+                                    "COMM 405",
+                                    "COMM 409",
+                                    "COMM 410",
+                                    "COMM 419"
+                                ],
+                                "level_rules": [
+                                    {
+                                        "min_level": 400,
+                                        "credits_needed": 6
+                                    }
+                                ],
+                                "label": "Advanced Media Selection"
+                            }
+                        ],
+                        "description": "Media Studies Electives",
+                        "total_credits": 15,
+                        "label": "Additional Courses"
+                    }
+                ]
+            }
+        },
+        "organizational_leadership_minor": {
+            "minor_id": "organizational_leadership_minor",
+            "minor_name": "Organizational Leadership Minor",
+            "department": "LHR",
+            "total_credits_required": 18,
+            "description": "Develop leadership skills, organizational theory knowledge, and evidence-based decision making strategies.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "olead_core",
+                                "description": "Leadership Foundations",
+                                "credits_needed": 9,
+                                "courses": [
+                                    "OLEAD 100",
+                                    "OLEAD 201",
+                                    "OLEAD 210"
+                                ],
+                                "label": "Olead Core"
+                            },
+                            {
+                                "type": "OR",
+                                "requirement_id": "communication_skills",
+                                "description": "Select OLEAD 464 or LER 464",
+                                "credits_needed": 3,
+                                "options": [
+                                    "OLEAD 464",
+                                    "LER 464"
+                                ],
+                                "label": "Communication Skills"
+                            }
+                        ],
+                        "description": "Required Core Courses (12 credits)",
+                        "total_credits": 12,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "leadership_electives",
+                                "description": "Select 6 credits from the approved list.",
+                                "credits_required": 6,
+                                "credits_needed": 6,
+                                "valid_courses": [
+                                    "BA 100",
+                                    "LHR 427",
+                                    "OLEAD 220",
+                                    "OLEAD 230",
+                                    "OLEAD 409",
+                                    "LHR 409",
+                                    "OLEAD 410",
+                                    "OLEAD 411",
+                                    "OLEAD 465",
+                                    "LHR 465",
+                                    "OLEAD 495",
+                                    "OLEAD 496"
+                                ],
+                                "label": "Leadership Electives"
+                            }
+                        ],
+                        "description": "Leadership Electives",
+                        "total_credits": 6,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "political_science_minor": {
+            "minor_id": "political_science_minor",
+            "minor_name": "Political Science Minor",
+            "department": "PLSC",
+            "total_credits_required": 18,
+            "description": "Develop analytical reasoning and expertise in government, theory, and international relations.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [],
+                        "description": "None listed (All courses are selection-based)",
+                        "total_credits": 0,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "american_politics",
+                                "description": "Select 3 credits in American Politics",
+                                "credits_required": 3,
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "PLSC 1",
+                                    "PLSC 210N",
+                                    "PLSC 404",
+                                    "PLSC 429",
+                                    "PLSC 447",
+                                    "PLSC 468",
+                                    "PLSC 471",
+                                    "PLSC 472",
+                                    "PLSC 473",
+                                    "PLSC 480W",
+                                    "PLSC 490"
+                                ],
+                                "label": "American Politics"
+                            },
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "comparative_politics",
+                                "description": "Select 3 credits in Comparative Politics",
+                                "credits_required": 3,
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "PLSC 3",
+                                    "PLSC 200N",
+                                    "PLSC 456"
+                                ],
+                                "label": "Comparative Politics"
+                            },
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "international_relations",
+                                "description": "Select 3 credits in International Relations",
+                                "credits_required": 3,
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "PLSC 14",
+                                    "PLSC 410",
+                                    "PLSC 412",
+                                    "PLSC 418W",
+                                    "PLSC 438",
+                                    "PLSC 439",
+                                    "PLSC 442",
+                                    "PLSC 467"
+                                ],
+                                "label": "International Relations"
+                            },
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "theory_methodology",
+                                "description": "Select 3 credits in Political Theory or Methodology",
+                                "credits_required": 3,
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "PLSC 7N",
+                                    "PLSC 17N",
+                                    "PLSC 10",
+                                    "PLSC 308",
+                                    "PLSC 309",
+                                    "PLSC 410"
+                                ],
+                                "label": "Theory Methodology"
+                            },
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "plsc_electives",
+                                "description": "Select 6 additional credits from any PLSC category above. Ensure 6 credits total in minor are at 400-level.",
+                                "credits_required": 6,
+                                "credits_needed": 6,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "PLSC 1",
+                                    "PLSC 210N",
+                                    "PLSC 404",
+                                    "PLSC 429",
+                                    "PLSC 447",
+                                    "PLSC 468",
+                                    "PLSC 471",
+                                    "PLSC 472",
+                                    "PLSC 473",
+                                    "PLSC 480W",
+                                    "PLSC 490",
+                                    "PLSC 3",
+                                    "PLSC 200N",
+                                    "PLSC 456",
+                                    "PLSC 14",
+                                    "PLSC 410",
+                                    "PLSC 412",
+                                    "PLSC 418W",
+                                    "PLSC 438",
+                                    "PLSC 439",
+                                    "PLSC 442",
+                                    "PLSC 467",
+                                    "PLSC 7N",
+                                    "PLSC 17N",
+                                    "PLSC 10",
+                                    "PLSC 308",
+                                    "PLSC 309"
+                                ],
+                                "label": "Plsc Electives"
+                            }
+                        ],
+                        "description": "Political Science Distribution & Electives (18 credits total). NOTE: At least 6 credits must be at the 400 level.",
+                        "total_credits": 18,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "psychology_minor": {
+            "minor_id": "psychology_minor",
+            "minor_name": "Psychology Minor",
+            "department": "PSYCH",
+            "total_credits_required": 18,
+            "description": "Customize your degree with a set of courses matching your specific area of interest in psychology.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "psych_intro",
+                                "description": "Introductory Psychology",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "PSYCH 100"
+                                ],
+                                "label": "Psych Intro"
+                            },
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "psych_methods",
+                                "description": "Basic Research Methods",
+                                "credits_needed": 4,
+                                "courses": [
+                                    "PSYCH 301W"
+                                ],
+                                "label": "Psych Methods"
+                            }
+                        ],
+                        "description": "Required Core Courses (7 credits)",
+                        "total_credits": 7,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "psych_electives_selection",
+                                "description": "Select 11 credits from the list. NOTE: At least 6 credits must be at the 400 level.",
+                                "credits_required": 11,
+                                "credits_needed": 11,
+                                "valid_courses": [
+                                    "PSYCH 212",
+                                    "PSYCH 221",
+                                    "PSYCH 238",
+                                    "PSYCH 243",
+                                    "PSYCH 256",
+                                    "PSYCH 260",
+                                    "PSYCH 270",
+                                    "PSYCH 281",
+                                    "PSYCH 412",
+                                    "PSYCH 422",
+                                    "PSYCH 424",
+                                    "PSYCH 441",
+                                    "PSYCH 470",
+                                    "PSYCH 482",
+                                    "PSYCH 484",
+                                    "PSYCH 485"
+                                ],
+                                "label": "Psych Electives Selection"
+                            }
+                        ],
+                        "description": "Psychology Electives (11 credits)",
+                        "total_credits": 11,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "security_risk_analysis_minor": {
+            "minor_id": "security_risk_analysis_minor",
+            "minor_name": "Security and Risk Analysis Minor",
+            "department": "IST",
+            "total_credits_required": 21,
+            "description": "Explore security risk analysis, terrorism threats, information security, and legal/regulatory environments.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "sra_core",
+                                "description": "SRA Core",
+                                "credits_needed": 9,
+                                "min_grade": "C",
+                                "courses": [
+                                    "CYBER 221",
+                                    "SRA 111",
+                                    "SRA 211"
+                                ],
+                                "label": "Sra Core"
+                            }
+                        ],
+                        "description": "Required Core Courses",
+                        "total_credits": 9,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "OR",
+                                "requirement_id": "programming_intro",
+                                "description": "Select Intro to App Dev OR Programming",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "options": [
+                                    "IST 140",
+                                    "CMPSC 101"
+                                ],
+                                "label": "Programming Intro"
+                            },
+                            {
+                                "type": "OR",
+                                "requirement_id": "networking_decision",
+                                "description": "Select Networking OR Decision Theory",
+                                "credits_needed": 3,
+                                "min_grade": "C",
+                                "options": [
+                                    "IST 220",
+                                    "SRA 231"
+                                ],
+                                "label": "Networking Decision"
+                            }
+                        ],
+                        "description": "Foundation Selections (6 credits)",
+                        "total_credits": 6,
+                        "label": "Additional Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "sra_advanced_select",
+                                "description": "Select 6 credits from the approved 400-level list.",
+                                "credits_required": 6,
+                                "credits_needed": 6,
+                                "min_grade": "C",
+                                "valid_courses": [
+                                    "CYBER 451",
+                                    "CYBER 454",
+                                    "CYBER 456",
+                                    "IST 432",
+                                    "IST 452",
+                                    "IST 453",
+                                    "SRA 421",
+                                    "SRA 468",
+                                    "SRA 471",
+                                    "SRA 480"
+                                ],
+                                "label": "Sra Advanced Select"
+                            }
+                        ],
+                        "description": "Advanced SRA Electives (6 credits)",
+                        "total_credits": 6,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        },
+        "sociology_minor": {
+            "minor_id": "sociology_minor",
+            "minor_name": "Sociology Minor",
+            "department": "SOC",
+            "total_credits_required": 18,
+            "description": "Study human societies, social life, and specific areas of interest within sociology.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "FIXED_LIST",
+                                "requirement_id": "soc_core",
+                                "description": "Introductory Sociology",
+                                "credits_needed": 3,
+                                "courses": [
+                                    "SOC 1"
+                                ],
+                                "label": "Soc Core"
+                            }
+                        ],
+                        "description": "Required Core Course",
+                        "total_credits": 3,
+                        "label": "Prescribed Courses"
+                    },
+                    {
+                        "type": "AND",
+                        "children": [
+                            {
+                                "type": "PICK_FROM_LIST",
+                                "requirement_id": "soc_electives",
+                                "description": "Select 15 credits from the list. At least 6 credits must be at the 400 level.",
+                                "credits_required": 15,
+                                "credits_needed": 15,
+                                "valid_courses": [
+                                    "CRIMJ 12",
+                                    "SOC 030",
+                                    "SOC 119N",
+                                    "SOC 404",
+                                    "SOC 455",
+                                    "SOC 456",
+                                    "SOC 467"
+                                ],
+                                "level_rules": [
+                                    {
+                                        "min_level": 400,
+                                        "credits_needed": 6
+                                    }
+                                ],
+                                "label": "Soc Electives"
+                            }
+                        ],
+                        "description": "Sociology Electives",
+                        "total_credits": 15,
+                        "label": "Supporting Courses"
+                    }
+                ]
+            }
+        }
+    }
+}

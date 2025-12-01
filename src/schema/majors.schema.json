@@ -1,0 +1,651 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "$id": "https://example.com/schemas/majors.schema.json",
+    "title": "Penn State University Academic Majors",
+    "description": "Schema for defining academic major requirements and course structures",
+    "type": "object",
+    "patternProperties": {
+        "^[a-z_]+$": {
+            "$ref": "#/definitions/Major"
+        }
+    },
+    "additionalProperties": false,
+    "definitions": {
+        "Major": {
+            "type": "object",
+            "required": [
+                "major_id",
+                "name",
+                "degree_type",
+                "credits_required",
+                "entrance_requirements",
+                "common_requirements"
+            ],
+            "properties": {
+                "major_id": {
+                    "type": "string",
+                    "pattern": "^[a-z_]+$",
+                    "description": "Unique identifier for the major"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Full name of the major (e.g., 'Accounting, B.S.')"
+                },
+                "degree_type": {
+                    "type": "string",
+                    "enum": [
+                        "BS",
+                        "BA",
+                        "BDes"
+                    ],
+                    "description": "Type of degree awarded"
+                },
+                "department": {
+                    "type": "string",
+                    "description": "Department code (e.g., 'ACCTG', 'IST')"
+                },
+                "credits_required": {
+                    "type": "number",
+                    "minimum": 0,
+                    "description": "Total credits required for degree completion"
+                },
+                "entrance_requirements": {
+                    "$ref": "#/definitions/EntranceRequirements"
+                },
+                "common_requirements": {
+                    "$ref": "#/definitions/CommonRequirements"
+                },
+                "sub_plans": {
+                    "oneOf": [
+                        {
+                            "type": "null"
+                        },
+                        {
+                            "$ref": "#/definitions/SubPlans"
+                        }
+                    ]
+                },
+                "special_requirements": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/SpecialRequirement"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "EntranceRequirements": {
+            "type": "object",
+            "properties": {
+                "min_gpa": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 4.0
+                },
+                "min_gpa_transfer": {
+                    "type": "number",
+                    "minimum": 0.0,
+                    "maximum": 4.0
+                },
+                "min_credits_transfer": {
+                    "type": "number",
+                    "minimum": 0
+                },
+                "min_semester_standing": {
+                    "type": "integer",
+                    "minimum": 1
+                },
+                "courses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/CourseRequirement"
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "CommonRequirements": {
+            "type": "object",
+            "properties": {
+                "prescribed_courses": {
+                    "$ref": "#/definitions/RequirementNode"
+                },
+                "additional_courses": {
+                    "$ref": "#/definitions/RequirementNode"
+                },
+                "supporting_courses": {
+                    "$ref": "#/definitions/RequirementNode"
+                },
+                "specialization_courses": {
+                    "$ref": "#/definitions/RequirementNode"
+                }
+            },
+            "additionalProperties": false
+        },
+        "SubPlans": {
+            "type": "object",
+            "required": [
+                "type",
+                "options"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "SELECT_ONE",
+                        "SELECT_MULTIPLE"
+                    ],
+                    "description": "Whether student must select one option or can choose multiple"
+                },
+                "options": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^[a-z_]+$": {
+                            "$ref": "#/definitions/SubPlan"
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "SubPlan": {
+            "type": "object",
+            "required": [
+                "name"
+            ],
+            "properties": {
+                "name": {
+                    "type": "string",
+                    "description": "Display name for the sub-plan (e.g., 'Accounting Option')"
+                },
+                "credits_added": {
+                    "type": "number",
+                    "minimum": 0,
+                    "description": "Additional credits required for this option"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "Special notes or requirements"
+                },
+                "requirements": {
+                    "type": "object",
+                    "properties": {
+                        "prescribed_courses": {
+                            "$ref": "#/definitions/RequirementNode"
+                        },
+                        "additional_courses": {
+                            "$ref": "#/definitions/RequirementNode"
+                        },
+                        "supporting_courses": {
+                            "$ref": "#/definitions/RequirementNode"
+                        },
+                        "custom_plan": {
+                            "$ref": "#/definitions/RequirementNode"
+                        }
+                    },
+                    "additionalProperties": false
+                }
+            },
+            "additionalProperties": false
+        },
+        "RequirementNode": {
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "AND",
+                        "OR",
+                        "FIXED",
+                        "FIXED_LIST",
+                        "PICK_FROM_LIST",
+                        "PICK_FROM_DEPT",
+                        "ANY_COURSE",
+                        "CUSTOM_PLAN"
+                    ],
+                    "description": "Type of requirement logic"
+                },
+                "label": {
+                    "type": "string",
+                    "description": "Human-readable label for this requirement"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Detailed description of the requirement"
+                },
+                "note": {
+                    "type": "string",
+                    "description": "Additional notes or caveats"
+                },
+                "min_grade": {
+                    "type": "string",
+                    "pattern": "^[A-DF]$",
+                    "description": "Minimum grade required (A, B, C, D)"
+                },
+                "credits_needed": {
+                    "type": "number",
+                    "minimum": 0,
+                    "description": "Number of credits required"
+                }
+            },
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "const": "FIXED"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "course"
+                        ],
+                        "properties": {
+                            "course": {
+                                "type": "string",
+                                "pattern": "^[A-Z]+\\s+[0-9]+[A-Z]*$",
+                                "description": "Course code (e.g., 'ACCTG 211')"
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "const": "FIXED_LIST"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "courses"
+                        ],
+                        "properties": {
+                            "courses": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "pattern": "^[A-Z]+\\s+[0-9]+[A-Z]*$"
+                                },
+                                "minItems": 1
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "enum": [
+                                    "OR"
+                                ]
+                            }
+                        }
+                    },
+                    "then": {
+                        "oneOf": [
+                            {
+                                "required": [
+                                    "options"
+                                ],
+                                "properties": {
+                                    "options": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "pattern": "^[A-Z]+\\s+[0-9]+[A-Z]*$"
+                                        },
+                                        "minItems": 2
+                                    }
+                                }
+                            },
+                            {
+                                "required": [
+                                    "children"
+                                ],
+                                "properties": {
+                                    "children": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/RequirementNode"
+                                        },
+                                        "minItems": 2
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "enum": [
+                                    "AND"
+                                ]
+                            }
+                        }
+                    },
+                    "then": {
+                        "oneOf": [
+                            {
+                                "required": [
+                                    "children"
+                                ],
+                                "properties": {
+                                    "children": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#/definitions/RequirementNode"
+                                        },
+                                        "minItems": 1
+                                    }
+                                }
+                            },
+                            {
+                                "required": [
+                                    "courses"
+                                ],
+                                "properties": {
+                                    "courses": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "string",
+                                            "pattern": "^[A-Z]+\\s+[0-9]+[A-Z]*$"
+                                        },
+                                        "minItems": 1
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "const": "PICK_FROM_LIST"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "credits_needed",
+                            "valid_courses"
+                        ],
+                        "properties": {
+                            "valid_courses": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "pattern": "^[A-Z]+\\s+[0-9]+[A-Z]*$"
+                                },
+                                "minItems": 1
+                            },
+                            "min_grade_overrides": {
+                                "type": "object",
+                                "patternProperties": {
+                                    "^[A-Z]+\\s+[0-9]+[A-Z]*$": {
+                                        "type": "string",
+                                        "pattern": "^[A-DF]$"
+                                    }
+                                }
+                            },
+                            "level_rules": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "min_level",
+                                        "credits_needed"
+                                    ],
+                                    "properties": {
+                                        "min_level": {
+                                            "type": "integer",
+                                            "minimum": 100,
+                                            "maximum": 999
+                                        },
+                                        "max_level": {
+                                            "type": "integer",
+                                            "minimum": 100,
+                                            "maximum": 999
+                                        },
+                                        "credits_needed": {
+                                            "type": "number",
+                                            "minimum": 0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "const": "PICK_FROM_DEPT"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "credits_needed",
+                            "valid_departments"
+                        ],
+                        "properties": {
+                            "valid_departments": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "pattern": "^[A-Z]+$"
+                                },
+                                "minItems": 1
+                            },
+                            "level_min": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 999
+                            },
+                            "level_max": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 999
+                            },
+                            "department_rules": {
+                                "type": "object",
+                                "patternProperties": {
+                                    "^[A-Z]+$": {
+                                        "type": "object",
+                                        "properties": {
+                                            "min_grade": {
+                                                "type": "string",
+                                                "pattern": "^[A-DF]$"
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "level_rules": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "min_level",
+                                        "credits_needed"
+                                    ],
+                                    "properties": {
+                                        "min_level": {
+                                            "type": "integer",
+                                            "minimum": 100,
+                                            "maximum": 999
+                                        },
+                                        "max_level": {
+                                            "type": "integer",
+                                            "minimum": 100,
+                                            "maximum": 999
+                                        },
+                                        "credits_needed": {
+                                            "type": "number",
+                                            "minimum": 0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "const": "ANY_COURSE"
+                            }
+                        }
+                    },
+                    "then": {
+                        "required": [
+                            "credits_needed"
+                        ],
+                        "properties": {
+                            "level_min": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 999
+                            },
+                            "level_max": {
+                                "type": "integer",
+                                "minimum": 1,
+                                "maximum": 999
+                            },
+                            "level_rules": {
+                                "type": "array",
+                                "items": {
+                                    "type": "object",
+                                    "required": [
+                                        "min_level",
+                                        "credits_needed"
+                                    ],
+                                    "properties": {
+                                        "min_level": {
+                                            "type": "integer",
+                                            "minimum": 100,
+                                            "maximum": 999
+                                        },
+                                        "max_level": {
+                                            "type": "integer",
+                                            "minimum": 100,
+                                            "maximum": 999
+                                        },
+                                        "credits_needed": {
+                                            "type": "number",
+                                            "minimum": 0
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                {
+                    "if": {
+                        "properties": {
+                            "type": {
+                                "const": "CUSTOM_PLAN"
+                            }
+                        }
+                    },
+                    "then": {
+                        "properties": {
+                            "constraints": {
+                                "type": "object",
+                                "description": "Custom constraints for individualized plans"
+                            }
+                        }
+                    }
+                }
+            ],
+            "additionalProperties": true
+        },
+        "CourseRequirement": {
+            "type": "object",
+            "required": [
+                "type"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "enum": [
+                        "FIXED",
+                        "OR"
+                    ],
+                    "description": "Type of course requirement"
+                },
+                "course": {
+                    "type": "string",
+                    "pattern": "^[A-Z]+\\s+[0-9]+[A-Z]*$",
+                    "description": "Course code (e.g., 'ACCTG 211')"
+                },
+                "options": {
+                    "type": "array",
+                    "items": {
+                        "type": "string",
+                        "pattern": "^[A-Z]+\\s+[0-9]+[A-Z]*$"
+                    },
+                    "minItems": 2,
+                    "description": "List of course options (for OR type)"
+                },
+                "min_grade": {
+                    "type": "string",
+                    "pattern": "^[A-DF]$",
+                    "description": "Minimum grade required"
+                },
+                "min_grade_overrides": {
+                    "type": "object",
+                    "patternProperties": {
+                        "^[A-Z]+\\s+[0-9]+[A-Z]*$": {
+                            "type": "string",
+                            "pattern": "^[A-DF]$"
+                        }
+                    }
+                }
+            },
+            "additionalProperties": false
+        },
+        "SpecialRequirement": {
+            "type": "object",
+            "required": [
+                "type",
+                "label"
+            ],
+            "properties": {
+                "type": {
+                    "type": "string",
+                    "description": "Type of special requirement (e.g., 'CREDIT_TRANSFER')"
+                },
+                "label": {
+                    "type": "string",
+                    "description": "Label for this special requirement"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Detailed description"
+                },
+                "conditions": {
+                    "type": "object",
+                    "description": "Conditions that must be met"
+                },
+                "awards": {
+                    "type": "object",
+                    "description": "Credits or courses awarded"
+                }
+            },
+            "additionalProperties": true
+        }
+    }
+}

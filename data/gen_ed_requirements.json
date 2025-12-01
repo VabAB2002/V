@@ -1,0 +1,206 @@
+{
+    "gen_ed_requirements": {
+        "total_credits": 45,
+        "description": "Penn State General Education Requirements. Some requirements may be satisfied by courses required for the major. Students should work with an adviser to select courses.",
+        "categories": {
+            "foundations": {
+                "label": "Foundations",
+                "total_credits": 15,
+                "min_grade": "C",
+                "note": "All courses require a grade of C or better. interdomain courses may not be used for foundations requirements.",
+                "exclude_attributes": [
+                    "interdomain"
+                ],
+                "components": {
+                    "writing_speaking": {
+                        "label": "Writing/Speaking (GWS)",
+                        "credits_needed": 9,
+                        "min_grade": "C",
+                        "type": "PICK_BY_ATTRIBUTE",
+                        "required_attributes": [
+                            "GWS"
+                        ],
+                        "exclude_attributes": [
+                            "interdomain"
+                        ]
+                    },
+                    "quantification": {
+                        "label": "Quantification (GQ)",
+                        "credits_needed": 6,
+                        "min_grade": "C",
+                        "type": "AND",
+                        "note": "3-6 credits from mathematics, applied mathematics, and statistics; 0-3 credits from computer science or symbolic logic",
+                        "children": [
+                            {
+                                "label": "Math/Applied Math/Statistics",
+                                "type": "PICK_FROM_DEPT",
+                                "credits_needed": 3,
+                                "credits_max": 6,
+                                "valid_departments": [
+                                    "MATH",
+                                    "STAT"
+                                ],
+                                "min_grade": "C",
+                                "required_attributes": [
+                                    "GQ"
+                                ],
+                                "exclude_attributes": [
+                                    "interdomain"
+                                ]
+                            },
+                            {
+                                "label": "Computer Science or Symbolic Logic (Optional)",
+                                "type": "PICK_BY_ATTRIBUTE",
+                                "credits_needed": 0,
+                                "credits_max": 3,
+                                "valid_departments": [
+                                    "CMPSC",
+                                    "PHIL"
+                                ],
+                                "note": "Symbolic logic courses only",
+                                "min_grade": "C",
+                                "required_attributes": [
+                                    "GQ"
+                                ],
+                                "exclude_attributes": [
+                                    "interdomain"
+                                ]
+                            }
+                        ]
+                    }
+                }
+            },
+            "knowledge_domains": {
+                "label": "Knowledge Domains",
+                "total_credits": 15,
+                "note": "interdomain courses may not be used for knowledge domain requirements.",
+                "exclude_attributes": [
+                    "interdomain"
+                ],
+                "components": {
+                    "health_wellness": {
+                        "label": "Health and Wellness (GHW)",
+                        "type": "PICK_BY_ATTRIBUTE",
+                        "credits_needed": 3,
+                        "required_attributes": [
+                            "GHW"
+                        ],
+                        "exclude_attributes": [
+                            "interdomain"
+                        ]
+                    },
+                    "natural_sciences": {
+                        "label": "Natural Sciences (GN)",
+                        "type": "PICK_BY_ATTRIBUTE",
+                        "credits_needed": 3,
+                        "required_attributes": [
+                            "GN"
+                        ],
+                        "exclude_attributes": [
+                            "interdomain"
+                        ]
+                    },
+                    "arts": {
+                        "label": "Arts (GA)",
+                        "type": "PICK_BY_ATTRIBUTE",
+                        "credits_needed": 3,
+                        "required_attributes": [
+                            "GA"
+                        ],
+                        "exclude_attributes": [
+                            "interdomain"
+                        ]
+                    },
+                    "humanities": {
+                        "label": "Humanities (GH)",
+                        "type": "PICK_BY_ATTRIBUTE",
+                        "credits_needed": 3,
+                        "required_attributes": [
+                            "GH"
+                        ],
+                        "exclude_attributes": [
+                            "interdomain"
+                        ]
+                    },
+                    "social_behavioral": {
+                        "label": "Social and Behavioral Sciences (GS)",
+                        "type": "PICK_BY_ATTRIBUTE",
+                        "credits_needed": 3,
+                        "required_attributes": [
+                            "GS"
+                        ],
+                        "exclude_attributes": [
+                            "interdomain"
+                        ]
+                    }
+                }
+            },
+            "integrative_studies": {
+                "label": "Integrative Studies",
+                "total_credits": 6,
+                "components": {
+                    "inter_domain": {
+                        "label": "interdomain Course Work",
+                        "type": "PICK_BY_ATTRIBUTE",
+                        "credits_needed": 6,
+                        "required_attributes": [
+                            "interdomain"
+                        ],
+                        "note": "Courses that integrate multiple knowledge domains"
+                    }
+                }
+            },
+            "exploration": {
+                "label": "Exploration",
+                "total_credits": 9,
+                "components": {
+                    "natural_sciences_exploration": {
+                        "label": "Natural Sciences (GN) - may be interdomain",
+                        "type": "PICK_BY_ATTRIBUTE",
+                        "credits_needed": 3,
+                        "required_attributes": [
+                            "GN"
+                        ],
+                        "allow_inter_domain": true,
+                        "note": "May be interdomain"
+                    },
+                    "additional_exploration": {
+                        "label": "GA, GH, GN, GS, and interdomain Courses",
+                        "type": "PICK_BY_ATTRIBUTE",
+                        "credits_needed": 6,
+                        "valid_attributes": [
+                            "GA",
+                            "GH",
+                            "GN",
+                            "GS",
+                            "interdomain"
+                        ],
+                        "note": "May include 3 credits of World Language course work beyond the requirements of the student's degree program or at the 12th credit level, whichever is higher",
+                        "world_language_option": {
+                            "allowed": true,
+                            "credits_max": 3,
+                            "requirement": "Beyond degree requirements or at 12th credit level or higher"
+                        }
+                    }
+                }
+            }
+        },
+        "attribute_definitions": {
+            "GWS": "General Education - Writing/Speaking",
+            "GQ": "General Education - Quantification",
+            "GHW": "General Education - Health and Wellness",
+            "GN": "General Education - Natural Sciences",
+            "GA": "General Education - Arts",
+            "GH": "General Education - Humanities",
+            "GS": "General Education - Social and Behavioral Sciences",
+            "interdomain": "General Education - Integrative Studies (crosses multiple knowledge domains)"
+        },
+        "rules": {
+            "overlap_allowed": true,
+            "overlap_note": "Some General Education requirements may be satisfied by courses required for the major",
+            "adviser_consultation": "Students should work with an adviser to select courses",
+            "min_grade_default": "D",
+            "foundations_min_grade": "C"
+        }
+    }
+}

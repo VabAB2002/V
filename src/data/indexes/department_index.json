@@ -1,0 +1,301 @@
+{
+  "metadata": {
+    "generated_at": "2025-11-29T21:45:24.020172",
+    "total_departments": 26,
+    "description": "Groups majors by department"
+  },
+  "index": {
+    "ACCTG": [
+      {
+        "major_id": "accounting_bs",
+        "name": "Accounting, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "AGBM": [
+      {
+        "major_id": "agribusiness_management_bs",
+        "name": "Agribusiness Management, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "BBH": [
+      {
+        "major_id": "biobehavioral_health_bs",
+        "name": "Biobehavioral Health, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "Unknown": [
+      {
+        "major_id": "business_bs",
+        "name": "Business, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "CRIMJ": [
+      {
+        "major_id": "criminal_justice_bs",
+        "name": "Criminal Justice, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "IST": [
+      {
+        "major_id": "cybersecurity_analytics_operations_bs",
+        "name": "Cybersecurity Analytics and Operations, B.S.",
+        "degree_type": "BS",
+        "credits_required": 123
+      },
+      {
+        "major_id": "enterprise_technology_integration_bs",
+        "name": "Enterprise Technology Integration, B.S.",
+        "degree_type": "BS",
+        "credits_required": 124
+      },
+      {
+        "major_id": "information_sciences_technology_bs",
+        "name": "Information Sciences and Technology, B.S.",
+        "degree_type": "BS",
+        "credits_required": 125
+      },
+      {
+        "major_id": "security_risk_analysis_bs",
+        "name": "Security and Risk Analysis, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "COMM": [
+      {
+        "major_id": "digital_journalism_media_ba",
+        "name": "Digital Journalism and Media, B.A.",
+        "degree_type": "BA",
+        "credits_required": 120
+      },
+      {
+        "major_id": "strategic_communications_ba",
+        "name": "Strategic Communications, B.A.",
+        "degree_type": "BA",
+        "credits_required": 120
+      }
+    ],
+    "INTERDISCIPLINARY": [
+      {
+        "major_id": "digital_multimedia_design_bdes",
+        "name": "Digital Multimedia Design, B.Des.",
+        "degree_type": "B.Des",
+        "credits_required": 120
+      }
+    ],
+    "ECON": [
+      {
+        "major_id": "economics_ba",
+        "name": "Economics, B.A.",
+        "degree_type": "BA",
+        "credits_required": 120
+      },
+      {
+        "major_id": "economics_bs",
+        "name": "Economics, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "EME": [
+      {
+        "major_id": "energy_sustainability_policy_ba",
+        "name": "Energy and Sustainability Policy, B.A.",
+        "degree_type": "BA",
+        "credits_required": 120
+      },
+      {
+        "major_id": "energy_sustainability_policy_bs",
+        "name": "Energy and Sustainability Policy, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "FIN": [
+      {
+        "major_id": "finance_bs",
+        "name": "Finance, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "DA": [
+      {
+        "major_id": "functional_data_analytics_bs",
+        "name": "Functional Data Analytics, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "HPA": [
+      {
+        "major_id": "health_policy_administration_bs",
+        "name": "Health Policy and Administration, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "HIST": [
+      {
+        "major_id": "history_ba",
+        "name": "History, B.A.",
+        "degree_type": "BA",
+        "credits_required": 123
+      }
+    ],
+    "HDFS": [
+      {
+        "major_id": "hdfs_bs",
+        "name": "Human Development and Family Studies, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "L A": [
+      {
+        "major_id": "integrated_social_sciences_bs",
+        "name": "Integrated Social Sciences, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      },
+      {
+        "major_id": "law_society_ba",
+        "name": "Law and Society, B.A.",
+        "degree_type": "BA",
+        "credits_required": 120
+      },
+      {
+        "major_id": "multidisciplinary_studies_ba",
+        "name": "Multidisciplinary Studies, B.A.",
+        "degree_type": "BA",
+        "credits_required": 120
+      }
+    ],
+    "PLSC": [
+      {
+        "major_id": "international_politics_ba",
+        "name": "International Politics, B.A.",
+        "degree_type": "BA",
+        "credits_required": 123
+      },
+      {
+        "major_id": "political_science_ba",
+        "name": "Political Science, B.A.",
+        "degree_type": "BA",
+        "credits_required": 120
+      }
+    ],
+    "LHR": [
+      {
+        "major_id": "labor_human_resources_ba",
+        "name": "Labor and Human Resources, B.A.",
+        "degree_type": "BA",
+        "credits_required": 123
+      },
+      {
+        "major_id": "labor_human_resources_bs",
+        "name": "Labor and Human Resources, B.S.",
+        "degree_type": "BS",
+        "credits_required": 123
+      },
+      {
+        "major_id": "organizational_leadership_ba",
+        "name": "Organizational Leadership, B.A.",
+        "degree_type": "BA",
+        "credits_required": 120
+      },
+      {
+        "major_id": "organizational_leadership_bs",
+        "name": "Organizational Leadership, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "MKTG": [
+      {
+        "major_id": "marketing_bs",
+        "name": "Marketing, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "NURS": [
+      {
+        "major_id": "nursing_rn_bsn_bs",
+        "name": "Nursing (RN to BSN), B.S.",
+        "degree_type": "BSN",
+        "credits_required": 120
+      }
+    ],
+    "CAS": [
+      {
+        "major_id": "organizational_professional_communication_ba",
+        "name": "Organizational and Professional Communication, B.A.",
+        "degree_type": "BA",
+        "credits_required": 120
+      },
+      {
+        "major_id": "organizational_professional_communication_bs",
+        "name": "Organizational and Professional Communication, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "SCM": [
+      {
+        "major_id": "project_supply_chain_management_bs",
+        "name": "Project and Supply Chain Management, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "PSYCH": [
+      {
+        "major_id": "psychology_ba",
+        "name": "Psychology, B.A.",
+        "degree_type": "BA",
+        "credits_required": 123
+      },
+      {
+        "major_id": "psychology_bs",
+        "name": "Psychology, B.S.",
+        "degree_type": "BS",
+        "credits_required": 123
+      }
+    ],
+    "RPTM": [
+      {
+        "major_id": "recreation_park_tourism_management_bs",
+        "name": "Recreation, Park, and Tourism Management, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ],
+    "SWENG": [
+      {
+        "major_id": "software_engineering_bs",
+        "name": "Software Engineering, B.S.",
+        "degree_type": "BS",
+        "credits_required": 126
+      }
+    ],
+    "PLANT": [
+      {
+        "major_id": "turfgrass_science_bs",
+        "name": "Turfgrass Science, B.S.",
+        "degree_type": "BS",
+        "credits_required": 120
+      }
+    ]
+  }
+}

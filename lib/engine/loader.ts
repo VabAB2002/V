@@ -9,15 +9,10 @@ import {
 } from '../types';
 
 /**
- * Paths to data files (relative to project root).
- * Note: When running from dist/, __dirname is dist/src/engine, so we need to go up 3 levels.
- * When running from src/ via ts-node, __dirname is src/engine, so we need to go up 2 levels.
- * We detect which by checking if 'dist' is in the path.
+ * Paths to data files.
+ * In Next.js, use process.cwd() to get project root instead of __dirname
  */
-const isRunningFromDist = __dirname.includes(path.sep + 'dist' + path.sep) || __dirname.endsWith(path.sep + 'dist');
-const DATA_DIR = isRunningFromDist 
-    ? path.join(__dirname, '..', '..', '..', 'data')
-    : path.join(__dirname, '..', '..', 'data');
+const DATA_DIR = path.join(process.cwd(), 'lib', 'data');
 const DB_PATH = path.join(DATA_DIR, 'courses.db');
 const MAJORS_PATH = path.join(DATA_DIR, 'penn_state_majors.json');
 const MINORS_PATH = path.join(DATA_DIR, 'penn_state_minors.json');

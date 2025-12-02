@@ -1,12 +1,12 @@
 'use client'
 
 import { useSearchParams, useRouter, useParams } from 'next/navigation';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, Suspense } from 'react';
 import type { MinorRecommendation } from '../../actions/getRecommendations';
 import PageTransition from '@/components/PageTransition';
 import NProgress from 'nprogress';
 
-export default function MinorDetailsPage() {
+function MinorDetailsContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const params = useParams();
@@ -201,5 +201,18 @@ export default function MinorDetailsPage() {
                 </div>
             </div>
         </PageTransition>
+    );
+}
+
+export default function MinorDetailsPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen w-full bg-white flex items-center justify-center">
+            <div className="animate-pulse flex flex-col items-center">
+                <div className="h-8 w-32 bg-gray-200 rounded mb-4"></div>
+                <div className="h-4 w-48 bg-gray-200 rounded"></div>
+            </div>
+        </div>}>
+            <MinorDetailsContent />
+        </Suspense>
     );
 }

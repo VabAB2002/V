@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { fetchCourses } from '../actions';
 import type { CourseOption } from '@/lib/utils';
@@ -9,7 +9,7 @@ import { getMinorRecommendations } from '../actions/getRecommendations';
 import PageTransition from '@/components/PageTransition';
 import NProgress from 'nprogress';
 
-export default function TranscriptUploadPage() {
+function TranscriptUploadContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const majorId = searchParams.get('major');
@@ -455,5 +455,18 @@ export default function TranscriptUploadPage() {
                 </div>
             </div>
         </PageTransition>
+    );
+}
+
+export default function TranscriptUploadPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen w-full bg-white flex items-center justify-center">
+            <div className="animate-pulse flex flex-col items-center">
+                <div className="h-8 w-32 bg-gray-200 rounded mb-4"></div>
+                <div className="h-4 w-48 bg-gray-200 rounded"></div>
+            </div>
+        </div>}>
+            <TranscriptUploadContent />
+        </Suspense>
     );
 }

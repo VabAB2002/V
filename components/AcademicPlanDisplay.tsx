@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { JSX, useEffect, useState } from 'react';
 import { getMajorPlan, type MajorPlan } from '@/app/actions/getMajorPlan';
 import CourseBadge from './CourseBadge';
 

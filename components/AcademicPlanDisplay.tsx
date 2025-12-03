@@ -1,7 +1,8 @@
 'use client'
 
-import { JSX, useEffect, useState } from 'react';
+import { JSX, useEffect, useState, useMemo } from 'react';
 import { getMajorPlan, type MajorPlan } from '@/app/actions/getMajorPlan';
+import { CourseDetailsProvider } from '@/lib/context/CourseDetailsContext';
 import CourseBadge from './CourseBadge';
 
 interface AcademicPlanDisplayProps {
@@ -23,6 +24,56 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
 
         fetchPlan();
     }, [majorId]);
+
+    // Helper to recursively extract all course codes from the major plan
+    const extractAllCourseCodes = (obj: any): string[] => {
+        const codes: string[] = [];
+
+        const traverse = (node: any) => {
+            if (!node) return;
+
+            // Handle different node types
+            if (node.course) {
+                codes.push(node.course);
+            }
+            if (node.courses && Array.isArray(node.courses)) {
+                node.courses.forEach((course: any) => {
+                    if (typeof course === 'string') {
+                        codes.push(course);
+                    } else {
+                        traverse(course);
+                    }
+                });
+            }
+            if (node.options && Array.isArray(node.options)) {
+                node.options.forEach((option: string) => codes.push(option));
+            }
+            if (node.valid_courses && Array.isArray(node.valid_courses)) {
+                node.valid_courses.forEach((course: string) => codes.push(course));
+            }
+            if (node.children && Array.isArray(node.children)) {
+                node.children.forEach(traverse);
+            }
+
+            // Traverse nested objects
+            if (typeof node === 'object') {
+                Object.values(node).forEach(value => {
+                    if (typeof value === 'object') {
+                        traverse(value);
+                    }
+                });
+            }
+        };
+
+        traverse(obj);
+        return [...new Set(codes)]; // Remove duplicates
+    };
+
+    // Extract all course codes from the major plan
+    const allCourseCodes = useMemo(() => {
+        if (!majorPlan) return [];
+        return extractAllCourseCodes(majorPlan);
+    }, [majorPlan]);
 
     // Helper to check if a course is completed
     const isCompleted = (courseCode: string) => {
@@ -239,69 +290,71 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
     }
 
     return (
-        <div className="h-full overflow-y-auto px-12 py-8">
-            {/* Header */}
-            <div className="mb-10">
-                <h2 className="text-4xl font-semibold text-gray-900 mb-4">
-                    Academic Plan
-                </h2>
-                <p className="text-xl text-gray-600">
-                    {majorPlan.name}
-                </p>
-                <p className="text-lg text-gray-500 mt-3">
-                    {majorPlan.credits_required} total credits required
-                </p>
-            </div>
+        <CourseDetailsProvider courseCodes={allCourseCodes}>
+            <div className="h-full overflow-y-auto px-12 py-8">
+                {/* Header */}
+                <div className="mb-10">
+                    <h2 className="text-4xl font-semibold text-gray-900 mb-4">
+                        Academic Plan
+                    </h2>
+                    <p className="text-xl text-gray-600">
+                        {majorPlan.name}
+                    </p>
+                    <p className="text-lg text-gray-500 mt-3">
+                        {majorPlan.credits_required} total credits required
+                    </p>
+                </div>
 
-            {/* Requirements */}
-            <div className="space-y-6">
-                {/* Entrance Requirements */}
-                {majorPlan.entrance_requirements?.courses && majorPlan.entrance_requirements.courses.length > 0 && (() => {
-                    const flatItems = flattenAndChildren(majorPlan.entrance_requirements.courses);
-                    return (
-                        <div className="mb-6">
-                            <h3 className="text-base font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-200">
-                                Entrance Requirements
-                            </h3>
-                            <div className={getGridClass(flatItems.length)}>
-                                {flatItems.map((item: any, i: number) => {
-                                    if (item.type === 'FIXED') {
-                                        return <CourseBadge key={`${item.course}-${i}`} courseCode={item.course} isCompleted={isCompleted(item.course)} />;
-                                    } else if (item.type === 'OR') {
-                                        return (
-                                            <div key={`or-${i}`} className="flex items-center gap-2">
-                                                {item.options?.map((course: string, j: number) => (
-                                                    <div key={`${course}-${j}`} className="flex items-center gap-2">
-                                                        <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
-                                                        {j < item.options.length - 1 && <span className="text-gray-400 text-sm">or</span>}
-                                                    </div>
-                                                ))}
-                                            </div>
-                                        );
-                                    }
-                                    return null;
-                                })}
+                {/* Requirements */}
+                <div className="space-y-6">
+                    {/* Entrance Requirements */}
+                    {majorPlan.entrance_requirements?.courses && majorPlan.entrance_requirements.courses.length > 0 && (() => {
+                        const flatItems = flattenAndChildren(majorPlan.entrance_requirements.courses);
+                        return (
+                            <div className="mb-6">
+                                <h3 className="text-base font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-200">
+                                    Entrance Requirements
+                                </h3>
+                                <div className={getGridClass(flatItems.length)}>
+                                    {flatItems.map((item: any, i: number) => {
+                                        if (item.type === 'FIXED') {
+                                            return <CourseBadge key={`${item.course}-${i}`} courseCode={item.course} isCompleted={isCompleted(item.course)} />;
+                                        } else if (item.type === 'OR') {
+                                            return (
+                                                <div key={`or-${i}`} className="flex items-center gap-2">
+                                                    {item.options?.map((course: string, j: number) => (
+                                                        <div key={`${course}-${j}`} className="flex items-center gap-2">
+                                                            <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
+                                                            {j < item.options.length - 1 && <span className="text-gray-400 text-sm">or</span>}
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                            );
+                                        }
+                                        return null;
+                                    })}
+                                </div>
                             </div>
-                        </div>
-                    );
-                })()}
+                        );
+                    })()}
 
-                {/* Prescribed Courses */}
-                {majorPlan.common_requirements?.prescribed_courses &&
-                    renderSection(majorPlan.common_requirements.prescribed_courses, 'Prescribed Courses')}
+                    {/* Prescribed Courses */}
+                    {majorPlan.common_requirements?.prescribed_courses &&
+                        renderSection(majorPlan.common_requirements.prescribed_courses, 'Prescribed Courses')}
 
-                {/* Additional Courses */}
-                {majorPlan.common_requirements?.additional_courses &&
-                    renderSection(majorPlan.common_requirements.additional_courses, 'Additional Courses')}
+                    {/* Additional Courses */}
+                    {majorPlan.common_requirements?.additional_courses &&
+                        renderSection(majorPlan.common_requirements.additional_courses, 'Additional Courses')}
 
-                {/* Supporting Courses */}
-                {majorPlan.common_requirements?.supporting_courses &&
-                    renderSection(majorPlan.common_requirements.supporting_courses, 'Supporting Courses')}
+                    {/* Supporting Courses */}
+                    {majorPlan.common_requirements?.supporting_courses &&
+                        renderSection(majorPlan.common_requirements.supporting_courses, 'Supporting Courses')}
 
-                {/* Specialization Courses */}
-                {majorPlan.common_requirements?.specialization_courses &&
-                    renderSection(majorPlan.common_requirements.specialization_courses, 'Specialization Courses')}
+                    {/* Specialization Courses */}
+                    {majorPlan.common_requirements?.specialization_courses &&
+                        renderSection(majorPlan.common_requirements.specialization_courses, 'Specialization Courses')}
+                </div>
             </div>
-        </div>
+        </CourseDetailsProvider>
     );
 }

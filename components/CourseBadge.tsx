@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react';
-import { getCourseDetails, type CourseDetails } from '@/app/actions/getCourseDetails';
+import { useState } from 'react';
+import { useCourseDetails } from '@/lib/context/CourseDetailsContext';
+import type { CourseDetails } from '@/app/actions/getCourseDetails';
 import CourseTooltip from './CourseTooltip';
 import CourseModal from './CourseModal';
 
@@ -11,21 +12,9 @@ interface CourseBadgeProps {
 }
 
 export default function CourseBadge({ courseCode, isCompleted }: CourseBadgeProps) {
-    const [courseDetails, setCourseDetails] = useState<CourseDetails | null>(null);
+    const { getCourseDetails: getDetails, isLoading } = useCourseDetails();
+    const courseDetails = getDetails(courseCode);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isLoading, setIsLoading] = useState(false);
-
-    // Fetch course details on mount
-    useEffect(() => {
-        const fetchDetails = async () => {
-            setIsLoading(true);
-            const details = await getCourseDetails(courseCode);
-            setCourseDetails(details);
-            setIsLoading(false);
-        };
-
-        fetchDetails();
-    }, [courseCode]);
 
     const handleClick = () => {
         if (courseDetails) {

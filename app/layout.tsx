@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import TopProgressBar from "@/components/TopProgressBar";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,6 +28,7 @@ export default function RootLayout({
           <TopProgressBar />
         </Suspense>
         {children}
+        <SpeedInsights />
       </body>
     </html>
   );

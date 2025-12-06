@@ -148,7 +148,35 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
                 </div>
             );
         }
-
+// Handle OR with children (nested requirements)
+if (req.type === 'OR' && req.children && !req.options) {
+    return (
+        <div key={key} className="mb-6">
+            {req.label && <h4 className="text-lg font-medium text-gray-900 mb-4">{req.label}</h4>}
+            {req.description && <p className="text-xs text-gray-600 mb-2">{req.description}</p>}
+            <div className="space-y-3">
+                {req.children.map((child: any, i: number) => (
+                    <div key={i}>
+                        {i > 0 && <div className="text-center text-gray-400 text-sm my-2">OR</div>}
+                        {child.type === 'AND' && child.courses ? (
+                            // Handle AND with courses array
+                            <div className="flex items-center gap-2">
+                                {child.courses.map((course: string, j: number) => (
+                                    <div key={j} className="flex items-center gap-2">
+                                        <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
+                                        {j < child.courses.length - 1 && <span className="text-gray-400 text-sm">and</span>}
+                                    </div>
+                                ))}
+                            </div>
+                        ) : (
+                            renderRequirement(child, i)
+                        )}
+                    </div>
+                ))}
+            </div>
+        </div>
+    );
+}
         if (req.type === 'OR') {
             return (
                 <div key={key} className="mb-6">
@@ -195,48 +223,156 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
             );
         }
 
-        if (req.type === 'AND' && req.children) {
-            const flatItems = flattenAndChildren(req.children);
-            return (
-                <div key={key} className="mb-4">
-                    {req.label && <h4 className="text-sm font-medium text-gray-900 mb-2">{req.label}</h4>}
-                    {req.description && <p className="text-xs text-gray-600 mb-2">{req.description}</p>}
-                    <div className={getGridClass(flatItems.length)}>
-                        {flatItems.map((item: any, i: number) => {
-                            if (item.type === 'FIXED') {
-                                return <CourseBadge key={`${item.course}-${i}`} courseCode={item.course} isCompleted={isCompleted(item.course)} />;
-                            } else if (item.type === 'OR') {
-                                return (
-                                    <div key={`or-${i}`} className="flex items-center gap-2">
-                                        {item.options?.map((course: string, j: number) => (
-                                            <div key={`${course}-${j}`} className="flex items-center gap-2">
-                                                <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
-                                                {j < item.options.length - 1 && <span className="text-gray-400 text-sm">or</span>}
-                                            </div>
-                                        ))}
-                                    </div>
-                                );
-                            }
-                            return null;
-                        })}
+
+if (req.type === 'AND' && req.children) {
+    return (
+        <div key={key} className="space-y-4">
+            {req.label && <h4 className="text-lg font-medium text-gray-900 mb-4">{req.label}</h4>}
+            {req.description && <p className="text-xs text-gray-600 mb-3">{req.description}</p>}
+            {req.children.map((child: any, i: number) => renderRequirement(child, i))}
+        </div>
+    );
+}
+
+if (req.type === 'ANY_COURSE') {
+    return (
+        <div key={key} className="mb-4">
+            {req.label && <h4 className="text-sm font-medium text-gray-900 mb-2">{req.label}</h4>}
+            
+            {req.description && (
+                <p className="text-xs text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-200">
+                    {req.description}
+                </p>
+            )}
+            
+            {req.credits_needed !== undefined && (
+                <p className="text-xs text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-200">
+                    Select {req.credits_needed} credits of any courses
+                </p>
+            )}
+        </div>
+    );
+}
+
+// Handle CUSTOM_FOCUS_AREA type (for focus area selections)
+if (req.type === 'CUSTOM_FOCUS_AREA') {
+    return (
+        <div key={key} className="mb-6 p-4 bg-indigo-50 border border-indigo-200 rounded-lg">
+            {req.label && (
+                <h4 className="text-lg font-medium text-indigo-900 mb-2">
+                    {req.label}
+                </h4>
+            )}
+            
+            {req.description && (
+                <p className="text-sm text-gray-700 mb-3">
+                    {req.description}
+                </p>
+            )}
+            
+            <div className="text-sm text-gray-800 mb-2">
+                <strong>Required:</strong> {req.credits_needed} credits
+            </div>
+            
+            {req.focus_areas && (
+                <div className="mt-3">
+                    <p className="text-sm font-medium text-gray-800 mb-2">Available Focus Areas:</p>
+                    <div className="flex flex-wrap gap-2">
+                        {req.focus_areas.map((area: string, i: number) => (
+                            <span 
+                                key={i} 
+                                className="px-3 py-1 bg-white border border-indigo-300 rounded-md text-sm text-indigo-800 font-medium"
+                            >
+                                {area}
+                            </span>
+                        ))}
                     </div>
                 </div>
-            );
-        }
-
-
-        if (req.type === 'ANY_COURSE') {
-            return (
-                <div key={key} className="mb-4">
-                    {req.label && <h4 className="text-sm font-medium text-gray-900 mb-2">{req.label}</h4>}
-                    {req.description && (
-                        <p className="text-xs text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                            {req.description}
-                        </p>
+            )}
+            
+            {req.constraints && (
+                <div className="mt-3 text-xs text-gray-600">
+                    {req.constraints.single_area_only && (
+                        <p>• Must select courses from a single focus area</p>
+                    )}
+                    {req.constraints.min_400_level_credits && (
+                        <p>• Minimum {req.constraints.min_400_level_credits} credits at 400-level</p>
                     )}
                 </div>
-            );
-        }
+            )}
+        </div>
+    );
+}
+
+if (req.type === 'PICK_FROM_CATEGORY') {
+    return (
+        <div key={key} className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+            {req.label && (
+                <h4 className="text-lg font-medium text-blue-900 mb-2">
+                    {req.label}
+                </h4>
+            )}
+            
+            {req.description && (
+                <p className="text-sm text-gray-700 mb-3">
+                    {req.description}
+                </p>
+            )}
+            
+            <div className="text-sm text-gray-800 mb-2">
+                <strong>Required:</strong> {req.credits_needed} credits
+            </div>
+            
+            <div className="mt-2 flex flex-wrap gap-2">
+                {req.categories?.map((category: string, i: number) => (
+                    <span 
+                        key={i} 
+                        className="px-3 py-1 bg-white border border-blue-300 rounded-md text-sm text-blue-800 font-medium"
+                    >
+                        {category}
+                    </span>
+                ))}
+            </div>
+            
+            {req.exclude_major_subject && (
+                <p className="text-xs text-gray-600 mt-3 italic">
+                    ⓘ Cannot use courses from your major department
+                </p>
+            )}
+        </div>
+    );
+}
+
+if (req.type === 'PROFICIENCY') {
+    return (
+        <div key={key} className="mb-6 p-4 bg-purple-50 border border-purple-200 rounded-lg">
+            {req.label && (
+                <h4 className="text-lg font-medium text-purple-900 mb-2">
+                    {req.label}
+                </h4>
+            )}
+            
+            <div className="text-sm text-gray-800 mb-2">
+                <strong>Skill Required:</strong>{' '}
+                {req.skill
+                    ? req.skill.replace(/_/g, ' ').replace(/\b\w/g, (l: string) => l.toUpperCase())
+                    : 'Not specified'}
+            </div>
+            
+            {req.level && (
+                <div className="text-sm text-gray-700 mb-2">
+                    <strong>Proficiency Level:</strong> {req.level}
+                </div>
+            )}
+            
+            {req.credits_count_towards_degree === 0 && (
+                <div className="mt-3 p-2 bg-purple-100 rounded text-xs text-purple-800">
+                    ⓘ Note: Credits for proficiency courses do not count toward degree
+                </div>
+            )}
+        </div>
+    );
+}
 
         return null;
     };
@@ -337,6 +473,15 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
                             </div>
                         );
                     })()}
+{/* Bachelor of Arts Degree Requirements */}
+{majorPlan.common_requirements?.ba_requirements && (
+    <div className="mb-6">
+        <h3 className="text-2xl font-semibold text-gray-900 mb-5 pb-3 border-b border-gray-200">
+            Bachelor of Arts Degree Requirements
+        </h3>
+        {renderRequirement(majorPlan.common_requirements.ba_requirements, 0)}
+    </div>
+)}
 
                     {/* Prescribed Courses */}
                     {majorPlan.common_requirements?.prescribed_courses &&
@@ -353,8 +498,109 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
                     {/* Specialization Courses */}
                     {majorPlan.common_requirements?.specialization_courses &&
                         renderSection(majorPlan.common_requirements.specialization_courses, 'Specialization Courses')}
+
+{/* Electives */}
+{majorPlan.common_requirements?.electives && (
+    <div className="mb-10">
+        <h3 className="text-2xl font-semibold text-gray-900 mb-5 pb-3 border-b border-gray-200">
+            Electives
+        </h3>
+        <p className="text-sm text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-200">
+            {majorPlan.common_requirements.electives.credits_needed 
+                ? `Select ${majorPlan.common_requirements.electives.credits_needed} credits of any courses`
+                : 'Any courses to fulfill remaining credit requirements'}
+        </p>
+    </div>
+)}
+
+{/* Sub-Plans/Options */}
+{majorPlan.sub_plans?.options && (
+    <div className="mb-10">
+        <h3 className="text-2xl font-semibold text-gray-900 mb-5 pb-3 border-b border-gray-200">
+            Degree Options
+        </h3>
+        {majorPlan.sub_plans.type === 'SELECT_ONE' && (
+            <p className="text-sm text-gray-600 mb-6 italic">
+                Select one of the following options:
+            </p>
+        )}
+        <div className="space-y-8">
+            {Object.entries(majorPlan.sub_plans.options).map(([optionId, option]: [string, any]) => (
+                <div key={optionId} className="border border-gray-300 rounded-lg p-6 bg-gray-50">
+                    <div className="mb-4">
+                        <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                            {option.name}
+                        </h4>
+                        {option.credits_added && (
+                            <p className="text-sm text-gray-600">
+                                Credits: {option.credits_added}
+                            </p>
+                        )}
+                        {option.note && (
+                            <p className="text-sm text-amber-700 mt-2 italic">
+                                ⓘ {option.note}
+                            </p>
+                        )}
+                    </div>
+                    
+                    {/* Option Requirements */}
+                    <div className="space-y-4">
+                        {option.requirements?.prescribed_courses && (
+                            <div>
+                                <h5 className="text-md font-medium text-gray-800 mb-3">
+                                    Prescribed Courses
+                                </h5>
+                                {renderRequirement(option.requirements.prescribed_courses, 0)}
+                            </div>
+                        )}
+                        
+                        {option.requirements?.additional_courses && (
+                            <div>
+                                <h5 className="text-md font-medium text-gray-800 mb-3">
+                                    Additional Courses
+                                </h5>
+                                {renderRequirement(option.requirements.additional_courses, 0)}
+                            </div>
+                        )}
+                        
+                        {option.requirements?.supporting_courses && (
+                            <div>
+                                <h5 className="text-md font-medium text-gray-800 mb-3">
+                                    Supporting Courses
+                                </h5>
+                                {renderRequirement(option.requirements.supporting_courses, 0)}
+                            </div>
+                        )}
+                        
+                        {option.requirements?.custom_plan && (
+                            <div className="p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                                <h5 className="text-md font-medium text-blue-900 mb-2">
+                                    Custom Plan
+                                </h5>
+                                <p className="text-sm text-gray-700">
+                                    {option.requirements.custom_plan.description}
+                                </p>
+                                {option.requirements.custom_plan.constraints && (
+                                    <div className="mt-3 text-xs text-gray-600 space-y-1">
+                                        <p className="font-semibold">Constraints:</p>
+                                        {Object.entries(option.requirements.custom_plan.constraints).map(([key, value]) => (
+                                            <p key={key}>
+                                                • {key.replace(/_/g, ' ')}: {value}
+                                            </p>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        )}
+                    </div>
+                </div>
+            ))}
+        </div>
+    </div>
+)}
                 </div>
             </div>
         </CourseDetailsProvider>
     );
 }
+

@@ -23,7 +23,7 @@
                     "type": "OR",
                     "options": [
                         "ENGL 15",
-                        "ENGL 30"
+                        "ENGL 30H"
                     ],
                     "min_grade": "C"
                 },
@@ -490,7 +490,6 @@
                         "MATH 21",
                         "MATH 22",
                         "MATH 26",
-                        "MATH 40",
                         "MATH 41",
                         "MATH 110",
                         "MATH 140"
@@ -758,7 +757,7 @@
                                 "CAS 352",
                                 "CAS 404",
                                 "ENGL 419",
-                                "LHR 424",
+                                "LER 424",
                                 "LHR 472",
                                 "PSYCH 281",
                                 "PSYCH 484",
@@ -1382,7 +1381,7 @@
                         "courses": [
                             "ART 211Y",
                             "COMM 215",
-                            "COMM 230",
+                            "COMM 230W",
                             "DART 202",
                             "DMD 100",
                             "DMD 300",
@@ -1410,7 +1409,7 @@
                             "COMM 118",
                             "COMM 180",
                             "COMM 280",
-                            "COMM 342",
+                            "COMM 342W",
                             "COMM 428A",
                             "COMM 469",
                             "COMM 492",
@@ -2216,7 +2215,7 @@
                     "type": "OR",
                     "options": [
                         "ENGL 15",
-                        "ENGL 30"
+                        "ENGL 30H"
                     ],
                     "min_grade": "C"
                 },
@@ -2329,7 +2328,7 @@
                         "type": "OR",
                         "options": [
                             "ENGL 15",
-                            "ENGL 30"
+                            "ENGL 30H"
                         ],
                         "min_grade": "C"
                     },
@@ -4165,7 +4164,7 @@
                     "type": "OR",
                     "options": [
                         "ENGL 15",
-                        "ENGL 30"
+                        "ENGL 30H"
                     ],
                     "min_grade": "C"
                 },
@@ -5393,7 +5392,7 @@
                     "type": "OR",
                     "options": [
                         "ENGL 15",
-                        "ENGL 30"
+                        "ENGL 30H"
                     ],
                     "min_grade": "C"
                 },

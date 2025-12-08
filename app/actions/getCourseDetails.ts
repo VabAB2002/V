@@ -12,7 +12,13 @@ export interface CourseDetails {
     department: string;
     level: number;
     prerequisites: any;
+    attributes?: {
+        gen_ed: string[];
+        writing: boolean;
+        cultural_diversity: string[];
+    };
 }
+
 
 /**
  * Fetches course details by course code from penn_state_courses.json

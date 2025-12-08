@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { fetchMajors } from './actions';
 import type { MajorOption } from '@/lib/utils';
 import PageTransition from '@/components/PageTransition';
+import PageToggle from '@/components/PageToggle';
 import NProgress from 'nprogress';
 
 export default function HomePage() {
@@ -95,6 +96,11 @@ export default function HomePage() {
     <PageTransition>
       <div className="min-h-screen w-full bg-white flex items-center justify-center p-6">
         <div className="w-full max-w-2xl">
+          {/* Page Toggle */}
+          <div className="absolute top-6 left-1/2 -translate-x-1/2">
+            <PageToggle />
+          </div>
+
           {/* Header */}
           <div className="text-center mb-12">
             <h1 className="text-5xl font-semibold text-gray-900 mb-3 tracking-tight">

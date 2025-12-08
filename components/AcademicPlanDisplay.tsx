@@ -138,8 +138,8 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
 
         if (req.type === 'FIXED_LIST') {
             return (
-                <div key={key} className="mb-6">
-                    {req.label && <h4 className="text-lg font-medium text-gray-900 mb-4">{req.label}</h4>}
+                <div key={key} className="mb-4">
+                    {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
                     <div className={getGridClass(req.courses?.length || 0)}>
                         {req.courses?.map((course: string, i: number) => (
                             <CourseBadge key={`${course}-${i}`} courseCode={course} isCompleted={isCompleted(course)} />
@@ -151,18 +151,16 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
 
         if (req.type === 'OR') {
             return (
-                <div key={key} className="mb-6">
-                    {req.label && <h4 className="text-lg font-medium text-gray-900 mb-4">{req.label}</h4>}
-                    {req.description && <p className="text-xs text-gray-600 mb-2">{req.description}</p>}
-                    <div className={getGridClass(1)}>
-                        <div className="flex items-center gap-2">
-                            {req.options?.map((course: string, i: number) => (
-                                <div key={`${course}-${i}`} className="flex items-center gap-2">
-                                    <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
-                                    {i < req.options.length - 1 && <span className="text-gray-400 text-sm">or</span>}
-                                </div>
-                            ))}
-                        </div>
+                <div key={key} className="mb-4">
+                    {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
+                    {req.description && <p className="text-sm text-gray-600 mb-2">{req.description}</p>}
+                    <div className="flex flex-wrap items-center gap-2">
+                        {req.options?.map((course: string, i: number) => (
+                            <div key={`${course}-${i}`} className="flex items-center gap-2">
+                                <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
+                                {i < req.options.length - 1 && <span className="text-gray-400 text-sm">or</span>}
+                            </div>
+                        ))}
                     </div>
                 </div>
             );
@@ -170,9 +168,9 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
 
         if (req.type === 'PICK_FROM_LIST') {
             return (
-                <div key={key} className="mb-6">
-                    {req.label && <h4 className="text-lg font-medium text-gray-900 mb-4">{req.label}</h4>}
-                    {req.description && <p className="text-xs text-gray-600 mb-2">{req.description}</p>}
+                <div key={key} className="mb-4">
+                    {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
+                    {req.description && <p className="text-sm text-gray-600 mb-2">{req.description}</p>}
                     <div className={getGridClass(req.valid_courses?.length || 0)}>
                         {req.valid_courses?.map((course: string, i: number) => (
                             <CourseBadge key={`${course}-${i}`} courseCode={course} isCompleted={isCompleted(course)} />
@@ -241,14 +239,14 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
         return null;
     };
 
-    // Render a requirements section
+    // Render a requirements section as a card
     const renderSection = (section: any, title: string) => {
         if (!section) return null;
 
         if (section.type === 'AND' && section.children) {
             return (
-                <div className="mb-10">
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-5 pb-3 border-b border-gray-200">
+                <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-5">
                         {title}
                     </h3>
                     <div className="space-y-6">
@@ -259,8 +257,8 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
         }
 
         return (
-            <div className="mb-10">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-5 pb-3 border-b border-gray-200">
+            <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                <h3 className="text-xl font-semibold text-gray-900 mb-5">
                     {title}
                 </h3>
                 {renderRequirement(section, 0)}
@@ -306,13 +304,13 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
                 </div>
 
                 {/* Requirements */}
-                <div className="space-y-6">
+                <div className="flex flex-col gap-6">
                     {/* Entrance Requirements */}
                     {majorPlan.entrance_requirements?.courses && majorPlan.entrance_requirements.courses.length > 0 && (() => {
                         const flatItems = flattenAndChildren(majorPlan.entrance_requirements.courses);
                         return (
-                            <div className="mb-6">
-                                <h3 className="text-base font-semibold text-gray-900 mb-3 pb-2 border-b border-gray-200">
+                            <div className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md transition-shadow duration-200">
+                                <h3 className="text-xl font-semibold text-gray-900 mb-5">
                                     Entrance Requirements
                                 </h3>
                                 <div className={getGridClass(flatItems.length)}>

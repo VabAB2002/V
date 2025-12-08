@@ -82,22 +82,27 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
         );
     };
 
-    // Helper to determine optimal grid columns based on item count
-    const getGridColumns = (itemCount: number): number => {
-        if (itemCount === 1) return 1;
-        if (itemCount === 2) return 2;
-        if (itemCount === 3) return 3;
-        if (itemCount === 4) return 2; // 2×2
-        if (itemCount === 5 || itemCount === 6) return 3; // 3×2
-        return 3; // Max 3 columns for 40% width panel
-    };
+    // Calculate progress statistics
+    const progressStats = useMemo(() => {
+        const totalCourses = allCourseCodes.length;
+        const completedCourses = allCourseCodes.filter(code => isCompleted(code)).length;
+        const percentage = totalCourses > 0 ? Math.round((completedCourses / totalCourses) * 100) : 0;
+        const totalCredits = majorPlan?.credits_required || 0;
+        const estimatedCompletedCredits = completedCourses * 3; // Assuming 3 credits per course
 
-    // Helper to get full Tailwind grid class
-    const getGridClass = (itemCount: number): string => {
-        const cols = getGridColumns(itemCount);
-        if (cols === 1) return 'grid grid-cols-1 gap-2';
-        if (cols === 2) return 'grid grid-cols-2 gap-2';
-        return 'grid grid-cols-3 gap-2'; // Max 3 columns
+        return {
+            totalCourses,
+            completedCourses,
+            percentage,
+            totalCredits,
+            estimatedCompletedCredits: Math.min(estimatedCompletedCredits, totalCredits),
+            remainingCourses: totalCourses - completedCourses
+        };
+    }, [allCourseCodes, selectedCourses, majorPlan]);
+
+    // Pro approach: Use flex-wrap for natural badge flow
+    const getBadgeContainerClass = (): string => {
+        return 'flex flex-wrap gap-2';
     };
 
     // Helper to flatten AND children into displayable items
@@ -140,7 +145,7 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
             return (
                 <div key={key} className="mb-4">
                     {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
-                    <div className={getGridClass(req.courses?.length || 0)}>
+                    <div className={getBadgeContainerClass()}>
                         {req.courses?.map((course: string, i: number) => (
                             <CourseBadge key={`${course}-${i}`} courseCode={course} isCompleted={isCompleted(course)} />
                         ))}
@@ -171,7 +176,7 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
                 <div key={key} className="mb-4">
                     {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
                     {req.description && <p className="text-sm text-gray-600 mb-2">{req.description}</p>}
-                    <div className={getGridClass(req.valid_courses?.length || 0)}>
+                    <div className={getBadgeContainerClass()}>
                         {req.valid_courses?.map((course: string, i: number) => (
                             <CourseBadge key={`${course}-${i}`} courseCode={course} isCompleted={isCompleted(course)} />
                         ))}
@@ -199,7 +204,7 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
                 <div key={key} className="mb-4">
                     {req.label && <h4 className="text-sm font-medium text-gray-900 mb-2">{req.label}</h4>}
                     {req.description && <p className="text-xs text-gray-600 mb-2">{req.description}</p>}
-                    <div className={getGridClass(flatItems.length)}>
+                    <div className={getBadgeContainerClass()}>
                         {flatItems.map((item: any, i: number) => {
                             if (item.type === 'FIXED') {
                                 return <CourseBadge key={`${item.course}-${i}`} courseCode={item.course} isCompleted={isCompleted(item.course)} />;
@@ -289,18 +294,60 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
 
     return (
         <CourseDetailsProvider courseCodes={allCourseCodes}>
-            <div className="h-full overflow-y-auto px-12 py-8">
-                {/* Header */}
-                <div className="mb-10">
-                    <h2 className="text-4xl font-semibold text-gray-900 mb-4">
-                        Academic Plan
-                    </h2>
-                    <p className="text-xl text-gray-600">
-                        {majorPlan.name}
-                    </p>
-                    <p className="text-lg text-gray-500 mt-3">
-                        {majorPlan.credits_required} total credits required
-                    </p>
+            <div className="h-full overflow-y-auto px-10 py-10">
+                {/* Circular Progress Ring */}
+                <div className="flex flex-col items-center mb-10">
+                    <div className="relative w-32 h-32 mb-4">
+                        {/* Background circle */}
+                        <svg className="w-full h-full transform -rotate-90">
+                            <circle
+                                cx="64"
+                                cy="64"
+                                r="56"
+                                stroke="#e5e7eb"
+                                strokeWidth="8"
+                                fill="none"
+                            />
+                            {/* Progress circle */}
+                            <circle
+                                cx="64"
+                                cy="64"
+                                r="56"
+                                stroke="#111827"
+                                strokeWidth="8"
+                                fill="none"
+                                strokeLinecap="round"
+                                strokeDasharray={2 * Math.PI * 56}
+                                strokeDashoffset={2 * Math.PI * 56 * (1 - progressStats.percentage / 100)}
+                                className="transition-all duration-700 ease-out"
+                            />
+                        </svg>
+                        {/* Center text */}
+                        <div className="absolute inset-0 flex flex-col items-center justify-center">
+                            <span className="text-3xl font-semibold text-gray-900">
+                                {progressStats.percentage}%
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* Progress summary */}
+                    <div className="text-center">
+                        <h2 className="text-xl font-semibold text-gray-900 mb-2">
+                            {majorPlan.name}
+                        </h2>
+                        <p className="text-2xl font-light text-gray-900">
+                            <span className="font-medium">{progressStats.completedCourses}</span>
+                            <span className="text-gray-400"> of </span>
+                            <span>{progressStats.totalCourses}</span>
+                            <span className="text-gray-400"> major courses</span>
+                        </p>
+                        <p className="text-sm text-gray-500 mt-1">
+                            {progressStats.remainingCourses} remaining
+                        </p>
+                        <p className="text-xs text-gray-400 mt-2">
+                            Excludes GenEd (45 cr) & electives
+                        </p>
+                    </div>
                 </div>
 
                 {/* Requirements */}
@@ -313,7 +360,7 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
                                 <h3 className="text-xl font-semibold text-gray-900 mb-5">
                                     Entrance Requirements
                                 </h3>
-                                <div className={getGridClass(flatItems.length)}>
+                                <div className={getBadgeContainerClass()}>
                                     {flatItems.map((item: any, i: number) => {
                                         if (item.type === 'FIXED') {
                                             return <CourseBadge key={`${item.course}-${i}`} courseCode={item.course} isCompleted={isCompleted(item.course)} />;

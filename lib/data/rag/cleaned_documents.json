@@ -1,0 +1,410 @@
+[
+  {
+    "id": "summary:programs_overview",
+    "type": "summary",
+    "title": "Penn State World Campus Programs Overview",
+    "content": "Penn State World Campus Academic Programs Overview\n\nTotal Majors: 40 undergraduate majors available\nTotal Minors: 20 minors available\n\nPenn State World Campus offers 40 majors and 20 minors for online students.\n\nPopular majors include: Business, Psychology, Criminal Justice, Information Sciences and Technology, Cybersecurity, Software Engineering, and Nursing.\n\nPopular minors include: Business, Psychology, Economics, Information Sciences and Technology, and Organizational Leadership.\n\nAll programs can be completed 100% online."
+  },
+  {
+    "id": "major:accounting_bs",
+    "type": "major",
+    "title": "Accounting, B.S.",
+    "content": "Major: Accounting, B.S.\nDegree Type: BS\nDepartment: ACCTG\nTotal Credits Required: 120\n\nKey Required Courses: ACCTG 310, ACCTG 340, ACCTG 403, ACCTG 471, ACCTG 472, ACCTG 473, BA 364Y, ECON 104, ENGL 202D, MIS 204, MIS 390, SCM 301, BA 462, BA 243, STAT 200, MATH 110, MATH 140, ACCTG 410, ACCTG 423, ACCTG 462\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:agribusiness_management_bs",
+    "type": "major",
+    "title": "Agribusiness Management, B.S.",
+    "content": "Major: Agribusiness Management, B.S.\nDegree Type: BS\nDepartment: AGBM\nTotal Credits Required: 120\n\nKey Required Courses: ACCTG 211, FIN 301, AGBM 102, AGBM 106, AGBM 302, AGBM 308W, AGBM 320, ECON 104, MGMT 301, MKTG 301, SCM 301, ENGL 202D, AGBM 101, ECON 102, AGBM 408, AGBM 440, AGBM 460, BA 243, IST 110, MIS 204\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:biobehavioral_health_bs",
+    "type": "major",
+    "title": "Biobehavioral Health, B.S.",
+    "content": "Major: Biobehavioral Health, B.S.\nDegree Type: BS\nDepartment: BBH\nTotal Credits Required: 120\n\nKey Required Courses: BBH 101, BBH 302, BBH 310, BBH 311, BBH 316, BBH 411W, BBH 440, BIOL 110, BIOL 161, BIOL 163, NUTR 251, PSYCH 100, CHEM 110, CHEM 130, MICRB 106, ANTH 21, ANTH 22, BIOL 155, CHEM 111, CHEM 202\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:business_bs",
+    "type": "major",
+    "title": "Business, B.S.",
+    "content": "Major: Business, B.S.\nDegree Type: BS\nDepartment: Unknown\nTotal Credits Required: 120\nSpecializations/Options: Accounting Option, Entrepreneurship Option, Financial Services Option, Health Services Option, Management and Marketing Option, Individualized Option\nKey Required Courses: BA 321, BA 322, BA 420, BA 421, BA 422W, FIN 301, IB 303, MGMT 301, MKTG 301W, SCM 301, ECON 102, ECON 104, MIS 301, ACCTG 211, ACCTG 201, ACCTG 202, BA 243, BA 495A, ENGL 15, MIS 204\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:criminal_justice_bs",
+    "type": "major",
+    "title": "Criminal Justice, B.S.",
+    "content": "Major: Criminal Justice, B.S.\nDegree Type: BS\nDepartment: CRIMJ\nTotal Credits Required: 120\n\nKey Required Courses: CRIMJ 12, CRIMJ 100, CRIMJ 210, CRIMJ 220, CRIMJ 230, CRIMJ 250W, CRIMJ 450W, CRIMJ 465, CRIMJ 260, STAT 200, CRIMJ 304, CRIMJ 408, CRIMJ 435, SOC 119N, CRIMJ 451, CRIMJ 407, CRIMJ 420, CRIMJ 430, CRIMJ 441\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:cybersecurity_analytics_operations_bs",
+    "type": "major",
+    "title": "Cybersecurity Analytics and Operations, B.S.",
+    "content": "Major: Cybersecurity Analytics and Operations, B.S.\nDegree Type: BS\nDepartment: IST\nTotal Credits Required: 123\n\nKey Required Courses: CYBER 221, CYBER 262, CYBER 342W, CYBER 362, CYBER 366, CYBER 451, CYBER 454, CYBER 456, CYBER 440, IST 210, IST 220, IST 230, IST 432, IST 495, SRA 111, SRA 211, SRA 231, SRA 311, SRA 365, CYBER 100\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:digital_journalism_media_ba",
+    "type": "major",
+    "title": "Digital Journalism and Media, B.A.",
+    "content": "Major: Digital Journalism and Media, B.A.\nDegree Type: BA\nDepartment: COMM\nTotal Credits Required: 120\n\nKey Required Courses: COMM 160, COMM 180, COMM 260W, COMM 269, COMM 271, COMM 280, COMM 409, COMM 282, COMM 460W, COMM 467, COMM 310, COMM 364, COMM 403, COMM 492, COMM 228, COMM 380, COMM 461, COMM 469\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:digital_multimedia_design_bdes",
+    "type": "major",
+    "title": "Digital Multimedia Design, B.Des.",
+    "content": "Major: Digital Multimedia Design, B.Des.\nDegree Type: B.Des\nDepartment: INTERDISCIPLINARY\nTotal Credits Required: 120\n\nKey Required Courses: ART 211Y, COMM 215, COMM 230, DART 202, DMD 100, DMD 300, DMD 400, HCDD 113, IST 250, ART 10, ART 20, COMM 118, COMM 180, COMM 280, COMM 342, COMM 428A, COMM 469, COMM 492, DART 203, DART 204\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:economics_ba",
+    "type": "major",
+    "title": "Economics, B.A.",
+    "content": "Major: Economics, B.A.\nDegree Type: BA\nDepartment: ECON\nTotal Credits Required: 120\n\nKey Required Courses: ECON 102, ECON 104, ECON 106, ECON 302, ECON 304, ECON 306\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:economics_bs",
+    "type": "major",
+    "title": "Economics, B.S.",
+    "content": "Major: Economics, B.S.\nDegree Type: BS\nDepartment: ECON\nTotal Credits Required: 120\n\nKey Required Courses: ECON 102, ECON 104, ECON 106, ECON 302, ECON 304, ECON 306, CMPSC 101, CMPSC 203, MATH 110, MATH 140\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:energy_sustainability_policy_ba",
+    "type": "major",
+    "title": "Energy and Sustainability Policy, B.A.",
+    "content": "Major: Energy and Sustainability Policy, B.A.\nDegree Type: BA\nDepartment: EME\nTotal Credits Required: 120\n\nKey Required Courses: CAS 100, ENGL 15, ENGL 202D, STAT 200, EBF 200, ECON 102, ECON 104, PLSC 1, PLSC 490, EGEE 102, EGEE 120, EGEE 401, EME 444, EME 466, EMSC 240N, EMSC 302, GEOG 30N, GEOG 438W, METEO 469, GEOG 432\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:energy_sustainability_policy_bs",
+    "type": "major",
+    "title": "Energy and Sustainability Policy, B.S.",
+    "content": "Major: Energy and Sustainability Policy, B.S.\nDegree Type: BS\nDepartment: EME\nTotal Credits Required: 120\n\nKey Required Courses: CAS 100, ENGL 15, ENGL 202D, STAT 200, EBF 200, ECON 102, ECON 104, PLSC 1, PLSC 490, EGEE 102, EGEE 120, EGEE 401, EME 444, EME 466, EMSC 240N, EMSC 302, GEOG 30N, GEOG 432, GEOG 438W, METEO 469\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:enterprise_technology_integration_bs",
+    "type": "major",
+    "title": "Enterprise Technology Integration, B.S.",
+    "content": "Major: Enterprise Technology Integration, B.S.\nDegree Type: BS\nDepartment: IST\nTotal Credits Required: 124\n\nKey Required Courses: ACCTG 211, ETI 300W, ETI 301, ETI 302, ETI 420, ETI 421, ETI 461, IST 210, IST 220, IST 230, IST 256, IST 495, CAS 100, ECON 102, ECON 104, ENGL 202C, ENGL 202D, IST 140, IST 402, IST 423\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:finance_bs",
+    "type": "major",
+    "title": "Finance, B.S.",
+    "content": "Major: Finance, B.S.\nDegree Type: BS\nDepartment: FIN\nTotal Credits Required: 120\n\nKey Required Courses: ACCTG 211, ACCTG 426, FIN 301, FIN 420, FIN 451, FIN 471, MGMT 301, MGMT 471W, MIS 204, MKTG 301W, SCM 301, CAS 100, ECON 102, ECON 104, ENGL 202D, ACCTG 305, ACCTG 471, ACCTG 472, BA 243, ECON 304\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:functional_data_analytics_bs",
+    "type": "major",
+    "title": "Functional Data Analytics, B.S.",
+    "content": "Major: Functional Data Analytics, B.S.\nDegree Type: BS\nDepartment: DA\nTotal Credits Required: 120\n\nKey Required Courses: DA 101, DA 201W, DA 301, DA 302W, DA 305, DA 401, DA 402W, DA 475, DA 476, DIGIT 410, DIGIT 430, CAS 100, ENG 202C, IST 230, MGMT 409, MIS 415, MIS 447, PHIL 103, STAT 184, CMPSC 121\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:health_policy_administration_bs",
+    "type": "major",
+    "title": "Health Policy and Administration, B.S.",
+    "content": "Major: Health Policy and Administration, B.S.\nDegree Type: BS\nDepartment: HPA\nTotal Credits Required: 120\n\nKey Required Courses: HPA 101, HPA 200, HPA 210, HPA 211, HPA 301W, HPA 310, HPA 311, HPA 332, HPA 390W, HPA 455, HPA 395, ECON 102, PLSC 1, CMPSC 101, CMPSC 203, MIS 204, STAT 200, HPA 430, HPA 438, HPA 440\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:history_ba",
+    "type": "major",
+    "title": "History, B.A.",
+    "content": "Major: History, B.A.\nDegree Type: BA\nDepartment: HIST\nTotal Credits Required: 123\n\nKey Required Courses: HIST 302W, HIST 20, HIST 21, HIST 107, HIST 120N, HIST 139, HIST 144, HIST 109, HIST 111, HIST 117, HIST 130, HIST 122, HIST 165, HIST 179, HIST 181, HIST 184, HIST 193, JST 193, HIST 101, HIST 426\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:hdfs_bs",
+    "type": "major",
+    "title": "Human Development and Family Studies, B.S.",
+    "content": "Major: Human Development and Family Studies, B.S.\nDegree Type: BS\nDepartment: HDFS\nTotal Credits Required: 120\n\nKey Required Courses: HDFS 129, HDFS 301, HDFS 311, HDFS 312W, HDFS 315Y, HDFS 418, HDFS 229, HDFS 239, HDFS 249N, STAT 200\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:information_sciences_technology_bs",
+    "type": "major",
+    "title": "Information Sciences and Technology, B.S.",
+    "content": "Major: Information Sciences and Technology, B.S.\nDegree Type: BS\nDepartment: IST\nTotal Credits Required: 125\n\nKey Required Courses: ETI 301, HCDD 331, IST 110, IST 210, IST 220, IST 230, IST 440W, IST 495, STAT 200, ECON 102, ECON 104, ENGL 202C, ENGL 202D, IST 140, CMPSC 101, MATH 110, MATH 140\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:integrated_social_sciences_bs",
+    "type": "major",
+    "title": "Integrated Social Sciences, B.S.",
+    "content": "Major: Integrated Social Sciences, B.S.\nDegree Type: BS\nDepartment: L A\nTotal Credits Required: 120\n\nKey Required Courses: LA 201W, LA 496, PLSC 309, PSYCH 200, STAT 200, PHIL 103, PHIL 103W, PHIL 119, CAS 390, PSYCH 301W, SOC 207\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:international_politics_ba",
+    "type": "major",
+    "title": "International Politics, B.A.",
+    "content": "Major: International Politics, B.A.\nDegree Type: BA\nDepartment: PLSC\nTotal Credits Required: 123\n\nKey Required Courses: PLSC 1, PLSC 7N, PLSC 3, PLSC 200N, PLSC 14, PLSC 412, PLSC 418W, PLSC 439, PLSC 442, PLSC 410, PLSC 412, PLSC 418W, PLSC 438, PLSC 439, PLSC 442, PLSC 456, PLSC 467, HLS 483\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:labor_human_resources_ba",
+    "type": "major",
+    "title": "Labor and Human Resources, B.A.",
+    "content": "Major: Labor and Human Resources, B.A.\nDegree Type: BA\nDepartment: LHR\nTotal Credits Required: 123\n\nKey Required Courses: LHR 100, LHR 201, LHR 304, LHR 305, LHR 312, LHR 460, ECON 102, ECON 104, LHR 136Y, LHR 458Y, LHR 202, PSYCH 281, ACCTG 211, AFAM 100, BA 243, BA 304, BLAW 243, CAS 203, CAS 352, MGMT 100\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:labor_human_resources_bs",
+    "type": "major",
+    "title": "Labor and Human Resources, B.S.",
+    "content": "Major: Labor and Human Resources, B.S.\nDegree Type: BS\nDepartment: LHR\nTotal Credits Required: 123\n\nKey Required Courses: LHR 100, LHR 201, LHR 304, LHR 305, LHR 312, LHR 460, ECON 102, ECON 104, LHR 202, PSYCH 281, STAT 200, SCM 200, LHR 136W, LHR 458Y\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:law_society_ba",
+    "type": "major",
+    "title": "Law and Society, B.A.",
+    "content": "Major: Law and Society, B.A.\nDegree Type: BA\nDepartment: L A\nTotal Credits Required: 120\n\nKey Required Courses: HIST 20, HIST 21, PLSC 1, LA 201W, PLSC 210N, PLSC 472, CAS 215, CAS 321, CAS 390, PHIL 10, PHIL 12, PLSC 10, PLSC 309, SOC 207, CAS 252, CAS 404, CAS 426W, CAS 475, CRIMJ 12, CRIMJ 100\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:marketing_bs",
+    "type": "major",
+    "title": "Marketing, B.S.",
+    "content": "Major: Marketing, B.S.\nDegree Type: BS\nDepartment: MKTG\nTotal Credits Required: 120\n\nKey Required Courses: MKTG 301W, MKTG 330, MKTG 342, MKTG 450W, ACCTG 211, BA 364Y, BA 462, FIN 301, MGMT 301, MIS 390, SCM 301, ECON 102, ECON 104, ENGL 202D, MIS 204, MIS 250, BA 243, DA 101, MATH 110, MATH 140\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:multidisciplinary_studies_ba",
+    "type": "major",
+    "title": "Multidisciplinary Studies, B.A.",
+    "content": "Major: Multidisciplinary Studies, B.A.\nDegree Type: BA\nDepartment: L A\nTotal Credits Required: 120\n\n\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:nursing_rn_bsn_bs",
+    "type": "major",
+    "title": "Nursing (RN to BSN), B.S.",
+    "content": "Major: Nursing (RN to BSN), B.S.\nDegree Type: BSN\nDepartment: NURS\nTotal Credits Required: 120\n\nKey Required Courses: NURS 200W, NURS 352, NURS 357, NURS 390, NURS 417, NURS 465, NURS 475, NURS 225, NURS 230, NURS 250, NURS 301, NURS 305, NURS 306, NURS 310, NURS 320, NURS 405B, NURS 420, NURS 245, NURS 325N, NURS 409\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:organizational_professional_communication_ba",
+    "type": "major",
+    "title": "Organizational and Professional Communication, B.A.",
+    "content": "Major: Organizational and Professional Communication, B.A.\nDegree Type: BA\nDepartment: CAS\nTotal Credits Required: 120\n\nKey Required Courses: CAS 204, CAS 301, CAS 303, CAS 390, CAS 426W, CAS 496, LA 201W, CAS 212, CAS 215, CAS 252, CAS 340, CAS 203, CAS 271N, CAS 302, CAS 352, ENGL 418, ENGL 419, ENGL 420, CAS 203, CAS 212\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:organizational_professional_communication_bs",
+    "type": "major",
+    "title": "Organizational and Professional Communication, B.S.",
+    "content": "Major: Organizational and Professional Communication, B.S.\nDegree Type: BS\nDepartment: CAS\nTotal Credits Required: 120\n\nKey Required Courses: CAS 204, CAS 301, CAS 303, CAS 390, CAS 426W, CAS 496, LA 201W, SOC 207, CAS 212, CAS 215, CAS 252, CAS 340, CAS 203, CAS 271N, CAS 302, CAS 352, OLEAD 464, LER 464, OLEAD 465, LHR 465\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:organizational_leadership_ba",
+    "type": "major",
+    "title": "Organizational Leadership, B.A.",
+    "content": "Major: Organizational Leadership, B.A.\nDegree Type: BA\nDepartment: LHR\nTotal Credits Required: 120\n\nKey Required Courses: OLEAD 100, OLEAD 201, OLEAD 210, PSYCH 100, PSYCH 484, OLEAD 464, LER 464, OLEAD 465, LHR 465, IST 110, PHIL 10, LHR 202, PSYCH 281, CAS 404, LHR 312, LHR 437, SOC 207, LHR 460, PHIL 119, OLEAD 409\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:organizational_leadership_bs",
+    "type": "major",
+    "title": "Organizational Leadership, B.S.",
+    "content": "Major: Organizational Leadership, B.S.\nDegree Type: BS\nDepartment: LHR\nTotal Credits Required: 120\n\nKey Required Courses: LHR 312, OLEAD 100, OLEAD 201, OLEAD 210, PSYCH 100, PSYCH 484, STAT 200, OLEAD 464, LHR 464, OLEAD 465, LHR 465, IST 110, PHIL 10, LHR 136Y, OLEAD 220, OLEAD 410, OLEAD 411, WMNST 105N, LHR 202, PSYCH 281\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:political_science_ba",
+    "type": "major",
+    "title": "Political Science, B.A.",
+    "content": "Major: Political Science, B.A.\nDegree Type: BA\nDepartment: PLSC\nTotal Credits Required: 120\n\nKey Required Courses: PLSC 1, PLSC 3, PLSC 10, PLSC 14, PLSC 17N\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:project_supply_chain_management_bs",
+    "type": "major",
+    "title": "Project and Supply Chain Management, B.S.",
+    "content": "Major: Project and Supply Chain Management, B.S.\nDegree Type: BS\nDepartment: SCM\nTotal Credits Required: 120\n\nKey Required Courses: ACCTG 211, FIN 301, MGMT 301, MIS 204, MKTG 301W, MGMT 341, MGMT 418, SCM 301, SCM 445, SCM 460, CAS 100, ECON 102, ECON 104, ENGL 202D, BA 243, BA 422W, ENGL 15, MATH 110, MATH 140, MGMT 410\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:psychology_ba",
+    "type": "major",
+    "title": "Psychology, B.A.",
+    "content": "Major: Psychology, B.A.\nDegree Type: BA\nDepartment: PSYCH\nTotal Credits Required: 123\n\nKey Required Courses: PSYCH 100, PSYCH 105, PSYCH 301W, PSYCH 490, PSYCH 200, STAT 200, PSYCH 256, PSYCH 260, PSYCH 212, PSYCH 221, PSYCH 231, PSYCH 238, PSYCH 243, PSYCH 270, PSYCH 281\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:psychology_bs",
+    "type": "major",
+    "title": "Psychology, B.S.",
+    "content": "Major: Psychology, B.S.\nDegree Type: BS\nDepartment: PSYCH\nTotal Credits Required: 123\n\nKey Required Courses: ENGL 202A, PSYCH 100, PSYCH 105, PSYCH 301W, PSYCH 490, PSYCH 200, STAT 200, PSYCH 256, PSYCH 260, PSYCH 212, PSYCH 221, PSYCH 231, PSYCH 238, PSYCH 243, PSYCH 270, PSYCH 281\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:recreation_park_tourism_management_bs",
+    "type": "major",
+    "title": "Recreation, Park, and Tourism Management, B.S.",
+    "content": "Major: Recreation, Park, and Tourism Management, B.S.\nDegree Type: BS\nDepartment: RPTM\nTotal Credits Required: 120\n\nKey Required Courses: RPTM 120, RPTM 220, RPTM 236, RPTM 277, RPTM 390, RPTM 410, RPTM 433, RPTM 456, CAS 283, RPTM 370, RPTM 435\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:security_risk_analysis_bs",
+    "type": "major",
+    "title": "Security and Risk Analysis, B.S.",
+    "content": "Major: Security and Risk Analysis, B.S.\nDegree Type: BS\nDepartment: IST\nTotal Credits Required: 120\n\nKey Required Courses: CYBER 221, IST 110, IST 210, IST 432, IST 495, SRA 111, SRA 211, SRA 231, STAT 200, ENGL 202C, ENGL 202D, PSYCH 100, SOC 5, AGBM 101, ECON 102, ECON 104, MATH 22, MATH 26, MATH 110, MATH 140\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:software_engineering_bs",
+    "type": "major",
+    "title": "Software Engineering, B.S.",
+    "content": "Major: Software Engineering, B.S.\nDegree Type: BS\nDepartment: SWENG\nTotal Credits Required: 126\n\nKey Required Courses: CHEM 110, CHEM 111, MATH 140, MATH 141, MATH 220, MATH 250, PHYS 211, PHYS 212, STAT 318, CMPSC 121, CMPSC 122, CMPSC 360, CMPSC 431W, CMPSC 461, CMPSC 465, CMPEN 270, CMPEN 351, CMPEN 441, CMPEN 461, SWENG 311\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:strategic_communications_ba",
+    "type": "major",
+    "title": "Strategic Communications, B.A.",
+    "content": "Major: Strategic Communications, B.A.\nDegree Type: BA\nDepartment: COMM\nTotal Credits Required: 120\n\nKey Required Courses: COMM 160, COMM 230W, COMM 428A, COMM 428B, COMM 428C, COMM 428D, COMM 428E, ECON 102, PSYCH 100, STAT 200, COMM 403, COMM 409, COMM 412\nHas specific entrance requirements."
+  },
+  {
+    "id": "major:turfgrass_science_bs",
+    "type": "major",
+    "title": "Turfgrass Science, B.S.",
+    "content": "Major: Turfgrass Science, B.S.\nDegree Type: BS\nDepartment: PLANT\nTotal Credits Required: 120\n\nKey Required Courses: TURF 230, TURF 235, TURF 238, TURF 307, TURF 425, TURF 434, TURF 435, TURF 436W, TURF 490, TURF 495, ENT 317, PPEM 412, CHEM 202, MATH 21, SOILS 101, STAT 200, AGBM 106, BIOL 110, BIOL 127, HORT 101\nHas specific entrance requirements."
+  },
+  {
+    "id": "summary:majors",
+    "type": "summary",
+    "title": "All Penn State World Campus Majors",
+    "content": "Penn State World Campus offers 40 majors.\n\nComplete list of majors:\n1. Accounting, B.S.\n2. Agribusiness Management, B.S.\n3. Biobehavioral Health, B.S.\n4. Business, B.S.\n5. Criminal Justice, B.S.\n6. Cybersecurity Analytics and Operations, B.S.\n7. Digital Journalism and Media, B.A.\n8. Digital Multimedia Design, B.Des.\n9. Economics, B.A.\n10. Economics, B.S.\n11. Energy and Sustainability Policy, B.A.\n12. Energy and Sustainability Policy, B.S.\n13. Enterprise Technology Integration, B.S.\n14. Finance, B.S.\n15. Functional Data Analytics, B.S.\n16. Health Policy and Administration, B.S.\n17. History, B.A.\n18. Human Development and Family Studies, B.S.\n19. Information Sciences and Technology, B.S.\n20. Integrated Social Sciences, B.S.\n21. International Politics, B.A.\n22. Labor and Human Resources, B.A.\n23. Labor and Human Resources, B.S.\n24. Law and Society, B.A.\n25. Marketing, B.S.\n26. Multidisciplinary Studies, B.A.\n27. Nursing (RN to BSN), B.S.\n28. Organizational and Professional Communication, B.A.\n29. Organizational and Professional Communication, B.S.\n30. Organizational Leadership, B.A.\n31. Organizational Leadership, B.S.\n32. Political Science, B.A.\n33. Project and Supply Chain Management, B.S.\n34. Psychology, B.A.\n35. Psychology, B.S.\n36. Recreation, Park, and Tourism Management, B.S.\n37. Security and Risk Analysis, B.S.\n38. Software Engineering, B.S.\n39. Strategic Communications, B.A.\n40. Turfgrass Science, B.S.\n\nTotal: 40 majors available."
+  },
+  {
+    "id": "minor:business_minor",
+    "type": "minor",
+    "title": "Business Minor",
+    "content": "Minor: Business Minor\nDepartment: BUSINESS\nCredits Required: 19\nDescription: Study the fundamentals of business including accounting, marketing, management, and economics.\nKey Courses: ACCTG 211, ACCTG 201, ACCTG 202, MGMT 301, MKTG 301W, ECON 102, ECON 104, CAS 404, CRIMJ 408, ENGL 419, ETI 420, HDFS 455, IST 402, IST 432, PSYCH 484"
+  },
+  {
+    "id": "minor:criminal_justice_minor",
+    "type": "minor",
+    "title": "Criminal Justice Minor",
+    "content": "Minor: Criminal Justice Minor\nDepartment: CRIMJ\nCredits Required: 18\nDescription: Delve into the foundational concepts of criminal justice, as well as explore supporting topics and specializations within the field.\nKey Courses: CRIMJ 100, CRIMJ 210, CRIMJ 220, CRIMJ 230, CRIM 406, SOC 406, CRIMJ 408, AFAM 409, SOC 409, CRIMJ 430, CRIMJ 435, CRIMJ 441, CRIMJ 450W, CRIMJ 465"
+  },
+  {
+    "id": "minor:dispute_management_minor",
+    "type": "minor",
+    "title": "Dispute Management and Resolution Minor",
+    "content": "Minor: Dispute Management and Resolution Minor\nDepartment: LHR\nCredits Required: 18\nDescription: Explore conflict management, dispute resolution, and negotiation through communication and labor relations.\nKey Courses: CAS 203, LHR 304, CAS 403, CAS 426W, CAS 452W, LHR 201, LHR 136, LHR 434, OLEAD 465, LHR 465, PSYCH 281"
+  },
+  {
+    "id": "minor:economics_minor",
+    "type": "minor",
+    "title": "Economics Minor",
+    "content": "Minor: Economics Minor\nDepartment: ECON\nCredits Required: 18\nDescription: Study economic theory, micro/macro analysis, and specialized topics.\nKey Courses: ECON 102, ECON 104, ECON 302, ECON 304, ECON 402, ECON 425, ECON 428, ECON 433, ECON 434, ECON 471"
+  },
+  {
+    "id": "minor:energy_business_finance_minor",
+    "type": "minor",
+    "title": "Energy Business and Finance Minor",
+    "content": "Minor: Energy Business and Finance Minor\nDepartment: EBF\nCredits Required: 28\nDescription: Integrates energy, business, and finance concepts with engineering and earth sciences.\nKey Courses: EBF 200, EBF 301, ECON 102, EME 460, STAT 200, MATH 22, MATH 110, MATH 140, EGEE 101, EGEE 102, EGEE 120, EBF 483, EGEE 401, EME 444, GEOG 430"
+  },
+  {
+    "id": "minor:english_minor",
+    "type": "minor",
+    "title": "English Minor",
+    "content": "Minor: English Minor\nDepartment: ENGL\nCredits Required: 18\nDescription: Select any combination of writing and literature courses relevant to personal interests."
+  },
+  {
+    "id": "minor:entrepreneurship_minor",
+    "type": "minor",
+    "title": "Entrepreneurship Minor",
+    "content": "Minor: Entrepreneurship Minor\nDepartment: ENTR\nCredits Required: 19\nDescription: Develop a foundation of knowledge to help take advantage of entrepreneurial opportunities.\nKey Courses: ACCTG 211, ECON 102, ENTR 300, ENTR 320, ENGL 419"
+  },
+  {
+    "id": "minor:finance_minor",
+    "type": "minor",
+    "title": "Finance Minor",
+    "content": "Minor: Finance Minor\nDepartment: FIN\nCredits Required: 18\nDescription: Study investments, corporate finance, and financial markets.\nKey Courses: FIN 301, FIN 420, ACCTG 426"
+  },
+  {
+    "id": "minor:geography_minor",
+    "type": "minor",
+    "title": "Geography Minor",
+    "content": "Minor: Geography Minor\nDepartment: GEOG\nCredits Required: 18\nDescription: Explore physical and human geography, environmental issues, and geospatial technologies.\nKey Courses: GEOG 30N, GEOG 1N, GEOG 3N, GEOG 430, GEOG 2N, GEOG 432, GEOG 438W, GEOG 6N, EME 432"
+  },
+  {
+    "id": "minor:history_minor",
+    "type": "minor",
+    "title": "History Minor",
+    "content": "Minor: History Minor\nDepartment: HIST\nCredits Required: 18\nDescription: Gain deep knowledge of culture, religion, art, politics, and war through the study of history.\nKey Courses: HIST 20, HIST 21, HIST 101, HIST 120N, HIST 130, HIST 144, HIST 181, HIST 302W, HIST 426, HIST 447, HIST 453, HIST 458Y, LHR 458, HIST 479"
+  },
+  {
+    "id": "minor:homeland_security_minor",
+    "type": "minor",
+    "title": "Homeland Security Minor",
+    "content": "Minor: Homeland Security Minor\nDepartment: HLS\nCredits Required: 18\nDescription: Explore emergency management, security administration, border security, and critical infrastructure protection.\nKey Courses: HLS 201, HLS 306, HLS 483, CRIMJ 304, CRIMJ 435, HLS 475, HLS 476, PLSC 439, SRA 421"
+  },
+  {
+    "id": "minor:hdfs_minor",
+    "type": "minor",
+    "title": "Human Development and Family Studies Minor",
+    "content": "Minor: Human Development and Family Studies Minor\nDepartment: HDFS\nCredits Required: 18\nDescription: Tailor the focus of your minor by selecting courses that fit your interests in human development.\nKey Courses: HDFS 129, HDFS 229, HDFS 239, HDFS 249N, HDFS 301, HDFS 311, HDFS 312W, HDFS 315Y, HDFS 411, HDFS 414, HDFS 418, HDFS 428, HDFS 429, HDFS 433, HDFS 455"
+  },
+  {
+    "id": "minor:ist_minor",
+    "type": "minor",
+    "title": "Information Sciences and Technology Minor",
+    "content": "Minor: Information Sciences and Technology Minor\nDepartment: IST\nCredits Required: 18\nDescription: Explore the organization of data, networking, and the relationship between information, people, and technology.\nKey Courses: IST 110, IST 210, IST 220, ETI 301, ETI 302, IST 140, IST 250, IST 402, IST 432, IST 452"
+  },
+  {
+    "id": "minor:labor_human_resources_minor",
+    "type": "minor",
+    "title": "Labor and Human Resources Minor",
+    "content": "Minor: Labor and Human Resources Minor\nDepartment: LHR\nCredits Required: 18\nDescription: Study labor relations, human resources, and workplace dynamics. Note: 6 credits must be at the 400 level.\nKey Courses: LHR 100, LHR 304, LHR 305, LHR 201, LHR 401, ACCTG 211, AFAM 100, BA 243, CAS 203, CAS 352, ECON 342, HIST 155, MGMT 100, MGMT 301, MGMT 321"
+  },
+  {
+    "id": "minor:media_studies_minor",
+    "type": "minor",
+    "title": "Media Studies Minor",
+    "content": "Minor: Media Studies Minor\nDepartment: COMM\nCredits Required: 18\nDescription: Explore the role, content, and effects of mass media, cinema, and electronic telecommunications.\nKey Courses: COMM 100N, COMM 150, COMM 180, COMM 205, COMM 403, COMM 405, COMM 409, COMM 410, COMM 419"
+  },
+  {
+    "id": "minor:organizational_leadership_minor",
+    "type": "minor",
+    "title": "Organizational Leadership Minor",
+    "content": "Minor: Organizational Leadership Minor\nDepartment: LHR\nCredits Required: 18\nDescription: Develop leadership skills, organizational theory knowledge, and evidence-based decision making strategies.\nKey Courses: OLEAD 100, OLEAD 201, OLEAD 210, OLEAD 464, LER 464, BA 100, LHR 427, OLEAD 220, OLEAD 230, OLEAD 409, LHR 409, OLEAD 410, OLEAD 411, OLEAD 465, LHR 465"
+  },
+  {
+    "id": "minor:political_science_minor",
+    "type": "minor",
+    "title": "Political Science Minor",
+    "content": "Minor: Political Science Minor\nDepartment: PLSC\nCredits Required: 18\nDescription: Develop analytical reasoning and expertise in government, theory, and international relations.\nKey Courses: PLSC 1, PLSC 210N, PLSC 404, PLSC 429, PLSC 447, PLSC 468, PLSC 471, PLSC 472, PLSC 473, PLSC 480W, PLSC 490, PLSC 3, PLSC 200N, PLSC 456, PLSC 14"
+  },
+  {
+    "id": "minor:psychology_minor",
+    "type": "minor",
+    "title": "Psychology Minor",
+    "content": "Minor: Psychology Minor\nDepartment: PSYCH\nCredits Required: 18\nDescription: Customize your degree with a set of courses matching your specific area of interest in psychology.\nKey Courses: PSYCH 100, PSYCH 301W, PSYCH 212, PSYCH 221, PSYCH 238, PSYCH 243, PSYCH 256, PSYCH 260, PSYCH 270, PSYCH 281, PSYCH 412, PSYCH 422, PSYCH 424, PSYCH 441, PSYCH 470"
+  },
+  {
+    "id": "minor:security_risk_analysis_minor",
+    "type": "minor",
+    "title": "Security and Risk Analysis Minor",
+    "content": "Minor: Security and Risk Analysis Minor\nDepartment: IST\nCredits Required: 21\nDescription: Explore security risk analysis, terrorism threats, information security, and legal/regulatory environments.\nKey Courses: CYBER 221, SRA 111, SRA 211, IST 140, CMPSC 101, IST 220, SRA 231, CYBER 451, CYBER 454, CYBER 456, IST 432, IST 452, IST 453, SRA 421, SRA 468"
+  },
+  {
+    "id": "minor:sociology_minor",
+    "type": "minor",
+    "title": "Sociology Minor",
+    "content": "Minor: Sociology Minor\nDepartment: SOC\nCredits Required: 18\nDescription: Study human societies, social life, and specific areas of interest within sociology.\nKey Courses: SOC 1, CRIMJ 12, SOC 030, SOC 119N, SOC 404, SOC 455, SOC 456, SOC 467"
+  },
+  {
+    "id": "summary:minors",
+    "type": "summary",
+    "title": "All Penn State World Campus Minors",
+    "content": "Penn State World Campus offers 20 minors.\n\nComplete list of minors:\n1. Business Minor\n2. Criminal Justice Minor\n3. Dispute Management and Resolution Minor\n4. Economics Minor\n5. Energy Business and Finance Minor\n6. English Minor\n7. Entrepreneurship Minor\n8. Finance Minor\n9. Geography Minor\n10. History Minor\n11. Homeland Security Minor\n12. Human Development and Family Studies Minor\n13. Information Sciences and Technology Minor\n14. Labor and Human Resources Minor\n15. Media Studies Minor\n16. Organizational Leadership Minor\n17. Political Science Minor\n18. Psychology Minor\n19. Security and Risk Analysis Minor\n20. Sociology Minor\n\nTotal: 20 minors available."
+  },
+  {
+    "id": "gened:overview",
+    "type": "gened",
+    "title": "Penn State General Education Overview",
+    "content": "Penn State General Education Requirements Overview\n\nTotal GenEd Credits Required: 45 credits\n\nCategories:\n1. Foundations\n2. Knowledge Domains\n3. Integrative Studies\n4. Exploration\n\nGeneral Education ensures students develop skills in:\n- Quantification (math and analytical thinking)\n- Writing and Speaking (communication skills)\n- Knowledge Domains (arts, humanities, natural sciences, social sciences)\n- Health and Wellness\n- Integrative Studies and Inter-Domain connections"
+  },
+  {
+    "id": "gened:foundations",
+    "type": "gened",
+    "title": "GenEd: Foundations",
+    "content": "GenEd Category: Foundations\nCredits Required: 15"
+  },
+  {
+    "id": "gened:knowledge_domains",
+    "type": "gened",
+    "title": "GenEd: Knowledge Domains",
+    "content": "GenEd Category: Knowledge Domains\nCredits Required: 15"
+  },
+  {
+    "id": "gened:integrative_studies",
+    "type": "gened",
+    "title": "GenEd: Integrative Studies",
+    "content": "GenEd Category: Integrative Studies\nCredits Required: 6"
+  },
+  {
+    "id": "gened:exploration",
+    "type": "gened",
+    "title": "GenEd: Exploration",
+    "content": "GenEd Category: Exploration\nCredits Required: 9"
+  }
+]

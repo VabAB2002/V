@@ -249,19 +249,21 @@ export default function GenEdPage() {
     return (
         <PageTransition>
             {/* App Shell: Fixed viewport, independent scroll panels */}
-            <div className="h-screen flex overflow-hidden bg-white">
+            <div className="h-screen flex overflow-hidden bg-white relative">
+                {/* Fixed Top Navigation */}
+                <div className="absolute top-6 left-1/2 -translate-x-1/2 z-50">
+                    <PageToggle />
+                </div>
+
                 {/* Left Panel - Course Input (60%) */}
                 <main className="w-[60%] overflow-y-auto flex items-center">
                     <div className="px-12 py-10 max-w-3xl mx-auto w-full">
-                        {/* Toggle */}
-                        <div className="flex justify-center mb-8">
-                            <PageToggle />
-                        </div>
+
 
                         {/* Header */}
                         <div className="mb-8">
                             <h1 className="text-4xl font-semibold text-gray-900 mb-4 tracking-tight">
-                                GenEd Planner
+                                GenEd Tool
                             </h1>
                             <p className="text-lg text-gray-600">
                                 Track your <span className="font-medium text-gray-900">45-credit</span> general education requirements.

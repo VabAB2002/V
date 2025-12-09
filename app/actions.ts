@@ -1,6 +1,6 @@
 'use server'
 
-import { getMajorList, getCourseList, type MajorOption, type CourseOption } from '@/lib/utils';
+import { getMajorList, getCourseList, type MajorOption, type CourseOption } from '@/lib/server-utils';
 
 /**
  * Server action to fetch the list of all available majors

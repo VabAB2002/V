@@ -97,7 +97,7 @@ export default function HomePage() {
       <div className="min-h-screen w-full bg-white flex items-center justify-center p-6">
         <div className="w-full max-w-2xl">
           {/* Page Toggle */}
-          <div className="absolute top-6 left-1/2 -translate-x-1/2">
+          <div className="absolute top-6 left-1/2 -translate-x-1/2 z-50">
             <PageToggle />
           </div>
 

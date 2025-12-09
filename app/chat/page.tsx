@@ -137,7 +137,7 @@ export default function ChatPage() {
                             "transition-all duration-700 ease-[cubic-bezier(0.25,0.1,0.25,1.0)] absolute w-full text-center",
                             hasStarted
                                 ? "top-0 opacity-0 pointer-events-none -translate-y-10 scale-95"
-                                : "top-[25%] opacity-100 translate-y-0 scale-100"
+                                : "top-[15%] opacity-100 translate-y-0 scale-100"
                         )}
                     >
                         <div className="inline-flex items-center justify-center p-2 mb-6 rounded-full bg-blue-50 text-blue-600 ring-1 ring-blue-100">

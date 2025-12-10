@@ -17,6 +17,7 @@ const DB_PATH = path.join(DATA_DIR, 'courses.db');
 const MAJORS_PATH = path.join(DATA_DIR, 'penn_state_majors.json');
 const MINORS_PATH = path.join(DATA_DIR, 'penn_state_minors.json');
 const GENED_PATH = path.join(DATA_DIR, 'gen_ed_requirements.json');
+const EQUIVALENCIES_PATH = path.join(DATA_DIR, 'course_equivalencies.json');
 
 /**
  * Database connection instance.
@@ -43,6 +44,7 @@ let stmtFindCourses: Database.Statement | null = null;
 let majorsData: any = null;
 let minorsData: any = null;
 let genEdData: any = null;
+let equivalenciesData: { equivalencies: Record<string, string[]> } | null = null;
 
 /**
  * Get course details for a specific course ID from SQLite.
@@ -137,6 +139,36 @@ function loadGenEdData(): any {
     const rawData = fs.readFileSync(GENED_PATH, 'utf-8');
     genEdData = JSON.parse(rawData);
     return genEdData;
+}
+
+/**
+ * Load course equivalencies data.
+ */
+function loadEquivalenciesData(): { equivalencies: Record<string, string[]> } {
+    if (equivalenciesData) {
+        return equivalenciesData;
+    }
+
+    try {
+        const rawData = fs.readFileSync(EQUIVALENCIES_PATH, 'utf-8');
+        equivalenciesData = JSON.parse(rawData);
+        return equivalenciesData!;
+    } catch (error) {
+        // Return empty equivalencies if file doesn't exist
+        console.warn('Course equivalencies file not found, using empty equivalencies');
+        equivalenciesData = { equivalencies: {} };
+        return equivalenciesData;
+    }
+}
+
+/**
+ * Get equivalent courses for a given course ID.
+ * @param courseId Course identifier (e.g., "CMPSC 121")
+ * @returns Array of equivalent course IDs, or empty array if none
+ */
+export function getEquivalentCourses(courseId: string): string[] {
+    const data = loadEquivalenciesData();
+    return data.equivalencies[courseId] || [];
 }
 
 /**

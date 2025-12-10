@@ -1,0 +1,24 @@
+{
+    "description": "Course equivalency mappings for Penn State. When a course is required, any equivalent course can satisfy the requirement.",
+    "version": "1.0",
+    "equivalencies": {
+        "CMPSC 121": [
+            "CMPSC 131"
+        ],
+        "CMPSC 122": [
+            "CMPSC 132"
+        ],
+        "CMPSC 131": [
+            "CMPSC 121"
+        ],
+        "CMPSC 132": [
+            "CMPSC 122"
+        ],
+        "STAT 318": [
+            "STAT 414"
+        ],
+        "STAT 414": [
+            "STAT 318"
+        ]
+    }
+}

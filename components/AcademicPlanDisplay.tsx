@@ -3,6 +3,7 @@
 import { JSX, useEffect, useState, useMemo } from 'react';
 import { getMajorPlan, type MajorPlan } from '@/app/actions/getMajorPlan';
 import { CourseDetailsProvider } from '@/lib/context/CourseDetailsContext';
+import { isCourseCompleted } from '@/lib/courseEquivalencies';
 import CourseBadge from './CourseBadge';
 
 interface AcademicPlanDisplayProps {
@@ -75,11 +76,9 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
         return extractAllCourseCodes(majorPlan);
     }, [majorPlan]);
 
-    // Helper to check if a course is completed
+    // Helper to check if a course is completed (includes equivalency check)
     const isCompleted = (courseCode: string) => {
-        return selectedCourses.some(
-            selected => selected.toUpperCase() === courseCode.toUpperCase()
-        );
+        return isCourseCompleted(courseCode, selectedCourses);
     };
 
     // Calculate progress statistics

@@ -1,5 +1,8 @@
 'use server'
 
+import Database from 'better-sqlite3';
+import path from 'path';
+
 export interface ParsedCourse {
     code: string;
     name: string;
@@ -11,7 +14,54 @@ export interface ParsedCourse {
 }
 
 /**
+ * Intermediate structure for course candidates before DB validation
+ */
+interface CourseCandidate {
+    codeWithLetter: string;      // e.g., "CMPSC 431W" 
+    codeWithoutLetter: string;   // e.g., "CMPSC 431"
+    potentialSuffix: string;     // e.g., "W"
+    descriptionWithLetter: string;    // Description if code has letter
+    descriptionWithoutLetter: string; // Description if code has no letter
+    attemptedCredits: number;
+    earnedCredits: number;
+    grade: string;
+    term: string;
+}
+
+/**
+ * Validate course codes against the database
+ * Returns a Set of valid course codes that exist in the DB
+ */
+async function validateCourseCodes(candidateCodes: string[]): Promise<Set<string>> {
+    if (candidateCodes.length === 0) {
+        return new Set();
+    }
+
+    try {
+        const dbPath = path.join(process.cwd(), 'lib', 'data', 'courses.db');
+        const db = new Database(dbPath, { readonly: true });
+
+        // Create placeholders for parameterized query
+        const placeholders = candidateCodes.map(() => '?').join(',');
+        const query = `SELECT id FROM courses WHERE id IN (${placeholders})`;
+
+        const rows = db.prepare(query).all(...candidateCodes) as Array<{ id: string }>;
+        db.close();
+
+        const validCodes = new Set(rows.map(r => r.id));
+        console.log(`[DB Validation] Checked ${candidateCodes.length} candidates, found ${validCodes.size} valid codes`);
+
+        return validCodes;
+    } catch (error) {
+        console.error('[DB Validation] Error querying database:', error);
+        // On error, return empty set - fallback to code without letter
+        return new Set();
+    }
+}
+
+/**
  * Parse a Penn State transcript PDF and extract courses
+ * Uses two-pass validation: extract candidates, then validate against DB
  */
 export async function parseTranscriptPDF(fileBuffer: ArrayBuffer): Promise<ParsedCourse[]> {
     try {
@@ -54,8 +104,13 @@ export async function parseTranscriptPDF(fileBuffer: ArrayBuffer): Promise<Parse
         console.log(text.substring(text.length - 1500));
         console.log('=== END PREVIEW ===');
 
-        const courses = extractCoursesFromText(text);
-        console.log('Extracted', courses.length, 'courses');
+        // PASS 1: Extract course candidates with both code variants
+        const candidates = extractCourseCandidates(text);
+        console.log(`Pass 1: Extracted ${candidates.length} course candidates`);
+
+        // PASS 2: Validate codes against database
+        const courses = await validateAndResolveCourses(candidates);
+        console.log(`Pass 2: Resolved ${courses.length} validated courses`);
 
         if (courses.length > 0) {
             console.log('Sample courses:', courses.slice(0, 3));
@@ -96,12 +151,15 @@ export async function parseTranscriptPDF(fileBuffer: ArrayBuffer): Promise<Parse
 }
 
 /**
- * Extract courses from transcript text
+ * PASS 1: Extract course candidates from transcript text
+ * Extracts BOTH potential course codes (with and without letter suffix)
+ * 
  * Penn State format (from PDF): Text is concatenated without spaces
  * Example: ASTRO    6Stars and Galaxies3.0003.000B-8.010
+ * Example: CMPSC  431WDatabase Mgmt Syst3.0003.000A12.000
  */
-function extractCoursesFromText(text: string): ParsedCourse[] {
-    const courses: ParsedCourse[] = [];
+function extractCourseCandidates(text: string): CourseCandidate[] {
+    const candidates: CourseCandidate[] = [];
     const lines = text.split('\n');
 
     // Track current term for context
@@ -110,23 +168,19 @@ function extractCoursesFromText(text: string): ParsedCourse[] {
     // Pattern to match term headers (e.g., "FA 2022", "SP 2023", "SU 2023")
     const termPattern = /^(FA|SP|SU)\s+\d{4}$/;
 
-    // Pattern to match course lines in the concatenated format
-    // Format: DEPT  CODEDescription...Attempted.EarnedGradePoints
-    // Example: CMPSC  131PROG & COMP I3.0003.000C6.000
-    // Example: ASTRO    6Stars and Galaxies3.0003.000B-8.010
-    // Example: MATH  141CALC ANLY GEOM II4.0004.000 TR0.000 (note space before TR)
+    // Modified pattern to capture the potential letter suffix separately
     // Pattern breakdown:
     // ([A-Z]{2,6})\s+ - Department code with spaces
-    // (\d{1,4}) - Course number (NO optional letter - that's part of description!)
-    // ([A-Z].+?) - Description starting with capital letter (non-greedy)
+    // (\d{1,4}) - Course number (digits only)
+    // ([A-Z]) - First letter after number (could be suffix OR start of description)
+    // (.+?) - Rest of description (non-greedy)
     // (\d+\.\d{3}) - Attempted credits
     // (\d+\.\d{3}) - Earned credits  
-    // \s*([A-Z][A-Z+-]*|LD|IP|TR|) - Grade (may have leading space, especially for TR)
+    // \s*([A-Z][A-Z+-]*|LD|IP|TR|) - Grade (may have leading space)
     // (\d+\.\d{3}) - Points
-    const coursePattern = /^([A-Z]{2,6})\s+(\d{1,4})([A-Z].+?)(\d+\.\d{3})(\d+\.\d{3})\s*([A-Z][A-Z+-]*|LD|IP|TR|)(\d+\.\d{3})$/;
+    const coursePattern = /^([A-Z]{2,6})\s+(\d{1,4})([A-Z])(.+?)(\d+\.\d{3})(\d+\.\d{3})\s*([A-Z][A-Z+-]*|LD|IP|TR|)(\d+\.\d{3})$/;
 
-    console.log('Starting course extraction...');
-    let courseCount = 0;
+    console.log('Pass 1: Starting course candidate extraction...');
 
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
@@ -145,58 +199,118 @@ function extractCoursesFromText(text: string): ParsedCourse[] {
         const match = coursePattern.exec(line);
 
         if (match) {
-            const [, dept, code, description, attempted, earned, grade, points] = match;
+            const [, dept, number, firstLetter, restOfDescription, attempted, earned, grade, points] = match;
 
-            const courseCode = `${dept} ${code}`;
+            // Generate BOTH candidate codes
+            const codeWithLetter = `${dept} ${number}${firstLetter}`;      // e.g., "CMPSC 431W"
+            const codeWithoutLetter = `${dept} ${number}`;                  // e.g., "CMPSC 431"
+
+            // Generate corresponding descriptions
+            const descriptionWithLetter = restOfDescription.trim();         // Description starts after suffix
+            const descriptionWithoutLetter = (firstLetter + restOfDescription).trim(); // Description includes first letter
+
             const attemptedCredits = parseFloat(attempted);
             const earnedCredits = parseFloat(earned);
-            const gradeTrimmed = grade.trim(); // Trim spaces from grade
+            const gradeTrimmed = grade.trim();
 
-            console.log(`Found course: ${courseCode}, Grade: "${gradeTrimmed}", Attempted: ${attemptedCredits}, Earned: ${earnedCredits}`);
+            console.log(`Candidate: ${codeWithoutLetter} OR ${codeWithLetter}`);
 
-            // Determine course status
-            let status: ParsedCourse['status'] = 'completed';
-
-            if (gradeTrimmed === 'IP') {
-                // Explicitly marked as in-progress
-                status = 'in-progress';
-            } else if (gradeTrimmed === 'LD') {
-                // Explicitly marked as late drop
-                status = 'dropped';
-            } else if (gradeTrimmed === 'TR') {
-                // Transfer credit
-                status = 'transfer';
-            } else if (!gradeTrimmed && attemptedCredits > 0) {
-                // No grade but has attempted credits = in-progress (future semester)
-                status = 'in-progress';
-            } else if (earnedCredits > 0) {
-                // Has earned credits = completed
-                status = 'completed';
-            } else {
-                // Attempted but not earned and not IP/TR = dropped
-                status = 'dropped';
-            }
-
-            // Only add courses that are completed, in-progress, or transfer
-            if (status !== 'dropped') {
-                courses.push({
-                    code: courseCode,
-                    name: description.trim(),
-                    credits: attemptedCredits,
-                    earnedCredits: earnedCredits,
-                    grade: gradeTrimmed || 'N/A',
-                    status: status,
-                    term: currentTerm
-                });
-                courseCount++;
-                console.log(`Added ${courseCode} (${status})`);
-            } else {
-                console.log(`Skipped ${courseCode} (dropped)`);
-            }
+            candidates.push({
+                codeWithLetter,
+                codeWithoutLetter,
+                potentialSuffix: firstLetter,
+                descriptionWithLetter,
+                descriptionWithoutLetter,
+                attemptedCredits,
+                earnedCredits,
+                grade: gradeTrimmed,
+                term: currentTerm
+            });
         }
     }
 
-    console.log(`Total courses found: ${courseCount}`);
+    console.log(`Pass 1 complete: ${candidates.length} candidates extracted`);
+    return candidates;
+}
+
+/**
+ * PASS 2: Validate candidates against database and resolve to final courses
+ */
+async function validateAndResolveCourses(candidates: CourseCandidate[]): Promise<ParsedCourse[]> {
+    if (candidates.length === 0) {
+        return [];
+    }
+
+    // Collect all candidate codes for batch validation
+    const allCandidateCodes: string[] = [];
+    for (const candidate of candidates) {
+        allCandidateCodes.push(candidate.codeWithLetter);
+        allCandidateCodes.push(candidate.codeWithoutLetter);
+    }
+
+    // Single batch query to validate all codes
+    const validCodes = await validateCourseCodes(allCandidateCodes);
+
+    console.log('Pass 2: Resolving course codes based on DB validation...');
+
+    const courses: ParsedCourse[] = [];
+
+    for (const candidate of candidates) {
+        // Priority: If code WITH letter exists in DB, use it
+        // Otherwise, use code WITHOUT letter (fallback)
+        let finalCode: string;
+        let finalDescription: string;
+
+        if (validCodes.has(candidate.codeWithLetter)) {
+            // DB confirms this is a course with a letter suffix (e.g., CMPSC 431W)
+            finalCode = candidate.codeWithLetter;
+            finalDescription = candidate.descriptionWithLetter;
+            console.log(`  ✓ ${finalCode} - validated with suffix`);
+        } else if (validCodes.has(candidate.codeWithoutLetter)) {
+            // DB confirms this is a regular course (e.g., CMPSC 131)
+            finalCode = candidate.codeWithoutLetter;
+            finalDescription = candidate.descriptionWithoutLetter;
+            console.log(`  ✓ ${finalCode} - validated without suffix`);
+        } else {
+            // Neither found in DB - use code without letter as fallback
+            // This handles courses that might not be in our database yet
+            finalCode = candidate.codeWithoutLetter;
+            finalDescription = candidate.descriptionWithoutLetter;
+            console.log(`  ? ${finalCode} - not in DB, using fallback`);
+        }
+
+        // Determine course status
+        let status: ParsedCourse['status'] = 'completed';
+
+        if (candidate.grade === 'IP') {
+            status = 'in-progress';
+        } else if (candidate.grade === 'LD') {
+            status = 'dropped';
+        } else if (candidate.grade === 'TR') {
+            status = 'transfer';
+        } else if (!candidate.grade && candidate.attemptedCredits > 0) {
+            status = 'in-progress';
+        } else if (candidate.earnedCredits > 0) {
+            status = 'completed';
+        } else {
+            status = 'dropped';
+        }
+
+        // Only add courses that are completed, in-progress, or transfer
+        if (status !== 'dropped') {
+            courses.push({
+                code: finalCode,
+                name: finalDescription,
+                credits: candidate.attemptedCredits,
+                earnedCredits: candidate.earnedCredits,
+                grade: candidate.grade || 'N/A',
+                status: status,
+                term: candidate.term
+            });
+        }
+    }
+
+    console.log(`Pass 2 complete: ${courses.length} courses resolved`);
 
     // Remove duplicates - keep the latest occurrence (in case of retakes)
     const uniqueCourses = new Map<string, ParsedCourse>();

@@ -6,7 +6,7 @@ import {
     AuditResult,
     GradeComparisonResult,
 } from '../types';
-import { getCourseDetails, getCourseCredits, courseHasGenEdAttribute } from './loader';
+import { getCourseDetails, getCourseCredits, courseHasGenEdAttribute, getEquivalentCourses } from './loader';
 
 /**
  * Grade hierarchy for comparison (higher index = better grade).
@@ -215,7 +215,9 @@ function auditSimpleOR(
     const minGrade = node.min_grade || 'D';
 
     for (const courseId of options) {
-        const completed = transcript.find(c => c.id === courseId && !usedCourses.has(c.id));
+        // Check both the exact course and equivalents
+        const validCourses = [courseId, ...getEquivalentCourses(courseId)];
+        const completed = transcript.find(c => validCourses.includes(c.id) && !usedCourses.has(c.id));
 
         if (completed && compareGrade(completed.grade, minGrade) === 'PASS') {
             usedCourses.add(completed.id);
@@ -261,7 +263,10 @@ function auditFIXED(
     }
 
     const minGrade = node.min_grade || 'D';
-    const completed = transcript.find(c => c.id === courseId && !usedCourses.has(c.id));
+
+    // Check both the exact course and equivalents
+    const validCourses = [courseId, ...getEquivalentCourses(courseId)];
+    const completed = transcript.find(c => validCourses.includes(c.id) && !usedCourses.has(c.id));
 
     if (completed && compareGrade(completed.grade, minGrade) === 'PASS') {
         usedCourses.add(completed.id);
@@ -301,7 +306,10 @@ function auditFIXED_LIST(
 
     for (const courseId of courses) {
         const requiredGrade = node.min_grade_overrides?.[courseId] || minGrade;
-        const completed = transcript.find(c => c.id === courseId && !usedCourses.has(c.id));
+
+        // Check both the exact course and equivalents
+        const validCourses = [courseId, ...getEquivalentCourses(courseId)];
+        const completed = transcript.find(c => validCourses.includes(c.id) && !usedCourses.has(c.id));
 
         creditsRequired += getCourseCredits(courseId);
 

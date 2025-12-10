@@ -2,14 +2,14 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { fetchCourses } from '../actions';
+import { fetchCourses } from '@/app/actions';
 import type { CourseOption } from '@/lib/utils';
 import { parseTranscriptPDF, extractCourseCodesFromParsed, type ParsedCourse } from '../actions/parseTranscript';
 import { getGenEdRequirements, type GenEdRequirements, type GenEdCategory } from '../actions/getGenEdRequirements';
 import { getBatchCourseDetails } from '../actions/getBatchCourseDetails';
 import { getAllMajors, getGenEdRecommendations, type MajorOption, type GenEdRecommendation, type GenEdRecommendationResult } from '../actions/getGenEdRecommendations';
-import PageTransition from '@/components/PageTransition';
-import PageToggle from '@/components/PageToggle';
+import PageTransition from '@/components/common/PageTransition';
+import PageToggle from '@/components/common/PageToggle';
 import NProgress from 'nprogress';
 
 interface CourseWithGenEd {

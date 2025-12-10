@@ -2,9 +2,9 @@
 
 import { JSX, useEffect, useState, useMemo } from 'react';
 import { getMajorPlan, type MajorPlan } from '@/app/actions/getMajorPlan';
-import { CourseDetailsProvider } from '@/lib/context/CourseDetailsContext';
+import { CourseDetailsProvider } from '@/components/context/CourseDetailsContext';
 import { isCourseCompleted } from '@/lib/courseEquivalencies';
-import CourseBadge from './CourseBadge';
+import CourseBadge from '@/components/course/CourseBadge';
 
 interface AcademicPlanDisplayProps {
     majorId: string;

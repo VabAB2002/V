@@ -189,3 +189,19 @@ export type GradeComparisonResult = 'PASS' | 'FAIL';
  * Utility type for course lookup cache.
  */
 export type CourseLookupCache = Map<string, CourseDetails>;
+
+/**
+ * Option for major selection dropdown/autocomplete.
+ */
+export interface MajorOption {
+    id: string;                        // Major identifier
+    name: string;                      // Major display name
+}
+
+/**
+ * Option for course selection dropdown/autocomplete.
+ */
+export interface CourseOption {
+    code: string;                      // Course code (e.g., "CMPSC 131")
+    name: string;                      // Course name
+}

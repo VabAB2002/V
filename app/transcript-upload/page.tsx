@@ -2,12 +2,13 @@
 
 import { useState, useEffect, useRef, Suspense } from 'react';
 import { useSearchParams, useRouter } from 'next/navigation';
-import { fetchCourses } from '../actions';
+import { fetchCourses } from '@/app/actions';
 import type { CourseOption } from '@/lib/utils';
 import { parseTranscriptPDF, extractCourseCodesFromParsed, type ParsedCourse } from '../actions/parseTranscript';
 import { getMinorRecommendations } from '../actions/getRecommendations';
-import PageTransition from '@/components/PageTransition';
-import AcademicPlanDisplay from '@/components/AcademicPlanDisplay';
+import { getCertificateRecommendations } from '../actions/getCertificateRecommendations';
+import PageTransition from '@/components/common/PageTransition';
+import AcademicPlanDisplay from '@/components/academic/AcademicPlanDisplay';
 import NProgress from 'nprogress';
 
 function TranscriptUploadContent() {
@@ -226,13 +227,17 @@ function TranscriptUploadContent() {
     const handleContinue = async () => {
         if (!majorId) return;
 
-        // Get recommendations using parsed courses
-        const recommendations = await getMinorRecommendations(parsedCourses, majorId, 6);
+        // Get recommendations for both minors and certificates
+        const [minorRecs, certRecs] = await Promise.all([
+            getMinorRecommendations(parsedCourses, majorId, 6),
+            getCertificateRecommendations(parsedCourses, majorId, 6)
+        ]);
 
-        // Navigate to results page with recommendations
+        // Navigate to results page with both recommendations
         const params = new URLSearchParams({
             major: majorId,
-            recommendations: JSON.stringify(recommendations)
+            recommendations: JSON.stringify(minorRecs),
+            certificates: JSON.stringify(certRecs)
         });
         router.push(`/results?${params.toString()}`);
     };

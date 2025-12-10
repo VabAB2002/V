@@ -2,16 +2,15 @@
 
 import { useSearchParams, useRouter, useParams } from 'next/navigation';
 import { useEffect, useState, Suspense } from 'react';
-import type { MinorRecommendation } from '../../actions/getRecommendations';
+import type { CertificateRecommendation } from '../../actions/getCertificateRecommendations';
 import PageTransition from '@/components/common/PageTransition';
-import NProgress from 'nprogress';
 
-function MinorDetailsContent() {
+function CertificateDetailsContent() {
     const searchParams = useSearchParams();
     const router = useRouter();
     const params = useParams();
 
-    const [recommendation, setRecommendation] = useState<MinorRecommendation | null>(null);
+    const [recommendation, setRecommendation] = useState<CertificateRecommendation | null>(null);
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -25,9 +24,6 @@ function MinorDetailsContent() {
         try {
             const rec = JSON.parse(recParam);
             setRecommendation(rec);
-            console.log('Recommendation data:', rec);
-            console.log('Completed courses:', rec.completed_courses);
-            console.log('Needed courses:', rec.needed_courses);
         } catch (error) {
             console.error('Error parsing recommendation:', error);
             router.push('/');
@@ -52,10 +48,10 @@ function MinorDetailsContent() {
                             ← Back to recommendations
                         </button>
                         <h1 className="text-4xl font-semibold text-gray-900 mb-3 tracking-tight">
-                            {recommendation.minor_name}
+                            {recommendation.certificate_name}
                         </h1>
                         <p className="text-lg text-gray-600">
-                            Minor Requirements & Progress
+                            Certificate Requirements & Progress
                         </p>
                     </div>
 
@@ -85,7 +81,7 @@ function MinorDetailsContent() {
                         </div>
                         <div className="w-full bg-gray-100 rounded-full h-4">
                             <div
-                                className="bg-gradient-to-r from-green-500 to-green-600 h-4 rounded-full transition-all duration-500"
+                                className="bg-gradient-to-r from-blue-500 to-blue-600 h-4 rounded-full transition-all duration-500"
                                 style={{ width: `${recommendation.completion_percentage}%` }}
                             />
                         </div>
@@ -131,7 +127,7 @@ function MinorDetailsContent() {
                             </div>
                         ) : (
                             <div className="p-6 bg-gray-50 rounded-lg text-center text-gray-500">
-                                No completed courses found for this minor
+                                No completed courses found for this certificate
                             </div>
                         )}
                     </div>
@@ -195,7 +191,7 @@ function MinorDetailsContent() {
                     {/* Info Note */}
                     <div className="p-4 bg-blue-50 rounded-xl border border-blue-200">
                         <p className="text-sm text-blue-900">
-                            <strong>Note:</strong> The courses listed show what applies toward this specific minor based on your completed coursework and planned major requirements.
+                            <strong>Note:</strong> The courses listed show what applies toward this specific certificate based on your completed coursework and planned major requirements.
                         </p>
                     </div>
                 </div>
@@ -204,7 +200,7 @@ function MinorDetailsContent() {
     );
 }
 
-export default function MinorDetailsPage() {
+export default function CertificateDetailsPage() {
     return (
         <Suspense fallback={<div className="min-h-screen w-full bg-white flex items-center justify-center">
             <div className="animate-pulse flex flex-col items-center">
@@ -212,7 +208,7 @@ export default function MinorDetailsPage() {
                 <div className="h-4 w-48 bg-gray-200 rounded"></div>
             </div>
         </div>}>
-            <MinorDetailsContent />
+            <CertificateDetailsContent />
         </Suspense>
     );
 }

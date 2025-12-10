@@ -5,7 +5,7 @@
  */
 export interface RawDocument {
     id: string;
-    type: 'course' | 'major' | 'minor' | 'gened';
+    type: 'course' | 'major' | 'minor' | 'certificate' | 'gened';
     content: string;
     metadata: DocumentMetadata;
 }
@@ -14,7 +14,7 @@ export interface RawDocument {
  * Document metadata stored in Pinecone
  */
 export interface DocumentMetadata {
-    type: 'course' | 'major' | 'minor' | 'gened';
+    type: 'course' | 'major' | 'minor' | 'certificate' | 'gened';
     title: string;
     content: string;
     credits?: number;

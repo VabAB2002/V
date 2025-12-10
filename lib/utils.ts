@@ -5,12 +5,5 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))
 }
 
-export interface MajorOption {
-  id: string;
-  name: string;
-}
-
-export interface CourseOption {
-  code: string;
-  name: string;
-}
+// Re-export types from the centralized types file for backwards compatibility
+export type { MajorOption, CourseOption } from './types';

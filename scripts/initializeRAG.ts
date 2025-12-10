@@ -17,6 +17,7 @@ const DATA_DIR = path.join(process.cwd(), 'lib', 'data');
 const DB_PATH = path.join(DATA_DIR, 'courses.db');
 const MAJORS_PATH = path.join(DATA_DIR, 'penn_state_majors.json');
 const MINORS_PATH = path.join(DATA_DIR, 'penn_state_minors.json');
+const CERTIFICATES_PATH = path.join(DATA_DIR, 'penn_state_certificates.json');
 const GENED_PATH = path.join(DATA_DIR, 'gen_ed_requirements.json');
 
 interface RawDocument {
@@ -219,6 +220,37 @@ Key Courses: ${uniqueCourses.length > 0 ? uniqueCourses.join(', ') : 'See requir
 }
 
 /**
+ * Load certificate documents
+ */
+function loadCertificateDocuments(): RawDocument[] {
+    const documents: RawDocument[] = [];
+
+    try {
+        const data = JSON.parse(fs.readFileSync(CERTIFICATES_PATH, 'utf-8'));
+        const certificates = data.certificates || data;
+
+        for (const [certId, cert] of Object.entries(certificates) as [string, any][]) {
+            const requiredCourses = extractCoursesFromRequirement(cert.requirements || {});
+            const uniqueCourses = [...new Set(requiredCourses)].slice(0, 20);
+
+            const content = `Certificate: ${cert.certificate_name || certId}
+Department: ${cert.department || 'Various'}
+Credits Required: ${cert.total_credits_required || 'Varies'}
+Description: ${cert.description || 'No description'}
+Key Courses: ${uniqueCourses.length > 0 ? uniqueCourses.join(', ') : 'See requirements'}`;
+
+            documents.push({ id: `certificate:${certId}`, type: 'certificate', content });
+        }
+
+        console.log(`✓ Loaded ${documents.length} certificate documents`);
+    } catch (error) {
+        console.error('Error loading certificates:', error);
+    }
+
+    return documents;
+}
+
+/**
  * Load GenEd documents
  */
 function loadGenEdDocuments(): RawDocument[] {
@@ -275,9 +307,10 @@ async function initializeRAG() {
         // const courses = loadCourseDocuments();  // Commented out - 5000 docs exceeds free tier
         const minors = loadMinorDocuments();
         const majors = loadMajorDocuments();
+        const certificates = loadCertificateDocuments();
         const genEd = loadGenEdDocuments();
 
-        const allDocs = [...minors, ...majors, ...genEd];  // ~65 docs
+        const allDocs = [...minors, ...majors, ...certificates, ...genEd];  // ~80 docs
         console.log(`\n📊 Total: ${allDocs.length} documents\n`);
 
         if (allDocs.length === 0) {

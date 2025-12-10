@@ -3,8 +3,8 @@
 import { useSearchParams, useRouter } from 'next/navigation';
 import { useEffect, useState, Suspense } from 'react';
 import type { MinorRecommendation } from '../actions/getRecommendations';
-import PageTransition from '@/components/PageTransition';
-import NProgress from 'nprogress';
+import type { CertificateRecommendation } from '../actions/getCertificateRecommendations';
+import PageTransition from '@/components/common/PageTransition';
 
 function ResultsContent() {
     const searchParams = useSearchParams();
@@ -13,24 +13,14 @@ function ResultsContent() {
     const [majorId, setMajorId] = useState('');
     const [majorName, setMajorName] = useState('');
     const [recommendations, setRecommendations] = useState<MinorRecommendation[]>([]);
+    const [certificates, setCertificates] = useState<CertificateRecommendation[]>([]);
     const [isVisible, setIsVisible] = useState(false);
-    const [expandedCards, setExpandedCards] = useState<Set<string>>(new Set());
-
-    const toggleDetails = (minorId: string) => {
-        setExpandedCards(prev => {
-            const newSet = new Set(prev);
-            if (newSet.has(minorId)) {
-                newSet.delete(minorId);
-            } else {
-                newSet.add(minorId);
-            }
-            return newSet;
-        });
-    };
+    const [activeTab, setActiveTab] = useState<'minors' | 'certificates'>('minors');
 
     useEffect(() => {
         const major = searchParams.get('major');
         const recsParam = searchParams.get('recommendations');
+        const certsParam = searchParams.get('certificates');
 
         if (!major || !recsParam) {
             router.push('/');
@@ -57,6 +47,16 @@ function ResultsContent() {
             return;
         }
 
+        // Parse certificates if available
+        if (certsParam) {
+            try {
+                const certs = JSON.parse(certsParam);
+                setCertificates(certs);
+            } catch (error) {
+                console.error('Error parsing certificates:', error);
+            }
+        }
+
         // Trigger fade-in animation
         setTimeout(() => setIsVisible(true), 50);
     }, [searchParams, router]);
@@ -68,7 +68,7 @@ function ResultsContent() {
             <div className={`min-h-screen w-full bg-white p-6 transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
                 <div className="w-full max-w-5xl mx-auto">
                     {/* Header */}
-                    <div className="mb-12">
+                    <div className="mb-8">
                         <button
                             onClick={() => router.push('/')}
                             className="mb-6 text-sm text-gray-500 hover:text-gray-900 transition-colors"
@@ -76,91 +76,197 @@ function ResultsContent() {
                             ← Back to home
                         </button>
                         <h1 className="text-4xl font-semibold text-gray-900 mb-3 tracking-tight">
-                            Minor Recommendations
+                            Program Recommendations
                         </h1>
                         <p className="text-lg text-gray-600">
                             Based on your progress in <span className="font-medium text-gray-900">{majorName}</span>
                         </p>
                     </div>
 
-                    {/* Recommendations Grid */}
-                    {recommendations.length === 0 ? (
-                        <div className="text-center py-16">
-                            <p className="text-gray-500">No recommendations available</p>
-                        </div>
-                    ) : (
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {recommendations.map((rec, index) => (
-                                <div
-                                    key={rec.minor_id}
-                                    className="border border-gray-200 rounded-2xl p-6 hover:border-gray-300 transition-all duration-200"
-                                >
-                                    {/* Ranking Badge */}
-                                    <div className="flex items-start justify-between mb-4">
-                                        <div className="flex items-center gap-3">
-                                            <div className="w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold">
-                                                {index + 1}
-                                            </div>
-                                            <h2 className="text-xl font-semibold text-gray-900">
-                                                {rec.minor_name}
-                                            </h2>
-                                        </div>
-                                    </div>
+                    {/* Tab Switcher */}
+                    <div className="flex gap-2 mb-8 p-1 bg-gray-100 rounded-xl w-fit">
+                        <button
+                            onClick={() => setActiveTab('minors')}
+                            className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'minors'
+                                    ? 'bg-white text-gray-900 shadow-sm'
+                                    : 'text-gray-600 hover:text-gray-900'
+                                }`}
+                        >
+                            Minors ({recommendations.length})
+                        </button>
+                        <button
+                            onClick={() => setActiveTab('certificates')}
+                            className={`px-6 py-2.5 rounded-lg text-sm font-medium transition-all ${activeTab === 'certificates'
+                                    ? 'bg-white text-gray-900 shadow-sm'
+                                    : 'text-gray-600 hover:text-gray-900'
+                                }`}
+                        >
+                            Certificates ({certificates.length})
+                        </button>
+                    </div>
 
-                                    {/* Stats */}
-                                    <div className="space-y-3 mb-4">
-                                        {/* Completion Bar */}
-                                        <div>
-                                            <div className="flex justify-between mb-2 text-sm">
-                                                <span className="text-gray-600">Completion</span>
-                                                <span className="font-medium text-gray-900">
-                                                    {rec.completion_percentage.toFixed(1)}%
-                                                </span>
-                                            </div>
-                                            <div className="w-full bg-gray-100 rounded-full h-2">
-                                                <div
-                                                    className="bg-gray-900 h-2 rounded-full transition-all duration-500"
-                                                    style={{ width: `${rec.completion_percentage}%` }}
-                                                />
-                                            </div>
-                                        </div>
-
-                                        {/* Credits Info */}
-                                        <div className="grid grid-cols-2 gap-4 pt-2">
-                                            <div>
-                                                <p className="text-xs text-gray-500 mb-1">Completed</p>
-                                                <p className="text-lg font-semibold text-gray-900">
-                                                    {rec.completed_credits} credits
-                                                </p>
-                                            </div>
-                                            <div>
-                                                <p className="text-xs text-gray-500 mb-1">Gap</p>
-                                                <p className="text-lg font-semibold text-gray-900">
-                                                    {rec.gap_credits} credits
-                                                </p>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    {/* View Details Button */}
-                                    <button
-                                        onClick={() => {
-                                            const params = new URLSearchParams({
-                                                recommendation: JSON.stringify(rec)
-                                            });
-                                            router.push(`/minor-details/${rec.minor_id}?${params.toString()}`);
-                                        }}
-                                        className="w-full mt-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium rounded-lg transition-colors"
-                                    >
-                                        View Details →
-                                    </button>
+                    {/* Minors Grid */}
+                    {activeTab === 'minors' && (
+                        <>
+                            {recommendations.length === 0 ? (
+                                <div className="text-center py-16">
+                                    <p className="text-gray-500">No minor recommendations available</p>
                                 </div>
-                            ))}
-                        </div>
+                            ) : (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {recommendations.map((rec, index) => (
+                                        <div
+                                            key={rec.minor_id}
+                                            className="border border-gray-200 rounded-2xl p-6 hover:border-gray-300 transition-all duration-200"
+                                        >
+                                            {/* Ranking Badge */}
+                                            <div className="flex items-start justify-between mb-4">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 rounded-full bg-gray-900 text-white flex items-center justify-center text-sm font-semibold">
+                                                        {index + 1}
+                                                    </div>
+                                                    <h2 className="text-xl font-semibold text-gray-900">
+                                                        {rec.minor_name}
+                                                    </h2>
+                                                </div>
+                                            </div>
+
+                                            {/* Stats */}
+                                            <div className="space-y-3 mb-4">
+                                                {/* Completion Bar */}
+                                                <div>
+                                                    <div className="flex justify-between mb-2 text-sm">
+                                                        <span className="text-gray-600">Completion</span>
+                                                        <span className="font-medium text-gray-900">
+                                                            {rec.completion_percentage.toFixed(1)}%
+                                                        </span>
+                                                    </div>
+                                                    <div className="w-full bg-gray-100 rounded-full h-2">
+                                                        <div
+                                                            className="bg-gray-900 h-2 rounded-full transition-all duration-500"
+                                                            style={{ width: `${rec.completion_percentage}%` }}
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                {/* Credits Info */}
+                                                <div className="grid grid-cols-2 gap-4 pt-2">
+                                                    <div>
+                                                        <p className="text-xs text-gray-500 mb-1">Completed</p>
+                                                        <p className="text-lg font-semibold text-gray-900">
+                                                            {rec.completed_credits} credits
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-xs text-gray-500 mb-1">Gap</p>
+                                                        <p className="text-lg font-semibold text-gray-900">
+                                                            {rec.gap_credits} credits
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* View Details Button */}
+                                            <button
+                                                onClick={() => {
+                                                    const params = new URLSearchParams({
+                                                        recommendation: JSON.stringify(rec)
+                                                    });
+                                                    router.push(`/minor-details/${rec.minor_id}?${params.toString()}`);
+                                                }}
+                                                className="w-full mt-4 py-3 bg-gray-100 hover:bg-gray-200 text-gray-900 font-medium rounded-lg transition-colors"
+                                            >
+                                                View Details →
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </>
+                    )}
+
+                    {/* Certificates Grid */}
+                    {activeTab === 'certificates' && (
+                        <>
+                            {certificates.length === 0 ? (
+                                <div className="text-center py-16">
+                                    <p className="text-gray-500">No certificate recommendations available</p>
+                                </div>
+                            ) : (
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    {certificates.map((cert, index) => (
+                                        <div
+                                            key={cert.certificate_id}
+                                            className="border border-blue-200 rounded-2xl p-6 hover:border-blue-300 transition-all duration-200 bg-blue-50/30"
+                                        >
+                                            {/* Ranking Badge */}
+                                            <div className="flex items-start justify-between mb-4">
+                                                <div className="flex items-center gap-3">
+                                                    <div className="w-8 h-8 rounded-full bg-blue-600 text-white flex items-center justify-center text-sm font-semibold">
+                                                        {index + 1}
+                                                    </div>
+                                                    <h2 className="text-xl font-semibold text-gray-900">
+                                                        {cert.certificate_name}
+                                                    </h2>
+                                                </div>
+                                            </div>
+
+                                            {/* Stats */}
+                                            <div className="space-y-3 mb-4">
+                                                {/* Completion Bar */}
+                                                <div>
+                                                    <div className="flex justify-between mb-2 text-sm">
+                                                        <span className="text-gray-600">Completion</span>
+                                                        <span className="font-medium text-gray-900">
+                                                            {cert.completion_percentage.toFixed(1)}%
+                                                        </span>
+                                                    </div>
+                                                    <div className="w-full bg-blue-100 rounded-full h-2">
+                                                        <div
+                                                            className="bg-blue-600 h-2 rounded-full transition-all duration-500"
+                                                            style={{ width: `${cert.completion_percentage}%` }}
+                                                        />
+                                                    </div>
+                                                </div>
+
+                                                {/* Credits Info */}
+                                                <div className="grid grid-cols-2 gap-4 pt-2">
+                                                    <div>
+                                                        <p className="text-xs text-gray-500 mb-1">Completed</p>
+                                                        <p className="text-lg font-semibold text-gray-900">
+                                                            {cert.completed_credits} credits
+                                                        </p>
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-xs text-gray-500 mb-1">Gap</p>
+                                                        <p className="text-lg font-semibold text-gray-900">
+                                                            {cert.gap_credits} credits
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* View Details Button */}
+                                            <button
+                                                onClick={() => {
+                                                    const params = new URLSearchParams({
+                                                        recommendation: JSON.stringify(cert)
+                                                    });
+                                                    router.push(`/certificate-details/${cert.certificate_id}?${params.toString()}`);
+                                                }}
+                                                className="w-full mt-4 py-3 bg-blue-100 hover:bg-blue-200 text-blue-900 font-medium rounded-lg transition-colors"
+                                            >
+                                                View Details →
+                                            </button>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
+                        </>
                     )}
 
                     {/* Info Note */}
-                    {recommendations.length > 0 && (
+                    {(recommendations.length > 0 || certificates.length > 0) && (
                         <div className="mt-12 p-4 bg-gray-50 rounded-xl border border-gray-100">
                             <p className="text-sm text-gray-600">
                                 <strong className="text-gray-900">Note:</strong> Gap credits show the additional work needed beyond your major requirements. Recommendations are ranked by strategic score, considering completion percentage and credit requirements.
@@ -185,4 +291,3 @@ export default function ResultsPage() {
         </Suspense>
     );
 }
-

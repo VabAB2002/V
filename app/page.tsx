@@ -2,10 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react';
 import { useRouter } from 'next/navigation';
-import { fetchMajors } from './actions';
+import { fetchMajors } from '@/app/actions';
 import type { MajorOption } from '@/lib/utils';
-import PageTransition from '@/components/PageTransition';
-import PageToggle from '@/components/PageToggle';
+import PageTransition from '@/components/common/PageTransition';
+import PageToggle from '@/components/common/PageToggle';
 import NProgress from 'nprogress';
 
 export default function HomePage() {

@@ -16,6 +16,7 @@ const DATA_DIR = path.join(process.cwd(), 'lib', 'data');
 const DB_PATH = path.join(DATA_DIR, 'courses.db');
 const MAJORS_PATH = path.join(DATA_DIR, 'penn_state_majors.json');
 const MINORS_PATH = path.join(DATA_DIR, 'penn_state_minors.json');
+const CERTIFICATES_PATH = path.join(DATA_DIR, 'penn_state_certificates.json');
 const GENED_PATH = path.join(DATA_DIR, 'gen_ed_requirements.json');
 const EQUIVALENCIES_PATH = path.join(DATA_DIR, 'course_equivalencies.json');
 
@@ -43,6 +44,7 @@ let stmtFindCourses: Database.Statement | null = null;
 // In-memory cache for other data
 let majorsData: any = null;
 let minorsData: any = null;
+let certificatesData: any = null;
 let genEdData: any = null;
 let equivalenciesData: { equivalencies: Record<string, string[]> } | null = null;
 
@@ -126,6 +128,19 @@ function loadMinorsData(): any {
     const rawData = fs.readFileSync(MINORS_PATH, 'utf-8');
     minorsData = JSON.parse(rawData);
     return minorsData;
+}
+
+/**
+ * Load all certificates data.
+ */
+function loadCertificatesData(): any {
+    if (certificatesData) {
+        return certificatesData;
+    }
+
+    const rawData = fs.readFileSync(CERTIFICATES_PATH, 'utf-8');
+    certificatesData = JSON.parse(rawData);
+    return certificatesData;
 }
 
 /**
@@ -231,6 +246,28 @@ export function loadMinorRequirements(minorId: string): ProgramMetadata | null {
 }
 
 /**
+ * Load certificate requirements by certificate ID.
+ * @param certificateId Certificate identifier (e.g., "digital_arts_certificate")
+ * @returns Program metadata with requirements
+ */
+export function loadCertificateRequirements(certificateId: string): ProgramMetadata | null {
+    const data = loadCertificatesData();
+    const certData = data.certificates?.[certificateId];
+
+    if (!certData) {
+        return null;
+    }
+
+    return {
+        program_id: certData.certificate_id || certificateId,
+        name: certData.certificate_name || certData.name,
+        credits_required: certData.total_credits_required,
+        department: certData.department,
+        requirements: normalizeRequirementNode(certData.requirements),
+    };
+}
+
+/**
  * Load GenEd requirements.
  * @returns GenEd requirements as RequirementNode
  */
@@ -328,6 +365,14 @@ export function getAllMinorIds(): string[] {
 }
 
 /**
+ * Get all available certificate IDs.
+ */
+export function getAllCertificateIds(): string[] {
+    const data = loadCertificatesData();
+    return Object.keys(data.certificates || {});
+}
+
+/**
  * Check if a course satisfies GenEd requirements.
  * @param courseId Course identifier
  * @param genEdCategory GenEd category (e.g., "GN", "GQ")
@@ -382,6 +427,7 @@ export function findCoursesByDepartment(
 export function clearCache(): void {
     majorsData = null;
     minorsData = null;
+    certificatesData = null;
     genEdData = null;
     // We don't close the DB connection here as it might be reused, 
     // but we could if we wanted to force a full reload

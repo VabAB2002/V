@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react';
-import { useCourseDetails } from '@/lib/context/CourseDetailsContext';
+import { useCourseDetails } from '@/components/context/CourseDetailsContext';
 import type { CourseDetails } from '@/app/actions/getCourseDetails';
 import CourseTooltip from './CourseTooltip';
 import CourseModal from './CourseModal';

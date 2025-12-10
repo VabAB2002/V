@@ -1,0 +1,539 @@
+{
+    "certificates": {
+        "digital_arts_certificate": {
+            "certificate_id": "digital_arts_certificate",
+            "certificate_name": "Digital Arts",
+            "department": "DART",
+            "total_credits_required": 15,
+            "description": "This 15-credit program consists of five 3-credit courses, developing skills in digital imaging, 3D art, animation, web design, and professional portfolio presentation.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "intro_art",
+                        "label": "Introduction to Art",
+                        "description": "Select 3 credits from introductory visual studies or drawing",
+                        "credits_needed": 3,
+                        "valid_courses": [
+                            "ART 10",
+                            "ART 20"
+                        ]
+                    },
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "digital_foundation",
+                        "label": "Digital Art Foundation",
+                        "description": "Select 3 credits from digital arts fundamentals",
+                        "credits_needed": 3,
+                        "valid_courses": [
+                            "DART 202",
+                            "DART 203",
+                            "DART 204",
+                            "DART 206"
+                        ]
+                    },
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "core_criticism_portfolio",
+                        "label": "Criticism and Portfolio",
+                        "description": "Required advanced core courses",
+                        "credits_needed": 9,
+                        "courses": [
+                            "ART 211Y",
+                            "DART 300",
+                            "DART 412"
+                        ]
+                    }
+                ]
+            }
+        },
+        "diversity_studies_certificate": {
+            "certificate_id": "diversity_studies_certificate",
+            "certificate_name": "Diversity Studies",
+            "department": "DIV",
+            "total_credits_required": 12,
+            "description": "In this 12-credit program, you will explore the differences and similarities we share with others in our diverse society.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "div_prescribed",
+                        "label": "Prescribed Course",
+                        "description": "Required foundation course",
+                        "credits_needed": 3,
+                        "courses": [
+                            "WMNST 105N"
+                        ]
+                    },
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "div_additional",
+                        "label": "Additional Courses",
+                        "description": "Select 3 credits from the following list",
+                        "credits_needed": 3,
+                        "valid_courses": [
+                            "AFAM 100N",
+                            "WMNST 100",
+                            "WMNST 106N",
+                            "ENGL 245",
+                            "WMNST 245"
+                        ]
+                    },
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "div_supporting",
+                        "label": "Supporting Courses",
+                        "description": "Select 6 credits from the approved supporting list",
+                        "credits_needed": 6,
+                        "valid_courses": [
+                            "AFAM 409",
+                            "SOC 409",
+                            "AFR 110N",
+                            "AMST 140Y",
+                            "ANTH 1",
+                            "ANTH 45N",
+                            "ASIA 100",
+                            "BBH 302",
+                            "BBH 315",
+                            "CAS 271N",
+                            "CAS 426W",
+                            "CAS 455",
+                            "CAS 475",
+                            "CMLIT 10",
+                            "CMLIT 153",
+                            "COMM 205",
+                            "CRIM 201",
+                            "SOC 201",
+                            "CSD 269",
+                            "ENGL 245",
+                            "WMNST 245",
+                            "HDFS 249N",
+                            "HDFS 250",
+                            "HDFS 254N",
+                            "HIST 447",
+                            "HIST 458Y",
+                            "LHR 458",
+                            "HIST 479",
+                            "OLEAD 410",
+                            "OLEAD 411",
+                            "PLSC 210N",
+                            "RHS 100",
+                            "RLST 1",
+                            "RPTM 120",
+                            "SOC 119N",
+                            "SOC 456",
+                            "SPLED 461",
+                            "WMNST 100",
+                            "WMNST 106N",
+                            "WMNST 120"
+                        ]
+                    }
+                ]
+            }
+        },
+        "earth_sustainability_certificate": {
+            "certificate_id": "earth_sustainability_certificate",
+            "certificate_name": "Earth Sustainability",
+            "department": "EARTH",
+            "total_credits_required": 12,
+            "description": "Address key sustainability issues, including climate change, water access, sustainable energy, and coastal hazards.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "earth_prescribed",
+                        "label": "Prescribed Course",
+                        "description": "Required core course",
+                        "credits_needed": 3,
+                        "courses": [
+                            "EARTH 103N"
+                        ]
+                    },
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "earth_electives",
+                        "label": "Additional Courses",
+                        "description": "Select 9 credits from the following offerings",
+                        "credits_needed": 9,
+                        "valid_courses": [
+                            "EARTH 104N",
+                            "EARTH 107N",
+                            "EARTH 109",
+                            "EARTH 111",
+                            "GEOG 3N"
+                        ]
+                    }
+                ]
+            }
+        },
+        "erp_sap_certificate": {
+            "certificate_id": "erp_sap_certificate",
+            "certificate_name": "Enterprise Resource Planning with SAP",
+            "department": "ERP",
+            "total_credits_required": 9,
+            "description": "A 9-credit program designed to provide foundational knowledge of SAP software solutions and prepare for professional SAP certification.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "erp_core_courses",
+                        "label": "Required Courses",
+                        "description": "Complete all 3 required courses",
+                        "credits_needed": 9,
+                        "courses": [
+                            "MIS 404",
+                            "SCM 445",
+                            "SCM 460"
+                        ]
+                    }
+                ]
+            }
+        },
+        "financial_planning_certificate": {
+            "certificate_id": "financial_planning_certificate",
+            "certificate_name": "Financial Planning",
+            "department": "FIN",
+            "total_credits_required": 18,
+            "description": "Prepare for a career in financial planning covering income tax, retirement, estate planning, and investment strategies.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "fin_plan_prescribed",
+                        "label": "Prescribed Courses",
+                        "description": "Complete all 6 required courses",
+                        "credits_needed": 18,
+                        "courses": [
+                            "ACCTG 310",
+                            "FIN 330",
+                            "FIN 420",
+                            "FIN 430",
+                            "FIN 450",
+                            "FIN 491"
+                        ]
+                    }
+                ]
+            }
+        },
+        "ist_certificate": {
+            "certificate_id": "ist_certificate",
+            "certificate_name": "Information Sciences and Technology",
+            "department": "IST",
+            "total_credits_required": 12,
+            "description": "Prepare for a leadership role in IST fields by exploring social, ethical, and policy issues surrounding information technology.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "ist_prescribed",
+                        "label": "Prescribed Courses",
+                        "description": "Complete all 4 required courses",
+                        "credits_needed": 12,
+                        "courses": [
+                            "IST 110",
+                            "IST 210",
+                            "IST 220",
+                            "IST 250"
+                        ]
+                    }
+                ]
+            }
+        },
+        "labor_human_resources_certificate": {
+            "certificate_id": "labor_human_resources_certificate",
+            "certificate_name": "Labor and Human Resources",
+            "department": "LHR",
+            "total_credits_required": 12,
+            "description": "Examine the employment relationship, legal principles, and human resource fundamentals in this 12-credit program.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "lhr_core",
+                        "label": "Required Courses",
+                        "description": "Required foundation courses",
+                        "credits_needed": 6,
+                        "courses": [
+                            "LHR 100",
+                            "LHR 201"
+                        ]
+                    },
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "lhr_electives",
+                        "label": "Elective Courses",
+                        "description": "Select 6 credits from the approved electives",
+                        "credits_needed": 6,
+                        "valid_courses": [
+                            "LHR 304",
+                            "LHR 305",
+                            "LHR 400",
+                            "LHR 403"
+                        ]
+                    }
+                ]
+            }
+        },
+        "nursing_forensics_certificate": {
+            "certificate_id": "nursing_forensics_certificate",
+            "certificate_name": "Nursing Forensics",
+            "department": "NURS",
+            "total_credits_required": 12,
+            "description": "Prepare to provide specialized care for victims and perpetrators of violence, covering evidence collection, legal issues, and trauma recognition.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "forensics_prescribed",
+                        "label": "Prescribed Courses",
+                        "description": "Complete all 4 required courses",
+                        "credits_needed": 12,
+                        "courses": [
+                            "NURS 245",
+                            "NURS 409",
+                            "NURS 410",
+                            "NURS 411"
+                        ]
+                    }
+                ]
+            }
+        },
+        "nursing_informatics_certificate": {
+            "certificate_id": "nursing_informatics_certificate",
+            "certificate_name": "Nursing Informatics",
+            "department": "NURS",
+            "total_credits_required": 9,
+            "description": "This program provides informatics knowledge to support the efficient, ethical, and safe use of health informatics tools.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "informatics_prescribed",
+                        "label": "Prescribed Courses",
+                        "description": "Complete all 3 required courses",
+                        "credits_needed": 9,
+                        "courses": [
+                            "NURS 357",
+                            "NURS 458",
+                            "NURS 460"
+                        ]
+                    }
+                ]
+            }
+        },
+        "organizational_communication_certificate": {
+            "certificate_id": "organizational_communication_certificate",
+            "certificate_name": "Organizational Communication",
+            "department": "CAS",
+            "total_credits_required": 12,
+            "description": "Examine the function and structure of communication in formal and informal situations, focusing on technology and conflict resolution.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "org_comm_prescribed",
+                        "label": "Required Courses",
+                        "description": "Complete both required courses",
+                        "credits_needed": 6,
+                        "courses": [
+                            "CAS 283",
+                            "CAS 352"
+                        ]
+                    },
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "org_comm_electives",
+                        "label": "Elective Courses",
+                        "description": "Select 6 credits from the approved electives",
+                        "credits_needed": 6,
+                        "valid_courses": [
+                            "CAS 404",
+                            "CAS 452W",
+                            "CAS 475",
+                            "ENGL 419"
+                        ]
+                    }
+                ]
+            }
+        },
+        "security_risk_analysis_certificate": {
+            "certificate_id": "security_risk_analysis_certificate",
+            "certificate_name": "Security and Risk Analysis",
+            "department": "SRA",
+            "total_credits_required": 15,
+            "description": "Examine case studies related to cyber terrorism, bioterrorism, and critical infrastructure protection while learning risk analysis strategies.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "sra_core",
+                        "label": "Core Courses",
+                        "description": "Required core courses covering security, risk, terrorism, and information security",
+                        "credits_needed": 12,
+                        "courses": [
+                            "IST 110",
+                            "SRA 111",
+                            "SRA 211",
+                            "CYBER 221"
+                        ]
+                    },
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "sra_programming",
+                        "label": "Programming Requirement",
+                        "description": "Select 3 credits of introductory programming",
+                        "credits_needed": 3,
+                        "valid_courses": [
+                            "CMPSC 101",
+                            "CMPSC 121",
+                            "IST 140"
+                        ]
+                    }
+                ]
+            }
+        },
+        "professional_snowsports_education_certificate": {
+            "certificate_id": "professional_snowsports_education_certificate",
+            "certificate_name": "Professional Snowsports Education",
+            "department": "RPTM",
+            "total_credits_required": 9,
+            "description": "Combines theoretical knowledge with practical application to prepare students to teach snowsports with a focus on safety and leadership.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "snowsports_required",
+                        "label": "Required Courses",
+                        "description": "Complete all 3 required courses",
+                        "credits_needed": 9,
+                        "courses": [
+                            "RPTM 115",
+                            "RPTM 120",
+                            "RPTM 215"
+                        ]
+                    }
+                ]
+            }
+        },
+        "turfgrass_management_advanced_certificate": {
+            "certificate_id": "turfgrass_management_advanced_certificate",
+            "certificate_name": "Turfgrass Management, Advanced",
+            "department": "TURF",
+            "total_credits_required": 30,
+            "description": "This 30-credit program builds on the basic certificate, covering pest management, cultural systems, edaphology, and case studies.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "turf_adv_prescribed",
+                        "label": "Prescribed Courses",
+                        "description": "Required core courses and internship",
+                        "credits_needed": 8,
+                        "courses": [
+                            "TURF 230",
+                            "TURF 235",
+                            "TURF 490",
+                            "TURF 495"
+                        ]
+                    },
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "turf_adv_additional",
+                        "label": "Additional Courses",
+                        "description": "Select 22 credits from the following list",
+                        "credits_needed": 22,
+                        "valid_courses": [
+                            "ENT 317",
+                            "PPEM 412",
+                            "SOILS 101",
+                            "TURF 238",
+                            "TURF 307",
+                            "TURF 425",
+                            "TURF 434",
+                            "TURF 435",
+                            "TURF 436W"
+                        ]
+                    }
+                ]
+            }
+        },
+        "turfgrass_management_basic_certificate": {
+            "certificate_id": "turfgrass_management_basic_certificate",
+            "certificate_name": "Turfgrass Management, Basic",
+            "department": "TURF",
+            "total_credits_required": 15,
+            "description": "Introduces the field covering pest management, cultural systems, and edaphology.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "turf_basic_prescribed",
+                        "label": "Prescribed Courses",
+                        "description": "Required foundation courses",
+                        "credits_needed": 4,
+                        "courses": [
+                            "TURF 230",
+                            "TURF 235"
+                        ]
+                    },
+                    {
+                        "type": "PICK_FROM_LIST",
+                        "requirement_id": "turf_basic_additional",
+                        "label": "Additional Courses",
+                        "description": "Select 11 credits from the following list",
+                        "credits_needed": 11,
+                        "valid_courses": [
+                            "ENT 317",
+                            "PPEM 412",
+                            "TURF 238",
+                            "TURF 307",
+                            "TURF 425",
+                            "TURF 434",
+                            "TURF 435",
+                            "TURF 436W"
+                        ]
+                    }
+                ]
+            }
+        },
+        "weather_forecasting_certificate": {
+            "certificate_id": "weather_forecasting_certificate",
+            "certificate_name": "Weather Forecasting",
+            "department": "METEO",
+            "total_credits_required": 12,
+            "description": "Foundational apprenticeship in weather forecasting using cutting-edge techniques and innovative conceptual models.",
+            "requirements": {
+                "type": "AND",
+                "children": [
+                    {
+                        "type": "FIXED_LIST",
+                        "requirement_id": "weather_prescribed",
+                        "label": "Required Courses",
+                        "description": "Complete all 4 required meteorology courses",
+                        "credits_needed": 12,
+                        "courses": [
+                            "METEO 101",
+                            "METEO 241",
+                            "METEO 361",
+                            "METEO 410"
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}

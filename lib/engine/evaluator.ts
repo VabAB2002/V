@@ -8,22 +8,12 @@ import {
 } from '../types';
 import { getCourseDetails, getCourseCredits, courseHasGenEdAttribute, getEquivalentCourses } from './loader';
 
-/**
- * Grade hierarchy for comparison (higher index = better grade).
- */
+// Grade hierarchy (higher index = better)
 const GRADE_HIERARCHY = ['F', 'D', 'D+', 'C-', 'C', 'C+', 'B-', 'B', 'B+', 'A-', 'A', 'A+'];
 
-/**
- * Passing grades that count for credit.
- */
 const PASSING_GRADES = new Set(['D', 'D+', 'C-', 'C', 'C+', 'B-', 'B', 'B+', 'A-', 'A', 'A+']);
 
-/**
- * Compare two grades.
- * @param earnedGrade Grade student earned
- * @param requiredGrade Minimum required grade
- * @returns 'PASS' if earned >= required, 'FAIL' otherwise
- */
+// Compare two grades
 export function compareGrade(
     earnedGrade: string,
     requiredGrade: string = 'D'
@@ -39,15 +29,7 @@ export function compareGrade(
     return earnedIndex >= requiredIndex ? 'PASS' : 'FAIL';
 }
 
-/**
- * Audit a requirement node against a student's transcript.
- * This is the core recursive evaluation function.
- * 
- * @param node Requirement node to audit
- * @param transcript Student's completed courses
- * @param usedCourses Set of course IDs already used (to prevent double-counting)
- * @returns Audit result
- */
+// Core recursive evaluation function
 export function auditRequirement(
     node: RequirementNode,
     transcript: CompletedCourse[],

@@ -1,12 +1,7 @@
-/**
- * E2E Tests: Results Page
- * Tests recommendation display
- */
-
 import { test, expect } from '@playwright/test';
 
 test.describe('Results Page - Recommendations', () => {
-    
+
     // Create a sample URL with mock recommendation data
     const sampleRecommendation = encodeURIComponent(JSON.stringify([
         {
@@ -73,9 +68,9 @@ test.describe('Results Page - Recommendations', () => {
     test('should handle empty recommendations', async ({ page }) => {
         // Navigate with empty recommendations
         await page.goto('/results?major=software_engineering_bs&recommendations=[]');
-        
+
         await page.waitForTimeout(500);
-        
+
         // Should show empty state or message
         const content = await page.content();
         expect(content.length).toBeGreaterThan(0);

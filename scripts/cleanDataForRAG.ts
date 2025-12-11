@@ -1,11 +1,5 @@
-/**
- * Clean Data for RAG - Creates RAG-friendly documents from source data
- * 
- * This script reads the original JSON files (without modifying them)
- * and creates cleaned, structured documents saved to lib/data/rag/
- * 
- * Usage: npx tsx scripts/cleanDataForRAG.ts
- */
+// Creates RAG-friendly documents from source data
+// Usage: npx tsx scripts/cleanDataForRAG.ts
 
 import * as fs from 'fs';
 import * as path from 'path';
@@ -23,9 +17,7 @@ interface CleanedDocument {
     content: string;
 }
 
-/**
- * Extract course IDs from requirement nodes safely
- */
+// Extract course IDs from requirement nodes
 function extractCourses(node: any): string[] {
     if (!node || typeof node !== 'object') return [];
 
@@ -42,9 +34,6 @@ function extractCourses(node: any): string[] {
     return [...new Set(courses)]; // Remove duplicates
 }
 
-/**
- * Clean and extract major data
- */
 function cleanMajors(): CleanedDocument[] {
     console.log('📚 Cleaning majors...');
     const documents: CleanedDocument[] = [];
@@ -118,9 +107,6 @@ Total: ${majorList.length} majors available.
     return documents;
 }
 
-/**
- * Clean and extract minor data
- */
 function cleanMinors(): CleanedDocument[] {
     console.log('📚 Cleaning minors...');
     const documents: CleanedDocument[] = [];
@@ -176,9 +162,6 @@ Total: ${minorList.length} minors available.
     return documents;
 }
 
-/**
- * Clean and extract GenEd data
- */
 function cleanGenEd(): CleanedDocument[] {
     console.log('📚 Cleaning GenEd requirements...');
     const documents: CleanedDocument[] = [];
@@ -239,9 +222,6 @@ ${subNames ? `Subcategories: ${subNames}` : ''}
     return documents;
 }
 
-/**
- * Main function
- */
 async function main() {
     console.log('🧹 Starting data cleaning for RAG...\n');
 

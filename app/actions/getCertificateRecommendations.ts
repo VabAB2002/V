@@ -31,9 +31,7 @@ export interface CertificateRecommendation {
     needed_courses: string[]; // Courses still needed
 }
 
-/**
- * Extract all required course IDs from a requirement tree
- */
+// Extract required course IDs from requirement tree
 function extractRequiredCourses(node: RequirementNode): string[] {
     const courses: string[] = [];
 
@@ -55,9 +53,7 @@ function extractRequiredCourses(node: RequirementNode): string[] {
     return courses;
 }
 
-/**
- * Calculate strategic score for ranking certificates
- */
+// Score for ranking
 function calculateStrategicScore(
     completionPercentage: number,
     gapCredits: number,
@@ -69,9 +65,7 @@ function calculateStrategicScore(
     return completionScore * 0.7 + gapScore * 0.3;
 }
 
-/**
- * Get top N certificate recommendations based on completed courses and major
- */
+// Get top N certificate recommendations
 export async function getCertificateRecommendations(
     parsedCourses: ParsedCourse[],
     majorId: string,

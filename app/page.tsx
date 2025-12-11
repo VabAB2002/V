@@ -18,17 +18,14 @@ export default function HomePage() {
   const inputRef = useRef<HTMLInputElement>(null);
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Load majors on mount
   useEffect(() => {
     fetchMajors().then(setMajors);
   }, []);
 
-  // Filter majors based on search query
   const filteredMajors = majors.filter(major =>
     major.name.toLowerCase().includes(searchQuery.toLowerCase())
   ).slice(0, 8); // Limit to 8 results for clean UI
 
-  // Handle keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (!isDropdownOpen) return;
 
@@ -55,19 +52,13 @@ export default function HomePage() {
     }
   };
 
-  // Handle major selection
   const handleSelect = (major: MajorOption) => {
     setSelectedMajor(major);
     setIsDropdownOpen(false);
-
-    // Start progress bar
     NProgress.start();
-
-    // Navigate
     router.push(`/transcript-upload?major=${major.id}`);
   };
 
-  // Handle input change
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchQuery(e.target.value);
     setIsDropdownOpen(true);
@@ -75,7 +66,6 @@ export default function HomePage() {
     setSelectedMajor(null);
   };
 
-  // Handle click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (

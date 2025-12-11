@@ -1,12 +1,7 @@
-/**
- * E2E Tests: Program Details Page
- * Tests minor/certificate detail view
- */
-
 import { test, expect } from '@playwright/test';
 
 test.describe('Program Details Page', () => {
-    
+
     const sampleRecommendation = encodeURIComponent(JSON.stringify({
         minor_id: 'business_minor',
         minor_name: 'Business Minor',
@@ -85,7 +80,7 @@ test.describe('Program Details Page', () => {
 });
 
 test.describe('Certificate Details Page', () => {
-    
+
     const sampleCertRecommendation = encodeURIComponent(JSON.stringify({
         certificate_id: 'digital_arts_certificate',
         certificate_name: 'Digital Arts Certificate',
@@ -101,7 +96,7 @@ test.describe('Certificate Details Page', () => {
 
     test('should load certificate details page', async ({ page }) => {
         await page.goto(`/certificate-details/digital_arts_certificate?recommendation=${sampleCertRecommendation}`);
-        
+
         // Should display some content
         const content = await page.content();
         expect(content.length).toBeGreaterThan(0);

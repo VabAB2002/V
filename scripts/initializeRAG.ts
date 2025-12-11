@@ -1,4 +1,4 @@
-/**
+/*
  * Initialize RAG - Populate Pinecone with course data
  * Usage: npx tsx scripts/initializeRAG.ts
  */
@@ -10,7 +10,6 @@ import Database from 'better-sqlite3';
 import { GoogleGenAI } from '@google/genai';
 import { Pinecone } from '@pinecone-database/pinecone';
 
-// Load environment variables
 dotenv.config({ path: path.join(process.cwd(), '.env.local') });
 
 const DATA_DIR = path.join(process.cwd(), 'lib', 'data');
@@ -38,9 +37,7 @@ const BATCH_SIZE = 50;
 const genai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 const pinecone = new Pinecone({ apiKey: process.env.PINECONE_API_KEY || '' });
 
-/**
- * Generate embeddings using Gemini
- */
+// Generate embeddings using Gemini
 async function generateEmbeddings(texts: string[]): Promise<number[][]> {
     const embeddings: number[][] = [];
 
@@ -70,9 +67,7 @@ async function generateEmbeddings(texts: string[]): Promise<number[][]> {
     return embeddings;
 }
 
-/**
- * Extract courses from requirement node safely
- */
+// Walk the requirement tree and grab all courses
 function extractCoursesFromRequirement(node: any): string[] {
     if (!node || typeof node !== 'object') return [];
 
@@ -89,9 +84,7 @@ function extractCoursesFromRequirement(node: any): string[] {
     return courses;
 }
 
-/**
- * Load course documents from SQLite - using correct schema
- */
+// Load course documents using correct schema
 function loadCourseDocuments(): RawDocument[] {
     const documents: RawDocument[] = [];
 
@@ -139,9 +132,7 @@ GenEd: ${genEdAttrs.length > 0 ? genEdAttrs.join(', ') : 'None'}`;
     return documents;
 }
 
-/**
- * Load minor documents
- */
+// Load minor documents
 function loadMinorDocuments(): RawDocument[] {
     const documents: RawDocument[] = [];
 
@@ -170,9 +161,7 @@ Key Courses: ${uniqueCourses.length > 0 ? uniqueCourses.join(', ') : 'See requir
     return documents;
 }
 
-/**
- * Load major documents
- */
+// Load major documents
 function loadMajorDocuments(): RawDocument[] {
     const documents: RawDocument[] = [];
 
@@ -219,9 +208,7 @@ Key Courses: ${uniqueCourses.length > 0 ? uniqueCourses.join(', ') : 'See requir
     return documents;
 }
 
-/**
- * Load certificate documents
- */
+// Load certificate documents
 function loadCertificateDocuments(): RawDocument[] {
     const documents: RawDocument[] = [];
 
@@ -250,9 +237,7 @@ Key Courses: ${uniqueCourses.length > 0 ? uniqueCourses.join(', ') : 'See requir
     return documents;
 }
 
-/**
- * Load GenEd documents
- */
+// Load GenEd documents
 function loadGenEdDocuments(): RawDocument[] {
     const documents: RawDocument[] = [];
 
@@ -285,9 +270,6 @@ Categories: Foundations (Writing/Speaking, Quantification), Knowledge Domains, I
     return documents;
 }
 
-/**
- * Main initialization function
- */
 async function initializeRAG() {
     console.log('🚀 Starting RAG initialization...\n');
 

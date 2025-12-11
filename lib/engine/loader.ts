@@ -8,10 +8,6 @@ import {
     ProgramMetadata,
 } from '../types';
 
-/**
- * Paths to data files.
- * In Next.js, use process.cwd() to get project root instead of __dirname
- */
 const DATA_DIR = path.join(process.cwd(), 'lib', 'data');
 const DB_PATH = path.join(DATA_DIR, 'courses.db');
 const MAJORS_PATH = path.join(DATA_DIR, 'penn_state_majors.json');
@@ -20,10 +16,7 @@ const CERTIFICATES_PATH = path.join(DATA_DIR, 'penn_state_certificates.json');
 const GENED_PATH = path.join(DATA_DIR, 'gen_ed_requirements.json');
 const EQUIVALENCIES_PATH = path.join(DATA_DIR, 'course_equivalencies.json');
 
-/**
- * Database connection instance.
- * Lazy loaded on first access.
- */
+// Database connection (lazy loaded)
 let dbInstance: Database.Database | null = null;
 
 function getDb(): Database.Database {
@@ -48,11 +41,7 @@ let certificatesData: any = null;
 let genEdData: any = null;
 let equivalenciesData: { equivalencies: Record<string, string[]> } | null = null;
 
-/**
- * Get course details for a specific course ID from SQLite.
- * @param courseId Course identifier (e.g., "ACCTG 211")
- * @returns Course details or undefined if not found
- */
+// Get course details from SQLite
 export function getCourseDetails(courseId: string): CourseDetails | undefined {
     const db = getDb();
 
@@ -83,12 +72,7 @@ export function getCourseDetails(courseId: string): CourseDetails | undefined {
     };
 }
 
-/**
- * Get the credit value for a course.
- * Handles both fixed and variable credit courses.
- * @param courseId Course identifier
- * @returns Credit value (uses min for variable credits) or 3 as default
- */
+// Get credit value for a course (defaults to 3)
 export function getCourseCredits(courseId: string): number {
     const details = getCourseDetails(courseId);
     if (!details) {
@@ -176,21 +160,13 @@ function loadEquivalenciesData(): { equivalencies: Record<string, string[]> } {
     }
 }
 
-/**
- * Get equivalent courses for a given course ID.
- * @param courseId Course identifier (e.g., "CMPSC 121")
- * @returns Array of equivalent course IDs, or empty array if none
- */
+// Get equivalent courses for a course ID
 export function getEquivalentCourses(courseId: string): string[] {
     const data = loadEquivalenciesData();
     return data.equivalencies[courseId] || [];
 }
 
-/**
- * Load major requirements by major ID.
- * @param majorId Major identifier (e.g., "accounting_bs")
- * @returns Program metadata with requirements
- */
+// Load major requirements by ID
 export function loadMajorRequirements(majorId: string): ProgramMetadata | null {
     const data = loadMajorsData();
     const majorData = data[majorId];
@@ -223,11 +199,7 @@ export function loadMajorRequirements(majorId: string): ProgramMetadata | null {
     };
 }
 
-/**
- * Load minor requirements by minor ID.
- * @param minorId Minor identifier (e.g., "business_minor")
- * @returns Program metadata with requirements
- */
+// Load minor requirements by ID
 export function loadMinorRequirements(minorId: string): ProgramMetadata | null {
     const data = loadMinorsData();
     const minorData = data.minors?.[minorId];
@@ -245,11 +217,7 @@ export function loadMinorRequirements(minorId: string): ProgramMetadata | null {
     };
 }
 
-/**
- * Load certificate requirements by certificate ID.
- * @param certificateId Certificate identifier (e.g., "digital_arts_certificate")
- * @returns Program metadata with requirements
- */
+// Load certificate requirements by ID
 export function loadCertificateRequirements(certificateId: string): ProgramMetadata | null {
     const data = loadCertificatesData();
     const certData = data.certificates?.[certificateId];
@@ -267,10 +235,7 @@ export function loadCertificateRequirements(certificateId: string): ProgramMetad
     };
 }
 
-/**
- * Load GenEd requirements.
- * @returns GenEd requirements as RequirementNode
- */
+// Load GenEd requirements
 export function loadGenEdRequirements(): RequirementNode {
     const data = loadGenEdData();
     const genEdReqs = data.gen_ed_requirements;
@@ -337,7 +302,7 @@ function normalizeRequirementNode(node: any): RequirementNode {
     // Normalize course fields
     const courseId = node.course_id ?? node.course;
 
-    // Recursively normalize children
+    // Normalize children too
     const children = node.children?.map((child: any) => normalizeRequirementNode(child));
 
     return {
@@ -372,12 +337,7 @@ export function getAllCertificateIds(): string[] {
     return Object.keys(data.certificates || {});
 }
 
-/**
- * Check if a course satisfies GenEd requirements.
- * @param courseId Course identifier
- * @param genEdCategory GenEd category (e.g., "GN", "GQ")
- * @returns True if course satisfies the category
- */
+// Check if a course has a GenEd attribute
 export function courseHasGenEdAttribute(courseId: string, genEdCategory: string): boolean {
     const details = getCourseDetails(courseId);
     if (!details) {
@@ -387,13 +347,7 @@ export function courseHasGenEdAttribute(courseId: string, genEdCategory: string)
     return details.attributes?.gen_ed?.includes(genEdCategory) || false;
 }
 
-/**
- * Search for courses by department and level range.
- * @param department Department code
- * @param minLevel Minimum course level
- * @param maxLevel Maximum course level
- * @returns Array of matching course IDs
- */
+// Search for courses by department and level range
 export function findCoursesByDepartment(
     department: string,
     minLevel?: number,

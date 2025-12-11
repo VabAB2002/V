@@ -4,10 +4,7 @@ import Database from 'better-sqlite3';
 import path from 'path';
 import type { CourseDetails } from './getCourseDetails';
 
-/**
- * Fetches multiple course details in a single batch operation from SQLite database
- * Much more efficient than calling getCourseDetails multiple times
- */
+// Batch fetch course details from SQLite (more efficient than individual calls)
 export async function getBatchCourseDetails(
     courseCodes: string[]
 ): Promise<Record<string, CourseDetails>> {

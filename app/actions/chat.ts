@@ -6,13 +6,7 @@ import type { ChatMessage, UserContext } from '@/lib/rag/types';
 // Re-export types for client components
 export type { ChatMessage, UserContext };
 
-/**
- * Send a chat message and get a response from the AI assistant
- * @param message User's message
- * @param history Previous messages in the conversation
- * @param context User's academic context
- * @returns Assistant's response message
- */
+// Send a chat message and get AI response
 export async function sendChatMessage(
     message: string,
     history: ChatMessage[],
@@ -50,9 +44,7 @@ export async function sendChatMessage(
     }
 }
 
-/**
- * Check if the chat system is ready
- */
+// Check if the RAG system is available
 export async function checkChatHealth(): Promise<{
     ready: boolean;
     ragEnabled: boolean;
@@ -60,7 +52,6 @@ export async function checkChatHealth(): Promise<{
 }> {
     try {
         const ragReady = await isRAGReady();
-
         return {
             ready: true,
             ragEnabled: ragReady,

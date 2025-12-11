@@ -1,10 +1,5 @@
-/**
- * Initialize RAG from Cleaned Data
- * 
- * Uses the cleaned documents from lib/data/rag/cleaned_documents.json
- * 
- * Usage: npx tsx scripts/initializeRAGFromClean.ts
- */
+// Initialize RAG from cleaned data
+// Usage: npx tsx scripts/initializeRAGFromClean.ts
 
 import * as dotenv from 'dotenv';
 import * as path from 'path';
@@ -34,9 +29,6 @@ interface EmbeddedDocument {
 const genai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
 const pinecone = new Pinecone({ apiKey: process.env.PINECONE_API_KEY || '' });
 
-/**
- * Generate embedding for a single text
- */
 async function generateEmbedding(text: string): Promise<number[]> {
     try {
         const result = await genai.models.embedContent({
@@ -53,9 +45,6 @@ async function generateEmbedding(text: string): Promise<number[]> {
     return [];
 }
 
-/**
- * Main initialization function
- */
 async function main() {
     console.log('🚀 Starting RAG initialization from cleaned data...\n');
 

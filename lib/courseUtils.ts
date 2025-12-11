@@ -2,9 +2,6 @@
  * Utility functions for course data handling
  */
 
-/**
- * Truncates a description to a specified number of sentences
- */
 export function truncateDescription(text: string, sentences: number = 3): string {
     if (!text) return '';
 
@@ -19,9 +16,6 @@ export function truncateDescription(text: string, sentences: number = 3): string
     return matches.slice(0, sentences).join(' ').trim() + '...';
 }
 
-/**
- * Formats credits for display
- */
 export function formatCredits(credits: number | { min: number; max: number }): string {
     if (typeof credits === 'number') {
         return `${credits} credit${credits !== 1 ? 's' : ''}`;
@@ -29,10 +23,7 @@ export function formatCredits(credits: number | { min: number; max: number }): s
     return `${credits.min}-${credits.max} credits`;
 }
 
-/**
- * Extracts course codes from prerequisite structure
- * Returns a simple comma-separated string for now
- */
+// Extracts course codes from prerequisite structure
 export function formatPrerequisites(prereqs: any): string {
     if (!prereqs || prereqs.type === 'none') {
         return 'None';
@@ -63,9 +54,6 @@ export function formatPrerequisites(prereqs: any): string {
     return codes.length > 0 ? codes.join(', ') : 'None';
 }
 
-/**
- * Recursively parses requirement structure for display
- */
 export interface ParsedRequirement {
     label?: string;
     description?: string;

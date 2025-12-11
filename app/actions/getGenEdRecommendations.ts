@@ -5,9 +5,6 @@ import path from 'path';
 import { loadMajorRequirements, getAllMajorIds } from '@/lib/engine/loader';
 import type { RequirementNode } from '@/lib/types';
 
-/**
- * Represents a single GenEd course recommendation
- */
 export interface GenEdRecommendation {
     course_code: string;
     course_name: string;
@@ -17,16 +14,10 @@ export interface GenEdRecommendation {
     score: number;             // Higher = better recommendation
 }
 
-/**
- * Result containing recommendations grouped by GenEd attribute
- */
 export interface GenEdRecommendationResult {
     [attribute: string]: GenEdRecommendation[];
 }
 
-/**
- * Major metadata for dropdown display
- */
 export interface MajorOption {
     id: string;
     name: string;
@@ -35,10 +26,7 @@ export interface MajorOption {
 // GenEd attributes we support
 const GENED_ATTRIBUTES = ['GWS', 'GQ', 'GHW', 'GN', 'GA', 'GH', 'GS', 'interdomain'];
 
-/**
- * Extract all course IDs from a requirement tree (recursively)
- * This identifies courses that count toward a major
- */
+// Extract course IDs from requirement tree
 function extractMajorCourses(node: RequirementNode, courses: Set<string> = new Set()): Set<string> {
     if (!node) return courses;
 
@@ -78,7 +66,7 @@ function extractMajorCourses(node: RequirementNode, courses: Set<string> = new S
         }
     }
 
-    // Recursively process children
+    // Handle children
     if (node.children) {
         for (const child of node.children) {
             extractMajorCourses(child, courses);
@@ -88,9 +76,7 @@ function extractMajorCourses(node: RequirementNode, courses: Set<string> = new S
     return courses;
 }
 
-/**
- * Get all available majors for the dropdown
- */
+// Get all majors for dropdown
 export async function getAllMajors(): Promise<MajorOption[]> {
     try {
         const majorIds = getAllMajorIds();
@@ -115,17 +101,7 @@ export async function getAllMajors(): Promise<MajorOption[]> {
     }
 }
 
-/**
- * Get smart GenEd course recommendations based on:
- * 1. Missing GenEd attributes the student needs
- * 2. Student's major (to find double-dipping opportunities)
- * 3. Courses already completed (to exclude)
- * 
- * @param missingAttributes - Array of GenEd attributes student still needs (e.g., ["GA", "GH"])
- * @param majorId - The student's major ID (e.g., "computer_science_bs")
- * @param completedCourses - Array of course codes already completed
- * @param topN - Number of recommendations per attribute (default: 5)
- */
+// Get smart GenEd recommendations (handles double-dipping, etc.)
 export async function getGenEdRecommendations(
     missingAttributes: string[],
     majorId: string | null,

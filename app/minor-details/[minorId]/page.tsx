@@ -25,9 +25,6 @@ function MinorDetailsContent() {
         try {
             const rec = JSON.parse(recParam);
             setRecommendation(rec);
-            console.log('Recommendation data:', rec);
-            console.log('Completed courses:', rec.completed_courses);
-            console.log('Needed courses:', rec.needed_courses);
         } catch (error) {
             console.error('Error parsing recommendation:', error);
             router.push('/');

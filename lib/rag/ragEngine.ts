@@ -4,9 +4,6 @@ import { generateQueryEmbedding, generateChatResponse, SYSTEM_PROMPT } from './g
 import { searchSimilar, checkIndexHealth } from './pinecone';
 import type { UserContext, SearchResult, RAGResponse } from './types';
 
-/**
- * Build context string from search results and user data
- */
 function buildContext(searchResults: SearchResult[], userContext: UserContext): string {
     const parts: string[] = [];
 
@@ -42,36 +39,24 @@ function buildContext(searchResults: SearchResult[], userContext: UserContext): 
     return parts.join('\n');
 }
 
-/**
- * Process a user query through the RAG pipeline
- * @param userMessage The user's question
- * @param userContext User's academic context (major, courses)
- * @returns RAG response with answer and sources
- */
+// Main RAG query pipeline
 export async function processQuery(
     userMessage: string,
     userContext: UserContext
 ): Promise<RAGResponse> {
     try {
-        // Step 1: Generate embedding for user query
-        console.log('Generating query embedding...');
         const queryEmbedding = await generateQueryEmbedding(userMessage);
 
         if (!queryEmbedding || queryEmbedding.length === 0) {
             throw new Error('Failed to generate query embedding');
         }
 
-        // Step 2: Search Pinecone for relevant documents
-        console.log('Searching for relevant documents...');
         const searchResults = await searchSimilar(queryEmbedding, 10);
 
         console.log(`Found ${searchResults.length} relevant documents`);
 
-        // Step 3: Build context from results + user data
         const context = buildContext(searchResults, userContext);
 
-        // Step 4: Generate response with Gemini
-        console.log('Generating response...');
         const answer = await generateChatResponse(SYSTEM_PROMPT, userMessage, context);
 
         return {

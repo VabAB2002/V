@@ -20,9 +20,7 @@ export interface CourseDetails {
 }
 
 
-/**
- * Fetches course details by course code from penn_state_courses.json
- */
+// Fetch course details from the database
 export async function getCourseDetails(courseCode: string): Promise<CourseDetails | null> {
     try {
         const dataPath = path.join(process.cwd(), 'lib', 'data', 'penn_state_courses.json');

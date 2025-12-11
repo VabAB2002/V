@@ -1,15 +1,10 @@
-/**
- * Integration Tests: Requirement Evaluator Engine
- * Tests the core audit functionality for requirements
- */
-
 import { auditRequirement, compareGrade } from '../../lib/engine/evaluator';
 import type { RequirementNode, CompletedCourse } from '../../lib/types';
 
 describe('Evaluator - Grade Comparison', () => {
-    
+
     describe('compareGrade()', () => {
-        
+
         it('should pass when earned >= required', () => {
             expect(compareGrade('A', 'C')).toBe('PASS');
             expect(compareGrade('B+', 'B')).toBe('PASS');
@@ -37,7 +32,7 @@ describe('Evaluator - Grade Comparison', () => {
 });
 
 describe('Evaluator - Requirement Auditing', () => {
-    
+
     const sampleTranscript: CompletedCourse[] = [
         { id: 'CMPSC 131', grade: 'A', credits_awarded: 3 },
         { id: 'CMPSC 132', grade: 'B+', credits_awarded: 3 },
@@ -47,7 +42,7 @@ describe('Evaluator - Requirement Auditing', () => {
     ];
 
     describe('FIXED node type', () => {
-        
+
         it('should mark as MET when course is completed', () => {
             const node: RequirementNode = {
                 type: 'FIXED',
@@ -56,7 +51,7 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('MET');
             expect(result.fulfilled_by).toContain('CMPSC 131');
             expect(result.credits_earned).toBe(3);
@@ -70,7 +65,7 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('MISSING');
             expect(result.fulfilled_by).toHaveLength(0);
         });
@@ -84,14 +79,14 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             // B grade doesn't meet A requirement
             expect(result.status).toBe('MISSING');
         });
     });
 
     describe('AND node type', () => {
-        
+
         it('should mark as MET when all children are met', () => {
             const node: RequirementNode = {
                 type: 'AND',
@@ -103,7 +98,7 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('MET');
             expect(result.credits_earned).toBe(8); // 4 + 4
         });
@@ -119,7 +114,7 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('PARTIAL');
         });
 
@@ -134,13 +129,13 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('MISSING');
         });
     });
 
     describe('OR node type', () => {
-        
+
         it('should mark as MET when one option is met', () => {
             const node: RequirementNode = {
                 type: 'OR',
@@ -152,7 +147,7 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('MET');
             expect(result.fulfilled_by).toHaveLength(1);
         });
@@ -165,14 +160,14 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('MET');
             expect(result.fulfilled_by).toContain('MATH 140');
         });
     });
 
     describe('FIXED_LIST node type', () => {
-        
+
         it('should mark as MET when all courses completed', () => {
             const node: RequirementNode = {
                 type: 'FIXED_LIST',
@@ -181,7 +176,7 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('MET');
             expect(result.fulfilled_by).toContain('CMPSC 131');
             expect(result.fulfilled_by).toContain('CMPSC 132');
@@ -195,13 +190,13 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('PARTIAL');
         });
     });
 
     describe('PICK_FROM_LIST node type', () => {
-        
+
         it('should count credits toward requirement', () => {
             const node: RequirementNode = {
                 type: 'PICK_FROM_LIST',
@@ -211,7 +206,7 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('MET');
             expect(result.credits_earned).toBe(6); // CMPSC 131 + CMPSC 132
         });
@@ -225,31 +220,31 @@ describe('Evaluator - Requirement Auditing', () => {
             };
 
             const result = auditRequirement(node, sampleTranscript, new Set());
-            
+
             expect(result.status).toBe('PARTIAL');
             expect(result.credits_earned).toBe(3); // Only CMPSC 131
         });
     });
 
     describe('Double counting prevention', () => {
-        
+
         it('should not count same course twice', () => {
             const node: RequirementNode = {
                 type: 'AND',
                 label: 'Requirements',
                 children: [
                     { type: 'FIXED', course_id: 'CMPSC 131' },
-                    { 
-                        type: 'PICK_FROM_LIST', 
-                        valid_courses: ['CMPSC 131', 'CMPSC 132'], 
-                        credits_needed: 3 
+                    {
+                        type: 'PICK_FROM_LIST',
+                        valid_courses: ['CMPSC 131', 'CMPSC 132'],
+                        credits_needed: 3
                     }
                 ]
             };
 
             const usedCourses = new Set<string>();
             const result = auditRequirement(node, sampleTranscript, usedCourses);
-            
+
             // CMPSC 131 used for FIXED, CMPSC 132 used for PICK_FROM_LIST
             expect(result.children_results![0].fulfilled_by).toContain('CMPSC 131');
             expect(result.children_results![1].fulfilled_by).toContain('CMPSC 132');

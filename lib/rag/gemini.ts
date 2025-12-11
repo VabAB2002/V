@@ -5,11 +5,7 @@ import { GoogleGenAI } from "@google/genai";
 // Initialize Gemini client
 const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
-/**
- * Generate embeddings for a list of texts using Gemini
- * @param texts Array of text strings to embed
- * @returns Array of embedding vectors (768 dimensions each)
- */
+// Generate embeddings for text strings
 export async function generateEmbeddings(texts: string[]): Promise<number[][]> {
     if (texts.length === 0) return [];
 
@@ -29,23 +25,13 @@ export async function generateEmbeddings(texts: string[]): Promise<number[][]> {
     }
 }
 
-/**
- * Generate a single embedding for a query
- * @param text Text to embed
- * @returns Embedding vector
- */
+// Single embedding for a query
 export async function generateQueryEmbedding(text: string): Promise<number[]> {
     const embeddings = await generateEmbeddings([text]);
     return embeddings[0] || [];
 }
 
-/**
- * Generate a chat response using Gemini
- * @param systemPrompt System instructions for the model
- * @param userMessage User's question
- * @param context Retrieved context from RAG
- * @returns Generated response text
- */
+// Generate chat response from Gemini
 export async function generateChatResponse(
     systemPrompt: string,
     userMessage: string,

@@ -1,9 +1,4 @@
-/**
- * Actions Module Barrel Export
- * 
- * Re-exports all server actions for clean imports throughout the app.
- * Usage: import { fetchMajors, parseTranscript } from '@/app/actions'
- */
+// Barrel export for all server actions
 
 // Data fetching actions
 export { fetchMajors, fetchCourses } from './fetchData';

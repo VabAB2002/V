@@ -1,12 +1,7 @@
-/**
- * E2E Tests: Transcript Upload Page
- * Tests course input functionality
- */
-
 import { test, expect } from '@playwright/test';
 
 test.describe('Transcript Upload Page', () => {
-    
+
     test.beforeEach(async ({ page }) => {
         // Navigate with a sample major parameter
         await page.goto('/transcript-upload?major=software_engineering_bs');
@@ -32,9 +27,9 @@ test.describe('Transcript Upload Page', () => {
     test('should show autocomplete when typing course code', async ({ page }) => {
         const searchInput = page.locator('input[type="text"]').first();
         await searchInput.fill('CMPSC');
-        
+
         await page.waitForTimeout(500);
-        
+
         // Should show autocomplete suggestions
         const suggestions = page.locator('[role="option"], [role="listbox"], li');
         const count = await suggestions.count();
@@ -44,14 +39,14 @@ test.describe('Transcript Upload Page', () => {
     test('should add course when selected from dropdown', async ({ page }) => {
         const searchInput = page.locator('input[type="text"]').first();
         await searchInput.fill('CMPSC 131');
-        
+
         await page.waitForTimeout(500);
-        
+
         // Try to click first suggestion if visible
         const firstOption = page.locator('[role="option"], li').first();
         if (await firstOption.isVisible()) {
             await firstOption.click();
-            
+
             // Course should appear as a pill/badge
             const coursePill = page.locator('text=CMPSC 131');
             await expect(coursePill).toBeVisible();
@@ -81,18 +76,18 @@ test.describe('Transcript Upload Page', () => {
         const searchInput = page.locator('input[type="text"]').first();
         await searchInput.fill('MATH 140');
         await page.waitForTimeout(300);
-        
+
         const firstOption = page.locator('[role="option"], li').first();
         if (await firstOption.isVisible()) {
             await firstOption.click();
             await page.waitForTimeout(200);
-            
+
             // Find and click remove button
             const removeButton = page.locator('button').filter({ hasText: /×|x|remove/i }).first();
             if (await removeButton.isVisible()) {
                 await removeButton.click();
                 await page.waitForTimeout(200);
-                
+
                 // Course pill should be gone (or reduced count)
             }
         }

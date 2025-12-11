@@ -31,9 +31,7 @@ export interface MinorRecommendation {
     needed_courses: string[]; // Courses still needed
 }
 
-/**
- * Extract all required course IDs from a requirement tree
- */
+// Grab course IDs from requirement tree
 function extractRequiredCourses(node: RequirementNode): string[] {
     const courses: string[] = [];
 
@@ -55,9 +53,7 @@ function extractRequiredCourses(node: RequirementNode): string[] {
     return courses;
 }
 
-/**
- * Calculate strategic score for ranking minors
- */
+// Score for ranking minors
 function calculateStrategicScore(
     completionPercentage: number,
     gapCredits: number,
@@ -69,9 +65,7 @@ function calculateStrategicScore(
     return completionScore * 0.7 + gapScore * 0.3;
 }
 
-/**
- * Get top N minor recommendations based on completed courses and major
- */
+// Get top N minor recommendations based on completed courses and major
 export async function getMinorRecommendations(
     parsedCourses: ParsedCourse[],
     majorId: string,
@@ -150,18 +144,6 @@ export async function getMinorRecommendations(
             usedCourses
         );
 
-        console.log(`\n=== ${minor.name} ===`);
-        console.log(`Completed credits: ${completedCredits}/${totalCredits}`);
-        console.log(`Gap credits: ${gapCredits}`);
-        console.log(`Used courses (${usedCourses.size}):`, Array.from(usedCourses));
-        console.log(`Needed courses (${neededCourses.length}):`, neededCourses);
-
-        // Debug Business Minor specifically
-        if (minorId === 'business_minor') {
-            console.log('\n=== BUSINESS MINOR DEBUG ===');
-            console.log('Full audit result:', JSON.stringify(auditResult, null, 2));
-            console.log('\nSections:', JSON.stringify(sections, null, 2));
-        }
 
         recommendations.push({
             minor_id: minorId,
@@ -184,10 +166,7 @@ export async function getMinorRecommendations(
     return recommendations.slice(0, topN);
 }
 
-/**
- * Extract courses grouped by sections
- * Tracks section labels while traversing the requirement tree
- */
+// Extract courses grouped by sections
 function extractCoursesWithSections(
     auditResult: any,
     requirements: RequirementNode,
@@ -309,7 +288,7 @@ function extractCoursesWithSections(
             // Start traversal for this section
             traverseSection(sectionAudit, sectionNode);
 
-            // Calculate credits completed in this section
+            // Count credits done in this section
             let creditsCompleted = 0;
             for (const courseId of sectionCompleted) {
                 const course = transcript.find(c => c.id === courseId);
@@ -332,10 +311,7 @@ function extractCoursesWithSections(
     return sections;
 }
 
-/**
- * Extract needed courses by examining audit results
- * Only extracts from requirements that are PARTIAL or MISSING
- */
+// Extract needed courses from audit results (PARTIAL or MISSING only)
 function extractNeededCoursesFromAudit(
     auditResult: any,
     requirements: RequirementNode,

@@ -14,9 +14,7 @@ export interface MajorPlan {
     sub_plans?: any;
 }
 
-/**
- * Fetches major academic plan by major_id from penn_state_majors.json
- */
+// Fetch major plan details
 export async function getMajorPlan(majorId: string): Promise<MajorPlan | null> {
     try {
         const dataPath = path.join(process.cwd(), 'lib', 'data', 'penn_state_majors.json');

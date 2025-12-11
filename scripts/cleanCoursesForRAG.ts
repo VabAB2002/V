@@ -1,11 +1,5 @@
-/**
- * cleanCoursesForRAG.ts
- * 
- * Extracts courses with GenEd attributes from SQLite and creates
- * RAG-friendly documents for Pinecone upload.
- * 
- * Run with: npx ts-node scripts/cleanCoursesForRAG.ts
- */
+// Extracts courses with GenEd attributes for Pinecone upload
+// Run: npx ts-node scripts/cleanCoursesForRAG.ts
 
 import Database from 'better-sqlite3';
 import * as fs from 'fs';

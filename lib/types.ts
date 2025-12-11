@@ -32,49 +32,49 @@ export interface RequirementNode {
     type: NodeType;
 
     // Metadata
-    label?: string;                    // Human-readable label (e.g., "Accounting Core")
-    description?: string;              // Detailed description
-    requirement_id?: string;           // Unique identifier for this requirement
-    option_id?: string;                // For OR branches
-    note?: string;                     // Additional notes
+    label?: string;
+    description?: string;
+    requirement_id?: string;
+    option_id?: string;
+    note?: string;
 
     // Credit Requirements
-    credits_needed?: number;           // Credits required (default: sum of children or course credits)
-    credits_required?: number;         // Alias for credits_needed
-    credits_max?: number;              // Maximum credits that can be applied
-    total_credits?: number;            // Total credits in this section (informational)
-    credits_added?: number;            // Credits added by sub-plan
+    credits_needed?: number;
+    credits_required?: number;
+    credits_max?: number;
+    total_credits?: number;
+    credits_added?: number;
 
     // Grade Requirements
-    min_grade?: string;                // Minimum grade (default "D", often "C")
-    min_grade_overrides?: Record<string, string>; // Per-course grade overrides
+    min_grade?: string;
+    min_grade_overrides?: Record<string, string>;
 
     // Recursive Structure
-    children?: RequirementNode[];      // Child requirement nodes
+    children?: RequirementNode[];
 
     // Course Selectors (Leaf Nodes)
-    course?: string;                   // Single course ID (for FIXED)
-    course_id?: string;                // Alias for course
-    courses?: string[];                // List of course IDs (for FIXED_LIST)
-    valid_courses?: string[];          // Valid course list (for PICK_FROM_LIST)
-    options?: string[];                // Course options (for OR nodes)
+    course?: string;
+    course_id?: string;
+    courses?: string[];
+    valid_courses?: string[];
+    options?: string[];
 
     // Department/Level Selectors
-    valid_departments?: string[];      // Valid departments (for PICK_FROM_DEPT)
-    department_rules?: Record<string, { min_grade?: string }>; // Per-dept rules
+    valid_departments?: string[];
+    department_rules?: Record<string, { min_grade?: string }>;
     level_min?: number;                // Minimum course level (e.g., 300)
     level_max?: number;                // Maximum course level (e.g., 499)
     level_rules?: LevelRule[];         // Level-based credit requirements
 
     // Attribute Selectors (for GenEd)
-    category?: string;                 // GenEd category (e.g., "GN", "GQ")
-    required_attributes?: string[];    // Required course attributes
-    valid_attributes?: string[];       // Valid course attributes
-    exclude_attributes?: string[];     // Excluded attributes (e.g., no interdomain)
-    allow_inter_domain?: boolean;      // Allow interdomain courses
+    category?: string;
+    required_attributes?: string[];
+    valid_attributes?: string[];
+    exclude_attributes?: string[];
+    allow_inter_domain?: boolean;
 
     // Exclusions
-    exclude_courses?: string[];        // Courses that cannot be used
+    exclude_courses?: string[];
 
     // Special Fields
     world_language_option?: {          // For world language requirements
@@ -105,15 +105,15 @@ export interface CompletedCourse {
  * Detailed information about a course from the course catalog.
  */
 export interface CourseDetails {
-    credits: number | { min: number; max: number }; // Fixed or variable credits
+    credits: number | { min: number; max: number };
     attributes: {
-        gen_ed: string[];                // GenEd attributes (e.g., ["GN", "GS"])
-        writing: boolean;                // Writing intensive
-        cultural_diversity: string[];    // Cultural diversity attributes
+        gen_ed: string[];
+        writing: boolean;
+        cultural_diversity: string[];
     };
-    department: string;                // Department code (e.g., "ACCTG")
-    level: number;                     // Course level (e.g., 211)
-    credit_type?: 'fixed' | 'variable'; // Credit type
+    department: string;
+    level: number;
+    credit_type?: 'fixed' | 'variable';
     [key: string]: any;                // Allow additional fields from course data
 }
 
@@ -121,14 +121,14 @@ export interface CourseDetails {
  * Result of auditing a requirement node.
  */
 export interface AuditResult {
-    status: 'MET' | 'MISSING' | 'PARTIAL'; // Requirement status
-    credits_earned: number;            // Credits earned toward this requirement
-    credits_required: number;          // Credits required for this requirement
-    fulfilled_by: string[];            // Course IDs that fulfilled this requirement
-    missing_reason?: string;           // Reason if not met
-    children_results?: AuditResult[];  // Results for child nodes
-    label?: string;                    // Label from requirement node
-    remaining_credits?: number;        // Credits still needed
+    status: 'MET' | 'MISSING' | 'PARTIAL';
+    credits_earned: number;
+    credits_required: number;
+    fulfilled_by: string[];
+    missing_reason?: string;
+    children_results?: AuditResult[];
+    label?: string;
+    remaining_credits?: number;
     suggested_courses?: string[];      // Suggested courses to complete (future)
 }
 
@@ -145,13 +145,13 @@ export interface Transcript {
  * Program (major/minor) metadata.
  */
 export interface ProgramMetadata {
-    program_id: string;                // Unique program ID
-    name: string;                      // Program name
-    degree_type?: string;              // Degree type (BS, BA, etc.)
-    department?: string;               // Primary department
-    credits_required: number;          // Total credits required
-    entrance_requirements?: RequirementNode; // Entrance requirements
-    requirements: RequirementNode;     // Main program requirements
+    program_id: string;
+    name: string;
+    degree_type?: string;
+    department?: string;
+    credits_required: number;
+    entrance_requirements?: RequirementNode;
+    requirements: RequirementNode;
 }
 
 /**

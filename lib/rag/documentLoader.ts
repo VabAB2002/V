@@ -11,9 +11,6 @@ const MAJORS_PATH = path.join(DATA_DIR, 'penn_state_majors.json');
 const MINORS_PATH = path.join(DATA_DIR, 'penn_state_minors.json');
 const GENED_PATH = path.join(DATA_DIR, 'gen_ed_requirements.json');
 
-/**
- * Load all course documents from SQLite database
- */
 export async function loadCourseDocuments(): Promise<RawDocument[]> {
     const documents: RawDocument[] = [];
 

@@ -13,9 +13,7 @@ export interface ParsedCourse {
     term?: string;
 }
 
-/**
- * Intermediate structure for course candidates before DB validation
- */
+// Intermediate structure for course candidates before DB validation
 interface CourseCandidate {
     codeWithLetter: string;      // e.g., "CMPSC 431W" 
     codeWithoutLetter: string;   // e.g., "CMPSC 431"
@@ -28,10 +26,7 @@ interface CourseCandidate {
     term: string;
 }
 
-/**
- * Validate course codes against the database
- * Returns a Set of valid course codes that exist in the DB
- */
+// Validate course codes against the database
 async function validateCourseCodes(candidateCodes: string[]): Promise<Set<string>> {
     if (candidateCodes.length === 0) {
         return new Set();
@@ -59,105 +54,37 @@ async function validateCourseCodes(candidateCodes: string[]): Promise<Set<string
     }
 }
 
-/**
- * Parse a Penn State transcript PDF and extract courses
- * Uses two-pass validation: extract candidates, then validate against DB
- */
+// Parse Penn State transcript PDF and extract courses
 export async function parseTranscriptPDF(fileBuffer: ArrayBuffer): Promise<ParsedCourse[]> {
     try {
-        console.log('Starting PDF parse...');
-        console.log('FileBuffer type:', typeof fileBuffer);
-        console.log('FileBuffer size:', fileBuffer.byteLength);
-
-        // Validate input
         if (!fileBuffer || fileBuffer.byteLength === 0) {
             throw new Error('Invalid or empty file buffer');
         }
 
-        // Import from lib directly to avoid debug code in index.js
         const pdfParse = require('pdf-parse/lib/pdf-parse.js');
-
-        // Convert ArrayBuffer to Node.js Buffer
         const buffer = Buffer.from(fileBuffer);
-        console.log('Buffer type:', Buffer.isBuffer(buffer));
-        console.log('Buffer size:', buffer.length);
-        console.log('First few bytes:', buffer.slice(0, 10).toString('hex'));
-
-        // Call pdf-parse function with just the buffer
-        console.log('Calling pdf-parse...');
         const data = await pdfParse(buffer);
-
-        console.log('PDF parsed successfully!');
-        console.log('Number of pages:', data.numpages);
-        console.log('Text length:', data.text?.length || 0);
 
         const text = data.text;
         if (!text || text.length === 0) {
             throw new Error('No text extracted from PDF');
         }
 
-        // Log a preview of the text to see the format
-        console.log('=== TEXT PREVIEW (first 2000 chars) ===');
-        console.log(text.substring(0, 2000));
-        console.log('=== END PREVIEW ===');
-        console.log('=== TEXT PREVIEW (last 1500 chars) ===');
-        console.log(text.substring(text.length - 1500));
-        console.log('=== END PREVIEW ===');
-
         // PASS 1: Extract course candidates with both code variants
         const candidates = extractCourseCandidates(text);
-        console.log(`Pass 1: Extracted ${candidates.length} course candidates`);
 
         // PASS 2: Validate codes against database
         const courses = await validateAndResolveCourses(candidates);
-        console.log(`Pass 2: Resolved ${courses.length} validated courses`);
-
-        if (courses.length > 0) {
-            console.log('Sample courses:', courses.slice(0, 3));
-
-            // Calculate credit totals
-            const completedCredits = courses
-                .filter(c => c.status === 'completed')
-                .reduce((sum, c) => sum + c.earnedCredits, 0);
-
-            const inProgressCredits = courses
-                .filter(c => c.status === 'in-progress')
-                .reduce((sum, c) => sum + c.credits, 0);
-
-            const transferCredits = courses
-                .filter(c => c.status === 'transfer')
-                .reduce((sum, c) => sum + c.earnedCredits, 0);
-
-            console.log('=== CREDIT SUMMARY ===');
-            console.log(`Completed courses: ${courses.filter(c => c.status === 'completed').length}`);
-            console.log(`Completed credits: ${completedCredits}`);
-            console.log(`In-progress courses: ${courses.filter(c => c.status === 'in-progress').length}`);
-            console.log(`In-progress credits: ${inProgressCredits}`);
-            console.log(`Transfer credits: ${transferCredits}`);
-            console.log(`Total potential credits: ${completedCredits + inProgressCredits + transferCredits}`);
-            console.log('===================');
-        }
 
         return courses;
     } catch (error) {
         console.error('Error parsing PDF:', error);
-        console.error('Error details:', {
-            message: error instanceof Error ? error.message : 'Unknown error',
-            stack: error instanceof Error ? error.stack : undefined,
-            name: error instanceof Error ? error.name : typeof error
-        });
         throw new Error(`Failed to parse transcript PDF: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
 }
 
-/**
- * PASS 1: Extract course candidates from transcript text
- * Extracts BOTH potential course codes (with and without letter suffix)
- * 
- * Penn State format (from PDF): Text is concatenated without spaces
- * Example: ASTRO    6Stars and Galaxies3.0003.000B-8.010
- * Example: CMPSC  431WDatabase Mgmt Syst3.0003.000A12.000
- */
+
+// Extract course candidates from transcript text
 function extractCourseCandidates(text: string): CourseCandidate[] {
     const candidates: CourseCandidate[] = [];
     const lines = text.split('\n');
@@ -168,19 +95,7 @@ function extractCourseCandidates(text: string): CourseCandidate[] {
     // Pattern to match term headers (e.g., "FA 2022", "SP 2023", "SU 2023")
     const termPattern = /^(FA|SP|SU)\s+\d{4}$/;
 
-    // Modified pattern to capture the potential letter suffix separately
-    // Pattern breakdown:
-    // ([A-Z]{2,6})\s+ - Department code with spaces
-    // (\d{1,4}) - Course number (digits only)
-    // ([A-Z]) - First letter after number (could be suffix OR start of description)
-    // (.+?) - Rest of description (non-greedy)
-    // (\d+\.\d{3}) - Attempted credits
-    // (\d+\.\d{3}) - Earned credits  
-    // \s*([A-Z][A-Z+-]*|LD|IP|TR|) - Grade (may have leading space)
-    // (\d+\.\d{3}) - Points
     const coursePattern = /^([A-Z]{2,6})\s+(\d{1,4})([A-Z])(.+?)(\d+\.\d{3})(\d+\.\d{3})\s*([A-Z][A-Z+-]*|LD|IP|TR|)(\d+\.\d{3})$/;
-
-    console.log('Pass 1: Starting course candidate extraction...');
 
     for (let i = 0; i < lines.length; i++) {
         const line = lines[i].trim();
@@ -233,9 +148,7 @@ function extractCourseCandidates(text: string): CourseCandidate[] {
     return candidates;
 }
 
-/**
- * PASS 2: Validate candidates against database and resolve to final courses
- */
+// PASS 2: Validate candidates against database and resolve to final courses
 async function validateAndResolveCourses(candidates: CourseCandidate[]): Promise<ParsedCourse[]> {
     if (candidates.length === 0) {
         return [];
@@ -329,19 +242,14 @@ async function validateAndResolveCourses(candidates: CourseCandidate[]): Promise
     return Array.from(uniqueCourses.values());
 }
 
-/**
- * Convert parsed courses to simple course code array for the autocomplete
- * This must be async because it's exported from a 'use server' file
- */
+// Convert parsed courses to simple course code array for the autocomplete
 export async function extractCourseCodesFromParsed(courses: ParsedCourse[]): Promise<string[]> {
     return courses
         .filter(c => c.status === 'completed' || c.status === 'in-progress' || c.status === 'transfer')
         .map(c => c.code);
 }
 
-/**
- * Helper to get summary stats from parsed courses
- */
+// Quick stats from parsed courses
 export async function getTranscriptSummary(courses: ParsedCourse[]): Promise<{
     totalCourses: number;
     completedCourses: number;

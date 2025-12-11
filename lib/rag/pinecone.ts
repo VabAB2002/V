@@ -15,17 +15,11 @@ function getPinecone(): Pinecone {
     return pineconeClient;
 }
 
-/**
- * Get the Pinecone index for course data
- */
 function getIndex() {
     const indexName = process.env.PINECONE_INDEX_NAME || 'penn-state-courses';
     return getPinecone().index(indexName);
 }
 
-/**
- * Convert DocumentMetadata to Pinecone RecordMetadata
- */
 function toRecordMetadata(metadata: DocumentMetadata): RecordMetadata {
     return {
         type: metadata.type,
@@ -38,10 +32,7 @@ function toRecordMetadata(metadata: DocumentMetadata): RecordMetadata {
     };
 }
 
-/**
- * Upsert documents to Pinecone
- * @param documents Array of embedded documents to store
- */
+// Batch upsert documents
 export async function upsertDocuments(documents: EmbeddedDocument[]): Promise<void> {
     if (documents.length === 0) return;
 
@@ -65,13 +56,7 @@ export async function upsertDocuments(documents: EmbeddedDocument[]): Promise<vo
     }
 }
 
-/**
- * Search for similar documents in Pinecone
- * @param queryEmbedding Query vector
- * @param topK Number of results to return
- * @param filter Optional metadata filter
- * @returns Array of search results with scores
- */
+// Search for similar documents
 export async function searchSimilar(
     queryEmbedding: number[],
     topK: number = 5,

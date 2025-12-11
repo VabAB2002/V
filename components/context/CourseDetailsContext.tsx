@@ -16,10 +16,7 @@ interface CourseDetailsProviderProps {
     children: ReactNode;
 }
 
-/**
- * Provider that batch-fetches course details for all specified course codes
- * and provides them to child components via context
- */
+// Batch-fetch course details and provide via context
 export function CourseDetailsProvider({ courseCodes, children }: CourseDetailsProviderProps) {
     const [courseDetailsMap, setCourseDetailsMap] = useState<Record<string, CourseDetails>>({});
     const [isLoading, setIsLoading] = useState(true);
@@ -52,9 +49,6 @@ export function CourseDetailsProvider({ courseCodes, children }: CourseDetailsPr
     );
 }
 
-/**
- * Hook to access course details from the context
- */
 export function useCourseDetails() {
     const context = useContext(CourseDetailsContext);
     if (context === undefined) {

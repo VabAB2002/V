@@ -4,10 +4,6 @@ import { type MajorOption, type CourseOption } from './utils'
 
 
 
-/**
- * Server-side utility to extract a simplified list of majors
- * Returns an array of {id, name} objects from penn_state_majors.json
- */
 export function getMajorList(): MajorOption[] {
     const filePath = path.join(process.cwd(), 'lib', 'data', 'penn_state_majors.json');
     const fileContents = fs.readFileSync(filePath, 'utf8');

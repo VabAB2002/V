@@ -1,12 +1,7 @@
-/**
- * E2E Tests: GenEd Tool Page
- * Tests GenEd progress tracking functionality
- */
-
 import { test, expect } from '@playwright/test';
 
 test.describe('GenEd Tool Page', () => {
-    
+
     test.beforeEach(async ({ page }) => {
         await page.goto('/gened');
     });
@@ -18,7 +13,7 @@ test.describe('GenEd Tool Page', () => {
 
     test('should show three-panel layout on desktop', async ({ page }) => {
         await page.setViewportSize({ width: 1280, height: 800 });
-        
+
         // Page should have multiple sections/panels
         const sections = page.locator('section, [class*="panel"], [class*="column"]');
         const count = await sections.count();
@@ -62,7 +57,7 @@ test.describe('GenEd Tool Page', () => {
     test('should expand/collapse sections when clicked', async ({ page }) => {
         // Look for expandable sections
         const expandableHeaders = page.locator('[class*="accordion"], [class*="collapse"], button').filter({ hasText: /Foundations|Knowledge|Integrative/i });
-        
+
         if (await expandableHeaders.first().isVisible()) {
             await expandableHeaders.first().click();
             await page.waitForTimeout(300);
@@ -73,7 +68,7 @@ test.describe('GenEd Tool Page', () => {
         const searchInput = page.locator('input[type="text"]').first();
         await searchInput.fill('ENGL 15');
         await page.waitForTimeout(500);
-        
+
         const firstOption = page.locator('[role="option"], li').first();
         if (await firstOption.isVisible()) {
             await firstOption.click();
@@ -92,7 +87,7 @@ test.describe('GenEd Tool Page', () => {
     test('should be responsive on mobile', async ({ page }) => {
         await page.setViewportSize({ width: 375, height: 667 });
         await page.goto('/gened');
-        
+
         // Page should still be functional
         const content = await page.content();
         expect(content.length).toBeGreaterThan(0);

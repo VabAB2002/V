@@ -5,6 +5,7 @@ import { getMajorPlan, type MajorPlan } from '@/app/actions/getMajorPlan';
 import { CourseDetailsProvider } from '@/components/context/CourseDetailsContext';
 import { isCourseCompleted } from '@/lib/courseEquivalencies';
 import CourseBadge from '@/components/course/CourseBadge';
+import ProgressRing from '@/components/ui/ProgressRing';
 
 interface AcademicPlanDisplayProps {
     majorId: string;
@@ -26,7 +27,7 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
         fetchPlan();
     }, [majorId]);
 
-    // Helper to recursively extract all course codes from the major plan
+    // Grab all course codes recursively from the major plan
     const extractAllCourseCodes = (obj: any): string[] => {
         const codes: string[] = [];
 
@@ -70,18 +71,18 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
         return [...new Set(codes)]; // Remove duplicates
     };
 
-    // Extract all course codes from the major plan
+    // Get all courses from the major plan
     const allCourseCodes = useMemo(() => {
         if (!majorPlan) return [];
         return extractAllCourseCodes(majorPlan);
     }, [majorPlan]);
 
-    // Helper to check if a course is completed (includes equivalency check)
+    // Check if course is done (handles equivalencies)
     const isCompleted = (courseCode: string) => {
         return isCourseCompleted(courseCode, selectedCourses);
     };
 
-    // Calculate progress statistics
+    // Progress stats
     const progressStats = useMemo(() => {
         const totalCourses = allCourseCodes.length;
         const completedCourses = allCourseCodes.filter(code => isCompleted(code)).length;
@@ -99,12 +100,11 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
         };
     }, [allCourseCodes, selectedCourses, majorPlan]);
 
-    // Pro approach: Use flex-wrap for natural badge flow
     const getBadgeContainerClass = (): string => {
         return 'flex flex-wrap gap-2';
     };
 
-    // Helper to flatten AND children into displayable items
+    // Flatten nested AND nodes for display
     const flattenAndChildren = (children: any[]): any[] => {
         const items: any[] = [];
         children.forEach((child: any) => {
@@ -117,7 +117,7 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
                     items.push({ type: 'FIXED', course });
                 });
             } else if (child.type === 'AND' && child.children) {
-                // Recursively flatten nested AND
+                // Keep flattening nested ANDs
                 items.push(...flattenAndChildren(child.children));
             }
         });
@@ -130,117 +130,103 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
 
         const key = `req-${index}`;
 
-        // Handle different requirement types
-        if (req.type === 'FIXED') {
-            return (
-                <div key={key} className="mb-3">
-                    {req.label && <p className="text-sm text-gray-600 mb-1">{req.label}</p>}
-                    <CourseBadge courseCode={req.course} isCompleted={isCompleted(req.course)} />
-                </div>
-            );
-        }
-
-        if (req.type === 'FIXED_LIST') {
-            return (
-                <div key={key} className="mb-4">
-                    {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
-                    <div className={getBadgeContainerClass()}>
-                        {req.courses?.map((course: string, i: number) => (
-                            <CourseBadge key={`${course}-${i}`} courseCode={course} isCompleted={isCompleted(course)} />
-                        ))}
+        switch (req.type) {
+            case 'FIXED':
+                return (
+                    <div key={key} className="mb-3">
+                        {req.label && <p className="text-sm text-gray-600 mb-1">{req.label}</p>}
+                        <CourseBadge courseCode={req.course} isCompleted={isCompleted(req.course)} />
                     </div>
-                </div>
-            );
-        }
+                );
 
-        if (req.type === 'OR') {
-            return (
-                <div key={key} className="mb-4">
-                    {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
-                    {req.description && <p className="text-sm text-gray-600 mb-2">{req.description}</p>}
-                    <div className="flex flex-wrap items-center gap-2">
-                        {req.options?.map((course: string, i: number) => (
-                            <div key={`${course}-${i}`} className="flex items-center gap-2">
-                                <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
-                                {i < req.options.length - 1 && <span className="text-gray-400 text-sm">or</span>}
-                            </div>
-                        ))}
+            case 'FIXED_LIST':
+                return (
+                    <div key={key} className="mb-4">
+                        {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
+                        <div className={getBadgeContainerClass()}>
+                            {req.courses?.map((course: string, i: number) => (
+                                <CourseBadge key={`${course}-${i}`} courseCode={course} isCompleted={isCompleted(course)} />
+                            ))}
+                        </div>
                     </div>
-                </div>
-            );
-        }
+                );
 
-        if (req.type === 'PICK_FROM_LIST') {
-            return (
-                <div key={key} className="mb-4">
-                    {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
-                    {req.description && <p className="text-sm text-gray-600 mb-2">{req.description}</p>}
-                    <div className={getBadgeContainerClass()}>
-                        {req.valid_courses?.map((course: string, i: number) => (
-                            <CourseBadge key={`${course}-${i}`} courseCode={course} isCompleted={isCompleted(course)} />
-                        ))}
+            case 'OR':
+                return (
+                    <div key={key} className="mb-4">
+                        {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
+                        {req.description && <p className="text-sm text-gray-600 mb-2">{req.description}</p>}
+                        <div className="flex flex-wrap items-center gap-2">
+                            {req.options?.map((course: string, i: number) => (
+                                <div key={`${course}-${i}`} className="flex items-center gap-2">
+                                    <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
+                                    {i < req.options.length - 1 && <span className="text-gray-400 text-sm">or</span>}
+                                </div>
+                            ))}
+                        </div>
                     </div>
-                </div>
-            );
-        }
+                );
 
-        if (req.type === 'PICK_FROM_DEPT') {
-            return (
-                <div key={key} className="mb-4">
-                    {req.label && <h4 className="text-sm font-medium text-gray-900 mb-2">{req.label}</h4>}
-                    {req.description && (
-                        <p className="text-xs text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                            {req.description}
-                        </p>
-                    )}
-                </div>
-            );
-        }
+            case 'PICK_FROM_LIST':
+                return (
+                    <div key={key} className="mb-4">
+                        {req.label && <h4 className="text-base font-medium text-gray-900 mb-3">{req.label}</h4>}
+                        {req.description && <p className="text-sm text-gray-600 mb-2">{req.description}</p>}
+                        <div className={getBadgeContainerClass()}>
+                            {req.valid_courses?.map((course: string, i: number) => (
+                                <CourseBadge key={`${course}-${i}`} courseCode={course} isCompleted={isCompleted(course)} />
+                            ))}
+                        </div>
+                    </div>
+                );
 
-        if (req.type === 'AND' && req.children) {
-            const flatItems = flattenAndChildren(req.children);
-            return (
-                <div key={key} className="mb-4">
-                    {req.label && <h4 className="text-sm font-medium text-gray-900 mb-2">{req.label}</h4>}
-                    {req.description && <p className="text-xs text-gray-600 mb-2">{req.description}</p>}
-                    <div className={getBadgeContainerClass()}>
-                        {flatItems.map((item: any, i: number) => {
-                            if (item.type === 'FIXED') {
-                                return <CourseBadge key={`${item.course}-${i}`} courseCode={item.course} isCompleted={isCompleted(item.course)} />;
-                            } else if (item.type === 'OR') {
-                                return (
-                                    <div key={`or-${i}`} className="flex items-center gap-2">
-                                        {item.options?.map((course: string, j: number) => (
-                                            <div key={`${course}-${j}`} className="flex items-center gap-2">
-                                                <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
-                                                {j < item.options.length - 1 && <span className="text-gray-400 text-sm">or</span>}
+            case 'PICK_FROM_DEPT':
+            case 'ANY_COURSE':
+                return (
+                    <div key={key} className="mb-4">
+                        {req.label && <h4 className="text-sm font-medium text-gray-900 mb-2">{req.label}</h4>}
+                        {req.description && (
+                            <p className="text-xs text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-200">
+                                {req.description}
+                            </p>
+                        )}
+                    </div>
+                );
+
+            case 'AND':
+                if (req.children) {
+                    const flatItems = flattenAndChildren(req.children);
+                    return (
+                        <div key={key} className="mb-4">
+                            {req.label && <h4 className="text-sm font-medium text-gray-900 mb-2">{req.label}</h4>}
+                            {req.description && <p className="text-xs text-gray-600 mb-2">{req.description}</p>}
+                            <div className={getBadgeContainerClass()}>
+                                {flatItems.map((item: any, i: number) => {
+                                    if (item.type === 'FIXED') {
+                                        return <CourseBadge key={`${item.course}-${i}`} courseCode={item.course} isCompleted={isCompleted(item.course)} />;
+                                    } else if (item.type === 'OR') {
+                                        return (
+                                            <div key={`or-${i}`} className="flex items-center gap-2">
+                                                {item.options?.map((course: string, j: number) => (
+                                                    <div key={`${course}-${j}`} className="flex items-center gap-2">
+                                                        <CourseBadge courseCode={course} isCompleted={isCompleted(course)} />
+                                                        {j < item.options.length - 1 && <span className="text-gray-400 text-sm">or</span>}
+                                                    </div>
+                                                ))}
                                             </div>
-                                        ))}
-                                    </div>
-                                );
-                            }
-                            return null;
-                        })}
-                    </div>
-                </div>
-            );
+                                        );
+                                    }
+                                    return null;
+                                })}
+                            </div>
+                        </div>
+                    );
+                }
+                return null;
+
+            default:
+                return null;
         }
-
-
-        if (req.type === 'ANY_COURSE') {
-            return (
-                <div key={key} className="mb-4">
-                    {req.label && <h4 className="text-sm font-medium text-gray-900 mb-2">{req.label}</h4>}
-                    {req.description && (
-                        <p className="text-xs text-gray-700 bg-gray-50 p-3 rounded-lg border border-gray-200">
-                            {req.description}
-                        </p>
-                    )}
-                </div>
-            );
-        }
-
-        return null;
     };
 
     // Render a requirements section as a card
@@ -296,37 +282,8 @@ export default function AcademicPlanDisplay({ majorId, selectedCourses }: Academ
             <div className="h-full overflow-y-auto px-10 py-10">
                 {/* Circular Progress Ring */}
                 <div className="flex flex-col items-center mb-10">
-                    <div className="relative w-32 h-32 mb-4">
-                        {/* Background circle */}
-                        <svg className="w-full h-full transform -rotate-90">
-                            <circle
-                                cx="64"
-                                cy="64"
-                                r="56"
-                                stroke="#e5e7eb"
-                                strokeWidth="8"
-                                fill="none"
-                            />
-                            {/* Progress circle */}
-                            <circle
-                                cx="64"
-                                cy="64"
-                                r="56"
-                                stroke="#111827"
-                                strokeWidth="8"
-                                fill="none"
-                                strokeLinecap="round"
-                                strokeDasharray={2 * Math.PI * 56}
-                                strokeDashoffset={2 * Math.PI * 56 * (1 - progressStats.percentage / 100)}
-                                className="transition-all duration-700 ease-out"
-                            />
-                        </svg>
-                        {/* Center text */}
-                        <div className="absolute inset-0 flex flex-col items-center justify-center">
-                            <span className="text-3xl font-semibold text-gray-900">
-                                {progressStats.percentage}%
-                            </span>
-                        </div>
+                    <div className="mb-4">
+                        <ProgressRing percentage={progressStats.percentage} />
                     </div>
 
                     {/* Progress summary */}

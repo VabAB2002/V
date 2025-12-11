@@ -1,12 +1,7 @@
-/**
- * E2E Tests: Chat Page (AI Advisor)
- * Tests the AI chat functionality
- */
-
 import { test, expect } from '@playwright/test';
 
 test.describe('Chat Page - AI Advisor', () => {
-    
+
     test.beforeEach(async ({ page }) => {
         await page.goto('/chat');
     });
@@ -48,7 +43,7 @@ test.describe('Chat Page - AI Advisor', () => {
     test('should accept text input', async ({ page }) => {
         const chatInput = page.locator('input[type="text"], textarea').first();
         await chatInput.fill('What are the prerequisites for CMPSC 461?');
-        
+
         const value = await chatInput.inputValue();
         expect(value).toContain('prerequisites');
     });
@@ -62,12 +57,12 @@ test.describe('Chat Page - AI Advisor', () => {
 
     test('should handle empty submit gracefully', async ({ page }) => {
         const sendButton = page.locator('button[type="submit"], button').filter({ hasText: /Send|Submit/i }).first();
-        
+
         if (await sendButton.isVisible()) {
             // Click send without typing
             await sendButton.click();
             await page.waitForTimeout(300);
-            
+
             // Should not crash
             const content = await page.content();
             expect(content.length).toBeGreaterThan(0);
@@ -79,7 +74,7 @@ test.describe('Chat Page - AI Advisor', () => {
         await chatInput.focus();
         await chatInput.fill('Test message');
         await page.keyboard.press('Enter');
-        
+
         // Should handle keyboard input
         await page.waitForTimeout(300);
     });

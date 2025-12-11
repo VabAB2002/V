@@ -5,7 +5,6 @@ import { usePathname, useSearchParams } from 'next/navigation'
 import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 
-// Configure NProgress
 NProgress.configure({
     showSpinner: false,
     trickleSpeed: 200,
@@ -21,7 +20,6 @@ export default function TopProgressBar() {
     }, [pathname, searchParams])
 
     useEffect(() => {
-        // Override default styles
         const style = document.createElement('style')
         style.innerHTML = `
             #nprogress .bar {

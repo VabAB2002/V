@@ -1,12 +1,6 @@
-/**
- * uploadCoursesToPinecone.ts
- * 
- * Uploads cleaned course documents to Pinecone with Gemini embeddings.
- * Includes rate limiting, exponential backoff, and resume capability.
- * 
- * Run with: npx ts-node scripts/uploadCoursesToPinecone.ts
- * Resume from index: npx ts-node scripts/uploadCoursesToPinecone.ts 500
- */
+// Uploads cleaned course documents to Pinecone
+// Run: npx ts-node scripts/uploadCoursesToPinecone.ts
+// Resume: npx ts-node scripts/uploadCoursesToPinecone.ts 500
 
 import * as fs from 'fs';
 import * as path from 'path';
